@@ -61,3 +61,13 @@ func (r *Auth_reposirory) Reposirory_check_password(id *int) (string, error) {
 	}
 	return res_db, nil
 }
+
+func (r *Auth_reposirory) Repository_choose_otpkey(email *string) (*string, error) {
+	var res_db string
+
+	query := `
+		select
+		from
+		where
+	`
+}
