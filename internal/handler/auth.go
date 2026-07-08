@@ -19,26 +19,6 @@ func Auth_new_handler(service *service.Auth_service) *Auth_handler {
 
 // ---------------------------------------------- login -----------------------------------------------------------------------------------
 func (h *Auth_handler) Login(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Content-Type", "application/json")
-
-	if r.Method == http.MethodOptions {
-		w.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")
-		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-		w.WriteHeader(http.StatusOK)
-		return
-	}
-
-	if r.Method != http.MethodPost {
-		http.Error(w, "Метод не разрешён", http.StatusMethodNotAllowed)
-		return
-	}
-
-	// Проверка формата данных которое приходит
-	if r.Header.Get("Content-Type") != "application/json" {
-		http.Error(w, "Ожидался JSON (Content-Type: application/json)", http.StatusUnsupportedMediaType)
-		return
-	}
 
 	// Response | Request
 	var req models.Auth_Req_Login

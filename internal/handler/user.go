@@ -29,18 +29,6 @@ func (u *User_handler) User_create(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Проверка: Все поля возвращются
-	// if req.AccessToken == "" || req.Password == "" || req.Name == "" {
-	// 	res.Status = "error"
-	// 	res.Error = "Поля не валидны"
-	// 	w.WriteHeader(400)
-	// 	// response
-	// 	json.NewEncoder(w).Encode(res)
-	// 	return
-	// }
-
-	// передаем на слой service
-	// err = u.service.User_create(&claims.Email, &req.Name, &req.Password)
 	err = u.service.User_create(&req.Email, &req.Password)
 	// Если ошибка
 	if err == models.User_err_exists_user {
