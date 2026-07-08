@@ -29,6 +29,11 @@ func main() {
 	user_service := service.User_new_service(user_repository)
 	user_handler := handler.User_new_handler(user_service)
 
+	// ---------------------------------- ticket -----------------------------------
+	ticket_repository := repository.Ticket_new_repository(db)
+	ticket_service := service.Ticket_new_service(ticket_repository)
+	ticket_handler := handler.Ticket_new_handler(ticket_service)
+
 	// ---------------------------------- apis --------------------------------------
 	// Маршрутизатор
 	mux := http.NewServeMux()
@@ -36,6 +41,7 @@ func main() {
 	mux.HandleFunc("POST /login", auth_handler.Login)
 	mux.HandleFunc("POST /login/check_otp", auth_handler.Check_otp)
 	mux.Handle("POST /user", middleware.AuthMiddleware(auth_service, http.HandlerFunc(user_handler.User_create)))
+	mux.Handle("GET /tickets", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(ticket_handler.GetTickets))))
 
 	handleWithCors := middleware.CORSMiddleware(mux)
 

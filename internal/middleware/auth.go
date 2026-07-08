@@ -7,6 +7,7 @@ import (
 	"errors"
 	"io"
 	"net/http"
+	"strings"
 
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/juraevibrahim01/jura/internal/models"
@@ -24,9 +25,6 @@ type authRequestBody struct {
 func AuthMiddleware(authService *service.Auth_service, next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		authHeader := r.Header.Get("Auth")
-		if authHeader == "" {
-			authHeader = r.Header.Get("Authorization")
-		}
 
 		var reqBody authRequestBody
 		if r.Body != nil {
@@ -48,6 +46,7 @@ func AuthMiddleware(authService *service.Auth_service, next http.Handler) http.H
 					return
 				}
 			}
+			reqBody.Email = strings.ToLower(strings.TrimSpace(reqBody.Email))
 			r.Body = io.NopCloser(bytes.NewReader(bodyBytes))
 		}
 
@@ -59,7 +58,7 @@ func AuthMiddleware(authService *service.Auth_service, next http.Handler) http.H
 			return
 		}
 
-		claims, err := authService.ValidateToken(authHeader, "", reqBody.Email)
+		claims, err := authService.ValidateToken(authHeader, "")
 		if err != nil {
 			response.Status = "error"
 
@@ -81,5 +80,53 @@ func AuthMiddleware(authService *service.Auth_service, next http.Handler) http.H
 		)
 
 		next.ServeHTTP(w, r.WithContext(ctx))
+	})
+}
+
+func RoleMiddleware(userService *service.User_service, requiredRoles []string, next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		claims, ok := r.Context().Value(ClaimsKey).(*models.Claims)
+		if !ok || claims == nil {
+			w.WriteHeader(http.StatusUnauthorized)
+			_ = json.NewEncoder(w).Encode(map[string]string{
+				"status":      "error",
+				"description": "Unauthorized",
+			})
+			return
+		}
+
+		userRole, err := userService.GetUserRole(claims.Email)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			_ = json.NewEncoder(w).Encode(map[string]string{
+				"status":      "error",
+				"description": "Ошибка проверки роли",
+			})
+			return
+		}
+
+		if userRole == "" {
+			userRole = "reading"
+		}
+
+		userRole = strings.ToLower(strings.TrimSpace(userRole))
+		allowed := false
+		for _, role := range requiredRoles {
+			if strings.ToLower(strings.TrimSpace(role)) == userRole {
+				allowed = true
+				break
+			}
+		}
+
+		if !allowed {
+			w.WriteHeader(http.StatusForbidden)
+			_ = json.NewEncoder(w).Encode(map[string]string{
+				"status":      "error",
+				"description": "Forbidden",
+			})
+			return
+		}
+
+		next.ServeHTTP(w, r)
 	})
 }

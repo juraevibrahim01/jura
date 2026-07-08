@@ -69,6 +69,10 @@ var (
 	otpMutex sync.RWMutex
 )
 
+func normalizeEmail(email string) string {
+	return strings.ToLower(strings.TrimSpace(email))
+}
+
 // Безопасная генерация 6-значного OTP через crypto/rand
 func (s *Auth_service) GenerateOTP() string {
 	max := big.NewInt(1000000)
@@ -81,24 +85,26 @@ func (s *Auth_service) GenerateOTP() string {
 
 // Сохранение с потокобезопасным удалением
 func (s *Auth_service) SaveOTP(email, otp *string) {
+	normalizedEmail := normalizeEmail(*email)
 	otpMutex.Lock()
-	otpCode[*email] = *otp
+	otpCode[normalizedEmail] = *otp
 	otpMutex.Unlock()
 
 	go func() {
 		time.Sleep(5 * time.Minute)
 		otpMutex.Lock()
-		delete(otpCode, *email)
+		delete(otpCode, normalizedEmail)
 		otpMutex.Unlock()
 	}()
 }
 
 // Проверка пароля с удалением после успешной проверки (Одноразовый код)
 func (s *Auth_service) OtpVerify(email, otp string) bool {
+	normalizedEmail := normalizeEmail(email)
 	otpMutex.Lock() // Используем Lock, так как будем удалять код при успехе
 	defer otpMutex.Unlock()
 
-	savedCode, exists := otpCode[email]
+	savedCode, exists := otpCode[normalizedEmail]
 	log.Println("saved code: ", savedCode, "provided otp:  ", otp)
 
 	if !exists {
@@ -106,7 +112,7 @@ func (s *Auth_service) OtpVerify(email, otp string) bool {
 	}
 
 	if savedCode == otp {
-		delete(otpCode, email) // Удаляем код, чтобы его нельзя было использовать дважды
+		delete(otpCode, normalizedEmail) // Удаляем код, чтобы его нельзя было использовать дважды
 		return true
 	}
 
@@ -136,34 +142,39 @@ func (s *Auth_service) SendOTPEmail(toEmail string, otp string) error {
 	return nil
 }
 
-func (s *Auth_service) GenerationToken(email *string) (string, string, error) {
+func (s *Auth_service) GenerationToken(userID int, email *string, role string) (string, string, error) {
+	normalizedEmail := normalizeEmail(*email)
 	claimsToken := jwt.MapClaims{
-		"email": *email,
-		"exp":   time.Now().Add(15 * time.Minute).Unix(),
+		"email":   normalizedEmail,
+		"role":    role,
+		"user_id": userID,
+		"exp":     time.Now().Add(15 * time.Minute).Unix(),
 	}
 
 	claimsRefToken := jwt.MapClaims{
-		"email": *email,
-		"exp":   time.Now().Add(72 * time.Hour).Unix(),
+		"email":   normalizedEmail,
+		"role":    role,
+		"user_id": userID,
+		"exp":     time.Now().Add(72 * time.Hour).Unix(),
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claimsToken)
 	refToken := jwt.NewWithClaims(jwt.SigningMethodHS256, claimsRefToken)
 
 	// находим ключь определенного юзера
-	access_token, ref_token, err := s.repository.Repository_choose_otpkey(email)
-	if err == nil {
+	access_token, ref_token, err := s.repository.Repository_get_keys_by_user_id(userID)
+	if err != nil {
 		log.Println("Не удалось получать токены из бд!")
 		return "", "", errors.New("Не удалось получить токены из бд!")
 	}
 
 	// Предполагается, что модели хранят []byte секреты
-	accessToken, err := token.SignedString(access_token)
+	accessToken, err := token.SignedString([]byte(access_token))
 	if err != nil {
 		return "", "", err
 	}
 
-	refreshToken, err := refToken.SignedString(ref_token)
+	refreshToken, err := refToken.SignedString([]byte(ref_token))
 	if err != nil {
 		return "", "", err
 	}
@@ -171,28 +182,44 @@ func (s *Auth_service) GenerationToken(email *string) (string, string, error) {
 	return accessToken, refreshToken, nil
 }
 
-func (s *Auth_service) ValidateToken(tokenString, refTokenString, email string) (*models.Claims, error) {
+func (s *Auth_service) ValidateToken(tokenString, refTokenString string) (*models.Claims, error) {
 	var originToken string
 	var secret []byte
+	var err error
 
 	if tokenString != "" {
 		originToken = strings.TrimPrefix(tokenString, "Bearer ")
-		access_token, _, err := s.repository.Repository_choose_otpkey(&email)
+	} else if refTokenString != "" {
+		originToken = refTokenString
+	} else {
+		return nil, errors.New("токен не передан")
+	}
+
+	parser := jwt.NewParser(jwt.WithoutClaimsValidation())
+	claims := &models.Claims{}
+	_, _, err = parser.ParseUnverified(originToken, claims)
+	if err != nil {
+		log.Print("не удалось распарсить токен без проверки", err)
+		return nil, models.ErrTokenInvalid
+	}
+
+	normalizedEmail := normalizeEmail(claims.Email)
+	claims.Email = normalizedEmail
+
+	if tokenString != "" {
+		access_token, _, err := s.repository.Repository_get_keys_by_user_id(claims.UserID)
 		if err != nil {
 			log.Println("Не удалось получать access-токен из бд!", err)
 			return nil, errors.New("Не удалось получить токены из бд!")
 		}
 		secret = []byte(access_token)
 	} else if refTokenString != "" {
-		originToken = refTokenString
-		_, ref_token, err := s.repository.Repository_choose_otpkey(&email)
+		_, ref_token, err := s.repository.Repository_get_keys_by_user_id(claims.UserID)
 		if err != nil {
 			log.Println("Не удалось получать refresh-токен из бд!", err)
 			return nil, errors.New("Не удалось получить токены из бд!")
 		}
 		secret = []byte(ref_token)
-	} else {
-		return nil, errors.New("токен не передан")
 	}
 
 	token, err := jwt.ParseWithClaims(originToken, &models.Claims{}, func(token *jwt.Token) (interface{}, error) {
@@ -223,6 +250,7 @@ func (s *Auth_service) ValidateToken(tokenString, refTokenString, email string) 
 		return nil, models.ErrTokenExpired
 	}
 
+	claims.Email = normalizedEmail
 	return claims, nil
 }
 

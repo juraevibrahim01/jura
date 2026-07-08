@@ -52,3 +52,7 @@ func (u *User_service) User_check_exist_user(email *string) error {
 	}
 	return nil
 }
+
+func (u *User_service) GetUserRole(email string) (string, error) {
+	return u.repository.GetUserRole(email)
+}

@@ -132,7 +132,26 @@ func (h *Auth_handler) Check_otp(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	accessToken, refreshToken, err := h.service.GenerationToken(&req.Email)
+	userID, err := h.service.Service_identification(&req.Email)
+	if err != nil {
+		res.Status = "error"
+		res.Error = "Не удалось определить пользователя"
+		w.WriteHeader(500)
+		json.NewEncoder(w).Encode(res)
+		return
+	}
+
+	accessToken, refreshToken, err := h.service.GenerationToken(userID, &req.Email, req.Role)
+	if err != nil {
+		log.Print("Ошибка при генерации токенов: ", err)
+		res.Status = "error"
+		res.Error = "Не удалось сгенерировать токены"
+		w.WriteHeader(500)
+		// response
+		json.NewEncoder(w).Encode(res)
+		return
+	}
+
 	res.Status = "success"
 	res.AccessToken = accessToken
 	res.RefreshToken = refreshToken
@@ -156,7 +175,7 @@ func (h *Auth_handler) RefreshToken(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	claims, err := h.service.ValidateToken("", req.RefToken, req.Email)
+	claims, err := h.service.ValidateToken("", req.RefToken)
 	if err != nil {
 		log.Println("Ошибка валидации токена:", err)
 		w.WriteHeader(http.StatusUnauthorized)
@@ -166,7 +185,7 @@ func (h *Auth_handler) RefreshToken(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	token, ref_token, err := h.service.GenerationToken(&claims.Email)
+	token, ref_token, err := h.service.GenerationToken(claims.UserID, &claims.Email, claims.Role)
 	if err != nil {
 		log.Print("Ошибка при генерации токенов")
 		w.WriteHeader(500)

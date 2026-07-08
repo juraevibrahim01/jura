@@ -49,3 +49,26 @@ func (u *User_repository) User_check_exist_user(email *string) error {
 	}
 	return models.User_err_exists_user
 }
+
+func (u *User_repository) GetUserRole(email string) (string, error) {
+	var role string
+
+	query := `
+		SELECT r.name
+		FROM roles r
+		JOIN user_roles ur on r.id = ur.roles_id
+		JOIN users u on u.id = ur.user_id
+        WHERE u.email = $1;
+	`
+	row := u.postgres.DB.QueryRow(query, email)
+	err := row.Scan(&role)
+	if err == sql.ErrNoRows {
+		return "", nil
+	}
+	if err != nil {
+		log.Print("Ошибка при получении роли пользователя: ", err)
+		return "", err
+	}
+
+	return role, nil
+}

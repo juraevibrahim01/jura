@@ -25,6 +25,7 @@ type Auth_Res_Login struct {
 type Auth_req_otp struct {
 	Email string `json:"email"`
 	Code  string `json:"code"`
+	Role  string `json:"role"`
 }
 
 type Auth_res_otp struct {
@@ -36,7 +37,9 @@ type Auth_res_otp struct {
 }
 
 type Claims struct {
-	Email string `json:"email"`
+	Email  string `json:"email"`
+	Role   string `json:"role"`
+	UserID int    `json:"user_id"`
 	jwt.RegisteredClaims
 }
 

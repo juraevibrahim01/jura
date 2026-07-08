@@ -23,7 +23,7 @@ func (r *Auth_reposirory) Reposirory_identification(email *string) (int, error) 
 	query := `
 		select id
 		from users
-		where email = $1;
+		where lower(email) = lower($1);
 	`
 	row := r.postgres.DB.QueryRow(query, email)
 
@@ -62,18 +62,17 @@ func (r *Auth_reposirory) Reposirory_check_password(id *int) (string, error) {
 	return res_db, nil
 }
 
-func (r *Auth_reposirory) Repository_choose_otpkey(email *string) (string, string, error) {
+func (r *Auth_reposirory) Repository_get_keys_by_user_id(userID int) (string, string, error) {
 	var access_token string
 	var ref_token string
 
 	query := `
 		select o.key, o.ref_key
 		from otp o
-		join users u on u.id = o.user_id 
-		where u.email = $1;
+		where o.user_id = $1;
 	`
 
-	rows, err := r.postgres.DB.Query(query, email)
+	rows, err := r.postgres.DB.Query(query, userID)
 	if err != nil {
 		return "", "", err
 	}
@@ -81,7 +80,6 @@ func (r *Auth_reposirory) Repository_choose_otpkey(email *string) (string, strin
 	defer rows.Close()
 
 	for rows.Next() {
-
 		err := rows.Scan(&access_token, &ref_token)
 		if err != nil {
 			return "", "", err
