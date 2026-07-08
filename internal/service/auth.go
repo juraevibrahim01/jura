@@ -138,25 +138,32 @@ func (s *Auth_service) SendOTPEmail(toEmail string, otp string) error {
 
 func (s *Auth_service) GenerationToken(email *string) (string, string, error) {
 	claimsToken := jwt.MapClaims{
-		"email": email,
+		"email": *email,
 		"exp":   time.Now().Add(15 * time.Minute).Unix(),
 	}
 
 	claimsRefToken := jwt.MapClaims{
-		"email": email,
+		"email": *email,
 		"exp":   time.Now().Add(72 * time.Hour).Unix(),
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claimsToken)
 	refToken := jwt.NewWithClaims(jwt.SigningMethodHS256, claimsRefToken)
 
+	// находим ключь определенного юзера
+	access_token, ref_token, err := s.repository.Repository_choose_otpkey(email)
+	if err == nil {
+		log.Println("Не удалось получать токены из бд!")
+		return "", "", errors.New("Не удалось получить токены из бд!")
+	}
+
 	// Предполагается, что модели хранят []byte секреты
-	accessToken, err := token.SignedString(models.JWTSecret)
+	accessToken, err := token.SignedString(access_token)
 	if err != nil {
 		return "", "", err
 	}
 
-	refreshToken, err := refToken.SignedString(models.JWTSecretRef)
+	refreshToken, err := refToken.SignedString(ref_token)
 	if err != nil {
 		return "", "", err
 	}
@@ -164,24 +171,31 @@ func (s *Auth_service) GenerationToken(email *string) (string, string, error) {
 	return accessToken, refreshToken, nil
 }
 
-func ValidateToken(tokenString, refTokenString string) (*models.Claims, error) {
-
+func (s *Auth_service) ValidateToken(tokenString, refTokenString, email string) (*models.Claims, error) {
 	var originToken string
 	var secret []byte
 
-	if refTokenString == "" {
-		// Убираем префикс "Bearer "
+	if tokenString != "" {
 		originToken = strings.TrimPrefix(tokenString, "Bearer ")
-		secret = models.JWTSecret
-	}
-	if tokenString == "" {
+		access_token, _, err := s.repository.Repository_choose_otpkey(&email)
+		if err != nil {
+			log.Println("Не удалось получать access-токен из бд!", err)
+			return nil, errors.New("Не удалось получить токены из бд!")
+		}
+		secret = []byte(access_token)
+	} else if refTokenString != "" {
 		originToken = refTokenString
-		secret = models.JWTSecretRef
+		_, ref_token, err := s.repository.Repository_choose_otpkey(&email)
+		if err != nil {
+			log.Println("Не удалось получать refresh-токен из бд!", err)
+			return nil, errors.New("Не удалось получить токены из бд!")
+		}
+		secret = []byte(ref_token)
+	} else {
+		return nil, errors.New("токен не передан")
 	}
 
-	// Парсим токен
 	token, err := jwt.ParseWithClaims(originToken, &models.Claims{}, func(token *jwt.Token) (interface{}, error) {
-		// Проверяем метод подписи
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 			return nil, errors.New("неверный метод подписи")
 		}
@@ -193,20 +207,17 @@ func ValidateToken(tokenString, refTokenString string) (*models.Claims, error) {
 		return nil, models.ErrTokenInvalid
 	}
 
-	// Проверяем валидность токена
 	if !token.Valid {
 		log.Print("недействительный токен")
 		return nil, models.ErrTokenInvalid
 	}
 
-	// Извлекаем claims
 	claims, ok := token.Claims.(*models.Claims)
 	if !ok {
 		log.Print("не удалось получить данные из токена")
 		return nil, errors.New("не удалось получить данные из токена")
 	}
 
-	// Проверяем срок действия токена
 	if claims.ExpiresAt != nil && claims.ExpiresAt.Time.Before(time.Now()) {
 		log.Print("токен истек")
 		return nil, models.ErrTokenExpired

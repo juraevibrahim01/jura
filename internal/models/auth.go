@@ -35,9 +35,6 @@ type Auth_res_otp struct {
 	RefreshToken string `json:"refresh_token"`
 }
 
-var JWTSecret = []byte("UTRfdfdfdfdffdfdfdf")
-var JWTSecretRef = []byte("UFHGEEkdfdfkdfldfkd")
-
 type Claims struct {
 	Email string `json:"email"`
 	jwt.RegisteredClaims
@@ -57,6 +54,7 @@ type Contextkey string
 
 type Auth_req_ref_token struct {
 	RefToken string `json:"ref_token"`
+	Email    string `json:"email"`
 }
 
 type Auth_res_ref_token struct {

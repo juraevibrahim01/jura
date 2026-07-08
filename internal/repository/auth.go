@@ -62,12 +62,35 @@ func (r *Auth_reposirory) Reposirory_check_password(id *int) (string, error) {
 	return res_db, nil
 }
 
-func (r *Auth_reposirory) Repository_choose_otpkey(email *string) (*string, error) {
-	var res_db string
+func (r *Auth_reposirory) Repository_choose_otpkey(email *string) (string, string, error) {
+	var access_token string
+	var ref_token string
 
 	query := `
-		select
-		from
-		where
+		select o.key, o.ref_key
+		from otp o
+		join users u on u.id = o.user_id 
+		where u.email = $1;
 	`
+
+	rows, err := r.postgres.DB.Query(query, email)
+	if err != nil {
+		return "", "", err
+	}
+
+	defer rows.Close()
+
+	for rows.Next() {
+
+		err := rows.Scan(&access_token, &ref_token)
+		if err != nil {
+			return "", "", err
+		}
+	}
+
+	if err := rows.Err(); err != nil {
+		return "", "", err
+	}
+
+	return access_token, ref_token, nil
 }

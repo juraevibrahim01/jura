@@ -1,56 +1,85 @@
 package middleware
 
-// import (
-// 	"context"
-// 	"encoding/json"
-// 	"errors"
-// 	"net/http"
+import (
+	"bytes"
+	"context"
+	"encoding/json"
+	"errors"
+	"io"
+	"net/http"
 
-// 	"github.com/golang-jwt/jwt/v5"
-// 	"github.com/juraevibrahim01/jura/internal/models"
-// 	"github.com/juraevibrahim01/jura/internal/service"
-// )
+	"github.com/golang-jwt/jwt/v5"
+	"github.com/juraevibrahim01/jura/internal/models"
+	"github.com/juraevibrahim01/jura/internal/service"
+)
 
-// var response models.Auth_middleware_res
+var response models.Auth_middleware_res
 
-// const ClaimsKey models.Contextkey = "claims"
+const ClaimsKey models.Contextkey = "claims"
 
-// func AuthMiddleware(next http.Handler) http.Handler {
-// 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-// 		authHeader := r.Header.Get("Auth")
+type authRequestBody struct {
+	Email string `json:"email"`
+}
 
-// 		if authHeader == "" {
-// 			w.WriteHeader(400)
-// 			response.Status = "error"
-// 			response.Description = "Auth empty"
+func AuthMiddleware(authService *service.Auth_service, next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		authHeader := r.Header.Get("Auth")
+		if authHeader == "" {
+			authHeader = r.Header.Get("Authorization")
+		}
 
-// 			//	response
-// 			json.NewEncoder(w).Encode(response)
-// 			return
-// 		}
+		var reqBody authRequestBody
+		if r.Body != nil {
+			bodyBytes, err := io.ReadAll(r.Body)
+			if err != nil {
+				w.WriteHeader(http.StatusBadRequest)
+				response.Status = "error"
+				response.Description = "Invalid request body"
+				_ = json.NewEncoder(w).Encode(response)
+				return
+			}
+			if len(bodyBytes) > 0 {
+				err = json.NewDecoder(bytes.NewReader(bodyBytes)).Decode(&reqBody)
+				if err != nil {
+					w.WriteHeader(http.StatusBadRequest)
+					response.Status = "error"
+					response.Description = "Invalid request body"
+					_ = json.NewEncoder(w).Encode(response)
+					return
+				}
+			}
+			r.Body = io.NopCloser(bytes.NewReader(bodyBytes))
+		}
 
-// 		claims, err := service.ValidateToken(authHeader, "")
-// 		if err != nil {
-// 			response.Status = "error"
+		if authHeader == "" {
+			w.WriteHeader(http.StatusBadRequest)
+			response.Status = "error"
+			response.Description = "Auth empty"
+			_ = json.NewEncoder(w).Encode(response)
+			return
+		}
 
-// 			if errors.Is(err, jwt.ErrTokenExpired) {
-// 				response.Description = models.ErrTokenExpired.Error()
-// 				w.WriteHeader(400)
-// 			} else if err.Error() == models.ErrTokenInvalid.Error() {
-// 				response.Description = models.ErrTokenInvalid.Error()
-// 				w.WriteHeader(500)
-// 			}
-// 			// response
-// 			json.NewEncoder(w).Encode(response)
-// 			return
-// 		}
+		claims, err := authService.ValidateToken(authHeader, "", reqBody.Email)
+		if err != nil {
+			response.Status = "error"
 
-// 		context := context.WithValue(
-// 			r.Context(),
-// 			ClaimsKey,
-// 			claims,
-// 		)
+			if errors.Is(err, jwt.ErrTokenExpired) {
+				response.Description = models.ErrTokenExpired.Error()
+				w.WriteHeader(http.StatusBadRequest)
+			} else if err.Error() == models.ErrTokenInvalid.Error() {
+				response.Description = models.ErrTokenInvalid.Error()
+				w.WriteHeader(http.StatusInternalServerError)
+			}
+			_ = json.NewEncoder(w).Encode(response)
+			return
+		}
 
-// 		next.ServeHTTP(w, r.WithContext(context))
-// 	})
-// }
+		ctx := context.WithValue(
+			r.Context(),
+			ClaimsKey,
+			claims,
+		)
+
+		next.ServeHTTP(w, r.WithContext(ctx))
+	})
+}

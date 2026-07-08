@@ -142,16 +142,6 @@ func (h *Auth_handler) Check_otp(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Проверка: Все поля возвращются
-	if req.Code == "" {
-		res.Status = "error"
-		res.Error = "Поля не валидны"
-		w.WriteHeader(400)
-		// response
-		json.NewEncoder(w).Encode(res)
-		return
-	}
-
 	verefi := h.service.OtpVerify(req.Email, req.Code)
 	if verefi != true {
 		res.Status = "error"
@@ -186,19 +176,7 @@ func (h *Auth_handler) RefreshToken(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Проверка: Все поля возвращются
-	if req.RefToken == "" {
-		res.Status = "error"
-		res.Error = "Поля не валидны"
-		w.WriteHeader(400)
-		// response
-		json.NewEncoder(w).Encode(res)
-		return
-	}
-
-	ref_token := req.RefToken
-
-	claims, err := service.ValidateToken("", ref_token)
+	claims, err := h.service.ValidateToken("", req.RefToken, req.Email)
 	if err != nil {
 		log.Println("Ошибка валидации токена:", err)
 		w.WriteHeader(http.StatusUnauthorized)
