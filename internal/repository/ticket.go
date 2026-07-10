@@ -3,6 +3,7 @@ package repository
 import (
 	"database/sql"
 	"log"
+	"strings"
 
 	"github.com/juraevibrahim01/jura/internal/models"
 	"github.com/juraevibrahim01/jura/pkg"
@@ -52,13 +53,16 @@ func (r *Ticket_repository) GetTickets(email *string) ([]models.Ticket, error) {
 	return tickets, nil
 }
 
-func (r *Ticket_repository) Ticket_create(title, email, priority, severity, environment, stepsToReproduce, expectedResult, actualResult *string, attachments *[]string) error {
+func (r *Ticket_repository) Ticket_create(title *string, email *string, priority *string, severity *string, environment *string, stepsToReproduce *string, expectedResult *string, actualResult *string, attachments *[]string) error {
+
+	attachmentsStr := strings.Join(*attachments, ",")
+
 	query := `
-		INSERT INTO tickets ("Title", user_id, "Priority", "Severity", "Environment", "StepsToReproduce", "ExpectedResult", "ActualResult", "Attachments")
+		INSERT INTO tickets ("Title", user_id, "Priority", "Severity", "Environment", "Steps", "Expected_Result", "Actual_Result", "Attachments")
 		VALUES ($1, (SELECT id FROM users WHERE email = $2), $3, $4, $5, $6, $7, $8, $9);
 	`
 
-	_, err := r.postgres.DB.Exec(query, title, email)
+	_, err := r.postgres.DB.Exec(query, title, email, priority, severity, environment, stepsToReproduce, expectedResult, actualResult, attachmentsStr)
 	if err != nil {
 		log.Print("Ошибка при создании тикета: ", err)
 		return err
