@@ -42,6 +42,7 @@ func main() {
 	mux.HandleFunc("POST /login/check_otp", auth_handler.Check_otp)
 	mux.Handle("POST /user", middleware.AuthMiddleware(auth_service, http.HandlerFunc(user_handler.User_create)))
 	mux.Handle("GET /tickets", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(ticket_handler.GetTickets))))
+	mux.Handle("POST /tickets", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ticket_handler.Ticket_create))))
 
 	handleWithCors := middleware.CORSMiddleware(mux)
 

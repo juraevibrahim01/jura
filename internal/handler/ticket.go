@@ -47,3 +47,44 @@ func (h *Ticket_handler) GetTickets(w http.ResponseWriter, r *http.Request) {
 		Tickets:     tickets,
 	})
 }
+
+func (h *Ticket_handler) Ticket_create(w http.ResponseWriter, r *http.Request) {
+
+	claims, ok := r.Context().Value(middleware.ClaimsKey).(*models.Claims)
+	if !ok || claims == nil {
+		w.WriteHeader(http.StatusUnauthorized)
+		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
+			Status:      "error",
+			Description: "Unauthorized",
+		})
+		return
+	}
+
+	var request models.TicketCreateRequest
+
+	err := json.NewDecoder(r.Body).Decode(&request)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
+			Status:      "error",
+			Description: "Ошибка при разборе запроса",
+		})
+		return
+	}
+
+	err = h.service.Ticket_create(&request.Title, &claims.Email, &request.Priority, &request.Severity, &request.Environment, &request.StepsToReproduce, &request.ExpectedResult, &request.ActualResult, &request.Attachments)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
+			Status:      "error",
+			Description: "Ошибка сервера при создании тикета",
+		})
+		return
+	}
+
+	w.WriteHeader(http.StatusCreated)
+	_ = json.NewEncoder(w).Encode(models.TicketsResponse{
+		Status:      "success",
+		Description: "Тикет успешно создан",
+	})
+}

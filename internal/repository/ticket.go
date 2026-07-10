@@ -51,3 +51,17 @@ func (r *Ticket_repository) GetTickets(email *string) ([]models.Ticket, error) {
 
 	return tickets, nil
 }
+
+func (r *Ticket_repository) Ticket_create(title, email, priority, severity, environment, stepsToReproduce, expectedResult, actualResult *string, attachments *[]string) error {
+	query := `
+		INSERT INTO tickets ("Title", user_id, "Priority", "Severity", "Environment", "StepsToReproduce", "ExpectedResult", "ActualResult", "Attachments")
+		VALUES ($1, (SELECT id FROM users WHERE email = $2), $3, $4, $5, $6, $7, $8, $9);
+	`
+
+	_, err := r.postgres.DB.Exec(query, title, email)
+	if err != nil {
+		log.Print("Ошибка при создании тикета: ", err)
+		return err
+	}
+	return nil
+}
