@@ -34,6 +34,11 @@ func main() {
 	ticket_service := service.Ticket_new_service(ticket_repository)
 	ticket_handler := handler.Ticket_new_handler(ticket_service)
 
+	// ---------------------------------- test_keys -----------------------------------
+	test_keys_repository := repository.New_Test_keys_repository(db)
+	test_keys_service := service.New_Test_keys_service(test_keys_repository)
+	test_keys_handler := handler.New_Test_keys_handler(test_keys_service)
+
 	// ---------------------------------- apis --------------------------------------
 	// Маршрутизатор
 	mux := http.NewServeMux()
@@ -43,6 +48,9 @@ func main() {
 	mux.Handle("POST /user", middleware.AuthMiddleware(auth_service, http.HandlerFunc(user_handler.User_create)))
 	mux.Handle("GET /tickets", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(ticket_handler.GetTickets))))
 	mux.Handle("POST /tickets", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ticket_handler.Ticket_create))))
+	mux.Handle("GET /test-keys", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetTestKeys))))
+	mux.Handle("POST /test-keys", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(test_keys_handler.CreateTestKey))))
+	mux.Handle("GET /test-keys/{id}", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetTestKeyByID))))
 
 	handleWithCors := middleware.CORSMiddleware(mux)
 
