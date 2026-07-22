@@ -3,9 +3,13 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 
+	"github.com/gorilla/mux"
+	"github.com/joho/godotenv"
 	"github.com/juraevibrahim01/jura/internal/handler"
 	"github.com/juraevibrahim01/jura/internal/middleware"
+	"github.com/juraevibrahim01/jura/internal/models"
 	"github.com/juraevibrahim01/jura/internal/repository"
 	"github.com/juraevibrahim01/jura/internal/service"
 	"github.com/juraevibrahim01/jura/pkg"
@@ -39,22 +43,50 @@ func main() {
 	test_keys_service := service.New_Test_keys_service(test_keys_repository)
 	test_keys_handler := handler.New_Test_keys_handler(test_keys_service)
 
+	// ---------------------------------- ai -----------------------------------
+
+	// Загружаем .env до того, как обращаемся к os.Getenv
+	if err := godotenv.Load("../../.env"); err != nil {
+		log.Println("Замечание: файл .env не найден, считываем системные переменные")
+	}
+
+	aiConfig := models.GeminiConfig{
+		APIKey: os.Getenv("GEMINI_API_KEY"),
+		APIURL: "https://generativelanguage.googleapis.com", // Базовый домен
+	}
+
+	ai_service := service.NewAI_service(aiConfig)
+	ai_handler := handler.NewAIHandler(ai_service)
+
+	// Проверка при старте
+	if err := ai_service.HealthCheck(); err != nil {
+		log.Printf("AI service warning: %v", err)
+	} else {
+		log.Println("AI service is healthy")
+	}
+
 	// ---------------------------------- apis --------------------------------------
-	// Маршрутизатор
-	mux := http.NewServeMux()
+	// Маршрутизатор (gorilla/mux для поддержки методов и параметров)
+	router := mux.NewRouter()
 
-	mux.HandleFunc("POST /login", auth_handler.Login)
-	mux.HandleFunc("POST /login/check_otp", auth_handler.Check_otp)
-	mux.Handle("POST /user", middleware.AuthMiddleware(auth_service, http.HandlerFunc(user_handler.User_create)))
-	mux.Handle("GET /tickets", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(ticket_handler.GetTickets))))
-	mux.Handle("POST /tickets", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ticket_handler.Ticket_create))))
-	mux.Handle("GET /test-keys", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetTestKeys))))
-	mux.Handle("POST /test-keys", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(test_keys_handler.CreateTestKey))))
-	mux.Handle("GET /test-keys/{id}", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetTestKeyByID))))
+	router.HandleFunc("/login", auth_handler.Login).Methods("POST")
+	router.HandleFunc("/login/check_otp", auth_handler.Check_otp).Methods("POST")
+	router.Handle("/user", middleware.AuthMiddleware(auth_service, http.HandlerFunc(user_handler.User_create))).Methods("POST")
+	router.Handle("/tickets", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(ticket_handler.GetTickets)))).Methods("GET")
+	router.Handle("/tickets", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ticket_handler.Ticket_create)))).Methods("POST")
+	router.Handle("/test-keys", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetTestKeys)))).Methods("GET")
+	router.Handle("/test-keys", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(test_keys_handler.CreateTestKey)))).Methods("POST")
+	router.Handle("/test-keys/{id}", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetTestKeyByID)))).Methods("GET")
+	router.Handle("/ai", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ai_handler.Chat)))).Methods("POST")
+	handleWithCors := middleware.CORSMiddleware(router)
 
-	handleWithCors := middleware.CORSMiddleware(mux)
+	// -------------------------------- url --------------------------------------
+	// Получение порта из переменной окружения (с дефолтом)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
 
-	// url
-	log.Fatal(http.ListenAndServe(":8081", handleWithCors))
+	log.Fatal(http.ListenAndServe(":"+port, handleWithCors))
 	// log.Fatal - если порт занят то программа не промолчит а даст информацию что порт занят
 }
