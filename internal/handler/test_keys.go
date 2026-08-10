@@ -6,7 +6,6 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/juraevibrahim01/jura/internal/middleware"
 	"github.com/juraevibrahim01/jura/internal/models"
 	"github.com/juraevibrahim01/jura/internal/service"
 )
@@ -22,17 +21,38 @@ func New_Test_keys_handler(service *service.Test_keys_service) *Test_keys_handle
 func (h *Test_keys_handler) GetTestKeys(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
-	claims, ok := r.Context().Value(middleware.ClaimsKey).(*models.Claims)
-	if !ok || claims == nil {
-		w.WriteHeader(http.StatusUnauthorized)
+	// claims, ok := r.Context().Value(middleware.ClaimsKey).(*models.Claims)
+	// if !ok || claims == nil {
+	// 	w.WriteHeader(http.StatusUnauthorized)
+	// 	_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
+	// 		Status:      "error",
+	// 		Description: "Unauthorized",
+	// 	})
+	// 	return
+	// }
+
+	var UserID string
+	UserID = r.Header.Get("X-User-UserID")
+	if UserID == "" {
+		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
 			Status:      "error",
-			Description: "Unauthorized",
+			Description: "UserID not found in header",
 		})
 		return
 	}
 
-	testKeys, err := h.service.GetTestKeys(&claims.UserID)
+	UserIDInt, err := strconv.Atoi(UserID)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
+			Status:      "error",
+			Description: "Invalid UserID format",
+		})
+		return
+	}
+
+	testKeys, err := h.service.GetTestKeys(&UserIDInt)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
@@ -53,12 +73,32 @@ func (h *Test_keys_handler) GetTestKeys(w http.ResponseWriter, r *http.Request) 
 func (h *Test_keys_handler) GetTestKeyByID(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
-	claims, ok := r.Context().Value(middleware.ClaimsKey).(*models.Claims)
-	if !ok || claims == nil {
-		w.WriteHeader(http.StatusUnauthorized)
+	// claims, ok := r.Context().Value(middleware.ClaimsKey).(*models.Claims)
+	// if !ok || claims == nil {
+	// 	w.WriteHeader(http.StatusUnauthorized)
+	// 	_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
+	// 		Status:      "error",
+	// 		Description: "Unauthorized",
+	// 	})
+	// 	return
+	// }
+
+	var UserID string
+	UserID = r.Header.Get("X-User-UserID")
+	if UserID == "" {
+		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
 			Status:      "error",
-			Description: "Unauthorized",
+			Description: "UserID not found in header",
+		})
+		return
+	}
+	UserIDInt, err := strconv.Atoi(UserID)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
+			Status:      "error",
+			Description: "Invalid UserID format",
 		})
 		return
 	}
@@ -83,7 +123,7 @@ func (h *Test_keys_handler) GetTestKeyByID(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	testKey, err := h.service.GetTestKeyByID(&id, &claims.UserID)
+	testKey, err := h.service.GetTestKeyByID(&id, &UserIDInt)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
