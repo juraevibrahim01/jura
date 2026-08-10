@@ -113,16 +113,28 @@ func (h *Test_keys_handler) GetTestKeyByID(w http.ResponseWriter, r *http.Reques
 func (h *Test_keys_handler) CreateTestKey(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
-	claims, ok := r.Context().Value(middleware.ClaimsKey).(*models.Claims)
-	if !ok || claims == nil {
-		w.WriteHeader(http.StatusUnauthorized)
+	// claims, ok := r.Context().Value(middleware.ClaimsKey).(*models.Claims)
+	// if !ok || claims == nil {
+	// 	w.WriteHeader(http.StatusUnauthorized)
+	// 	_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
+	// 		Status:      "error",
+	// 		Description: "Unauthorized",
+	// 	})
+	// 	return
+	// }
+
+	var UserID string
+	UserID = r.Header.Get("X-User-UserID")
+	userIDInt, err := strconv.Atoi(UserID)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+
 		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
 			Status:      "error",
-			Description: "Unauthorized",
+			Description: "Неверный id пользователя",
 		})
 		return
 	}
-
 	var request models.TestKeyCreateRequest
 	if err := json.NewDecoder(r.Body).Decode(&request); err != nil {
 		w.WriteHeader(http.StatusBadRequest)
@@ -133,7 +145,7 @@ func (h *Test_keys_handler) CreateTestKey(w http.ResponseWriter, r *http.Request
 		return
 	}
 
-	if err := h.service.CreateTestKey(&request, &claims.UserID); err != nil {
+	if err := h.service.CreateTestKey(&request, &userIDInt); err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
 			Status:      "error",
