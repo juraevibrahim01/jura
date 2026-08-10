@@ -85,17 +85,29 @@ func AuthMiddleware(authService *service.Auth_service, next http.Handler) http.H
 
 func RoleMiddleware(userService *service.User_service, requiredRoles []string, next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		claims, ok := r.Context().Value(ClaimsKey).(*models.Claims)
-		if !ok || claims == nil {
+		// claims, ok := r.Context().Value(ClaimsKey).(*models.Claims)
+		// if !ok || claims == nil {
+		// 	w.WriteHeader(http.StatusUnauthorized)
+		// 	_ = json.NewEncoder(w).Encode(map[string]string{
+		// 		"status":      "error",
+		// 		"description": "Unauthorized",
+		// 	})
+		// 	return
+		// }
+
+		var email string
+		email = r.Header.Get("X-User-Email")
+
+		if email == "" {
 			w.WriteHeader(http.StatusUnauthorized)
 			_ = json.NewEncoder(w).Encode(map[string]string{
 				"status":      "error",
-				"description": "Unauthorized",
+				"description": "Unauthorized: Email not found in header",
 			})
 			return
 		}
 
-		userRole, err := userService.GetUserRole(claims.Email)
+		userRole, err := userService.GetUserRole(email)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			_ = json.NewEncoder(w).Encode(map[string]string{
