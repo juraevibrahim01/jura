@@ -90,3 +90,5 @@ func main() {
 	log.Fatal(http.ListenAndServe(":"+port, handleWithCors))
 	// log.Fatal - если порт занят то программа не промолчит а даст информацию что порт занят
 }
+
+// https://jura-1-llep.onrender.com/
