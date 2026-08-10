@@ -75,7 +75,7 @@ func main() {
 	router.Handle("/tickets", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(ticket_handler.GetTickets)))).Methods("GET")
 	router.Handle("/tickets", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ticket_handler.Ticket_create)))).Methods("POST")
 	router.Handle("/test-keys", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetTestKeys)))).Methods("GET")
-	router.Handle("/test-keys", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(test_keys_handler.CreateTestKey)))).Methods("POST")
+	router.Handle("/test-keys", middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(test_keys_handler.CreateTestKey))).Methods("POST")
 	router.Handle("/test-keys/{id}", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetTestKeyByID)))).Methods("GET")
 	router.Handle("/ai", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ai_handler.Chat)))).Methods("POST")
 	handleWithCors := middleware.CORSMiddleware(router)
