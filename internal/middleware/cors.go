@@ -11,7 +11,7 @@ func CORSMiddleware(next http.Handler) http.Handler {
 		if r.Method == http.MethodOptions {
 			// Разрешаем все нужные вам методы
 			w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
-			w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+			w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization, X-User-UserID, X-User-Email")
 			w.WriteHeader(http.StatusOK)
 			return
 		}
