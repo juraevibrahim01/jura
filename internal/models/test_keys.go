@@ -34,3 +34,25 @@ type TestKeyCreateRequest struct {
 	ActualRes      string `json:"actual_res"`
 	Comment        string `json:"comment"`
 }
+
+type Category struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
+}
+
+type CategoriesResponse struct {
+	Status      string     `json:"status"`
+	Description string     `json:"description"`
+	Categories  []Category `json:"categories"`
+}
+
+type Project struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
+}
+
+type ProjectsResponse struct {
+	Status      string    `json:"status"`
+	Description string    `json:"description"`
+	Projects    []Project `json:"projects"`
+}

@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 	"strconv"
-	"strings"
 
+	"github.com/gorilla/mux"
 	"github.com/juraevibrahim01/jura/internal/models"
 	"github.com/juraevibrahim01/jura/internal/service"
 )
@@ -31,6 +31,27 @@ func (h *Test_keys_handler) GetTestKeys(w http.ResponseWriter, r *http.Request) 
 	// 	return
 	// }
 
+	vars := mux.Vars(r)
+	projectID := vars["project_id"]
+	ProjectID_int, err := strconv.Atoi(projectID)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
+			Status:      "error",
+			Description: "Invalid Project ID format",
+		})
+		return
+	}
+
+	if projectID == "" {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
+			Status:      "error",
+			Description: "Project ID not found in path",
+		})
+		return
+	}
+
 	var UserID string
 	UserID = r.Header.Get("X-User-UserID")
 	if UserID == "" {
@@ -52,7 +73,7 @@ func (h *Test_keys_handler) GetTestKeys(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
-	testKeys, err := h.service.GetTestKeys(&UserIDInt)
+	testKeys, err := h.service.GetTestKeys(&UserIDInt, &ProjectID_int)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
@@ -103,8 +124,10 @@ func (h *Test_keys_handler) GetTestKeyByID(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	idPart := strings.TrimPrefix(r.URL.Path, "/test-keys/")
-	if idPart == "" || idPart == "/" {
+	vars := mux.Vars(r)
+	_ = vars["project_id"]
+	idStr := vars["id"]
+	if idStr == "" {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
 			Status:      "error",
@@ -113,7 +136,7 @@ func (h *Test_keys_handler) GetTestKeyByID(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	id, err := strconv.Atoi(idPart)
+	id, err := strconv.Atoi(idStr)
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
@@ -163,6 +186,8 @@ func (h *Test_keys_handler) CreateTestKey(w http.ResponseWriter, r *http.Request
 	// 	return
 	// }
 
+	_ = mux.Vars(r)["project_id"]
+
 	var UserID string
 	UserID = r.Header.Get("X-User-UserID")
 	userIDInt, err := strconv.Atoi(UserID)
@@ -198,5 +223,110 @@ func (h *Test_keys_handler) CreateTestKey(w http.ResponseWriter, r *http.Request
 	_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
 		Status:      "success",
 		Description: "Тестовый кейс успешно создан",
+	})
+}
+
+func (h *Test_keys_handler) GetProjects(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
+	projects, err := h.service.GetProjects()
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		_ = json.NewEncoder(w).Encode(struct {
+			Status      string           `json:"status"`
+			Description string           `json:"description"`
+			Projects    []models.Project `json:"projects"`
+		}{
+			Status:      "error",
+			Description: "Ошибка сервера",
+			Projects:    nil,
+		})
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
+	_ = json.NewEncoder(w).Encode(struct {
+		Status      string           `json:"status"`
+		Description string           `json:"description"`
+		Projects    []models.Project `json:"projects"`
+	}{
+		Status:      "success",
+		Description: "Проекты получены",
+		Projects:    projects,
+	})
+}
+
+func (h *Test_keys_handler) GetProjectByID(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
+	vars := mux.Vars(r)
+	idStr := vars["id"]
+	if idStr == "" {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(struct {
+			Status      string          `json:"status"`
+			Description string          `json:"description"`
+			Project     *models.Project `json:"project,omitempty"`
+		}{
+			Status:      "error",
+			Description: "Не указан id проекта",
+			Project:     nil,
+		})
+		return
+	}
+
+	id, err := strconv.Atoi(idStr)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(struct {
+			Status      string          `json:"status"`
+			Description string          `json:"description"`
+			Project     *models.Project `json:"project,omitempty"`
+		}{
+			Status:      "error",
+			Description: "Неверный id проекта",
+			Project:     nil,
+		})
+		return
+	}
+
+	project, err := h.service.GetProjectByID(id)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		_ = json.NewEncoder(w).Encode(struct {
+			Status      string          `json:"status"`
+			Description string          `json:"description"`
+			Project     *models.Project `json:"project,omitempty"`
+		}{
+			Status:      "error",
+			Description: "Ошибка сервера",
+			Project:     nil,
+		})
+		return
+	}
+
+	if project == nil {
+		w.WriteHeader(http.StatusNotFound)
+		_ = json.NewEncoder(w).Encode(struct {
+			Status      string          `json:"status"`
+			Description string          `json:"description"`
+			Project     *models.Project `json:"project,omitempty"`
+		}{
+			Status:      "error",
+			Description: "Проект не найден",
+			Project:     nil,
+		})
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
+	_ = json.NewEncoder(w).Encode(struct {
+		Status      string          `json:"status"`
+		Description string          `json:"description"`
+		Project     *models.Project `json:"project,omitempty"`
+	}{
+		Status:      "success",
+		Description: "Проект получен",
+		Project:     project,
 	})
 }

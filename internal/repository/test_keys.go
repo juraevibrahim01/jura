@@ -16,14 +16,14 @@ func New_Test_keys_repository(postgres *pkg.Postgres) *Test_keys_repository {
 	return &Test_keys_repository{postgres: postgres}
 }
 
-func (r *Test_keys_repository) GetTestKeys(user_id *int) ([]models.TestKey, error) {
+func (r *Test_keys_repository) GetTestKeys(user_id, project_id *int) ([]models.TestKey, error) {
 	query := `
 		SELECT id, date, name, module, precondition, steps, expectation_res, actual_res, comment
 		FROM test_keys
-		WHERE user_id = $1;
+		WHERE user_id = $1 AND project_id = $2;
 	`
 
-	rows, err := r.postgres.DB.Query(query, *user_id)
+	rows, err := r.postgres.DB.Query(query, *user_id, *project_id)
 	if err != nil {
 		log.Print("Ошибка при получении тестовых ключей: ", err)
 		return nil, err
@@ -107,4 +107,78 @@ func (r *Test_keys_repository) CreateTestKey(request *models.TestKeyCreateReques
 	}
 
 	return nil
+}
+
+func (r *Test_keys_repository) GetCategories() ([]models.Category, error) {
+	query := `
+		SELECT id, name
+		FROM projects;
+	`
+
+	rows, err := r.postgres.DB.Query(query)
+	if err != nil {
+		log.Print("Ошибка при получении категорий: ", err)
+		return nil, err
+	}
+	defer rows.Close()
+
+	var categories []models.Category
+	for rows.Next() {
+		var category models.Category
+		err = rows.Scan(&category.ID, &category.Name)
+		if err != nil {
+			log.Print("Ошибка при сканировании категорий: ", err)
+			return nil, err
+		}
+		categories = append(categories, category)
+	}
+
+	return categories, nil
+}
+
+func (r *Test_keys_repository) GetProjects() ([]models.Project, error) {
+	query := `
+		SELECT id, name
+		FROM projects;
+	`
+
+	rows, err := r.postgres.DB.Query(query)
+	if err != nil {
+		log.Print("Ошибка при получении проектов: ", err)
+		return nil, err
+	}
+	defer rows.Close()
+
+	var projects []models.Project
+	for rows.Next() {
+		var p models.Project
+		err = rows.Scan(&p.ID, &p.Name)
+		if err != nil {
+			log.Print("Ошибка при сканировании проектов: ", err)
+			return nil, err
+		}
+		projects = append(projects, p)
+	}
+
+	return projects, nil
+}
+
+func (r *Test_keys_repository) GetProjectByID(id int) (*models.Project, error) {
+	query := `
+		SELECT id, name
+		FROM projects
+		WHERE id = $1;
+	`
+
+	row := r.postgres.DB.QueryRow(query, id)
+	var p models.Project
+	if err := row.Scan(&p.ID, &p.Name); err != nil {
+		if err == sql.ErrNoRows {
+			return nil, nil
+		}
+		log.Print("Ошибка при получении проекта по id: ", err)
+		return nil, err
+	}
+
+	return &p, nil
 }

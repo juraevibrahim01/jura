@@ -13,8 +13,8 @@ func New_Test_keys_service(repository *repository.Test_keys_repository) *Test_ke
 	return &Test_keys_service{repository: repository}
 }
 
-func (s *Test_keys_service) GetTestKeys(user_id *int) ([]models.TestKey, error) {
-	return s.repository.GetTestKeys(user_id)
+func (s *Test_keys_service) GetTestKeys(user_id, project_id *int) ([]models.TestKey, error) {
+	return s.repository.GetTestKeys(user_id, project_id)
 }
 
 func (s *Test_keys_service) GetTestKeyByID(id *int, user_id *int) (*models.TestKey, error) {
@@ -23,4 +23,16 @@ func (s *Test_keys_service) GetTestKeyByID(id *int, user_id *int) (*models.TestK
 
 func (s *Test_keys_service) CreateTestKey(request *models.TestKeyCreateRequest, user_id *int) error {
 	return s.repository.CreateTestKey(request, user_id)
+}
+
+func (s *Test_keys_service) GetCategories() ([]models.Category, error) {
+	return s.repository.GetCategories()
+}
+
+func (s *Test_keys_service) GetProjects() ([]models.Project, error) {
+	return s.repository.GetProjects()
+}
+
+func (s *Test_keys_service) GetProjectByID(id int) (*models.Project, error) {
+	return s.repository.GetProjectByID(id)
 }
