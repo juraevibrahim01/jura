@@ -279,9 +279,9 @@ func (h *Test_keys_handler) GetProjectByID(w http.ResponseWriter, r *http.Reques
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(struct {
-			Status      string          `json:"status"`
-			Description string          `json:"description"`
-			Project     *models.Project `json:"project,omitempty"`
+			Status      string            `json:"status"`
+			Description string            `json:"description"`
+			Project     *models.ProjectID `json:"project,omitempty"`
 		}{
 			Status:      "error",
 			Description: "Неверный id проекта",
@@ -294,9 +294,9 @@ func (h *Test_keys_handler) GetProjectByID(w http.ResponseWriter, r *http.Reques
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(struct {
-			Status      string          `json:"status"`
-			Description string          `json:"description"`
-			Project     *models.Project `json:"project,omitempty"`
+			Status      string            `json:"status"`
+			Description string            `json:"description"`
+			Project     *models.ProjectID `json:"project,omitempty"`
 		}{
 			Status:      "error",
 			Description: "Ошибка сервера",
@@ -308,9 +308,9 @@ func (h *Test_keys_handler) GetProjectByID(w http.ResponseWriter, r *http.Reques
 	if project == nil {
 		w.WriteHeader(http.StatusNotFound)
 		_ = json.NewEncoder(w).Encode(struct {
-			Status      string          `json:"status"`
-			Description string          `json:"description"`
-			Project     *models.Project `json:"project,omitempty"`
+			Status      string            `json:"status"`
+			Description string            `json:"description"`
+			Project     *models.ProjectID `json:"project,omitempty"`
 		}{
 			Status:      "error",
 			Description: "Проект не найден",
@@ -321,9 +321,9 @@ func (h *Test_keys_handler) GetProjectByID(w http.ResponseWriter, r *http.Reques
 
 	w.WriteHeader(http.StatusOK)
 	_ = json.NewEncoder(w).Encode(struct {
-		Status      string          `json:"status"`
-		Description string          `json:"description"`
-		Project     *models.Project `json:"project,omitempty"`
+		Status      string            `json:"status"`
+		Description string            `json:"description"`
+		Project     *models.ProjectID `json:"project,omitempty"`
 	}{
 		Status:      "success",
 		Description: "Проект получен",

@@ -51,6 +51,11 @@ func (r *Test_keys_repository) GetTestKeys(user_id, project_id *int) ([]models.T
 		testKeys = append(testKeys, testKey)
 	}
 
+	if rows.Err() != nil {
+		log.Println("Ошибка при итерации по строкам тестовых ключей: ", rows.Err())
+		return nil, rows.Err()
+	}
+
 	return testKeys, nil
 }
 
@@ -114,7 +119,6 @@ func (r *Test_keys_repository) GetCategories() ([]models.Category, error) {
 		SELECT id, name
 		FROM projects;
 	`
-
 	rows, err := r.postgres.DB.Query(query)
 	if err != nil {
 		log.Print("Ошибка при получении категорий: ", err)
@@ -131,6 +135,11 @@ func (r *Test_keys_repository) GetCategories() ([]models.Category, error) {
 			return nil, err
 		}
 		categories = append(categories, category)
+	}
+
+	if rows.Err() != nil {
+		log.Println("Ошибка при итерации по строкам категорий: ", rows.Err())
+		return nil, rows.Err()
 	}
 
 	return categories, nil
@@ -160,19 +169,28 @@ func (r *Test_keys_repository) GetProjects() ([]models.Project, error) {
 		projects = append(projects, p)
 	}
 
+	if rows.Err() != nil {
+		log.Println("Ошибка при итерации по строкам проектов: ", rows.Err())
+		return nil, rows.Err()
+	}
+
 	return projects, nil
 }
 
-func (r *Test_keys_repository) GetProjectByID(id int) (*models.Project, error) {
+func (r *Test_keys_repository) GetProjectByID(id int) (*models.ProjectID, error) {
 	query := `
-		SELECT id, name
-		FROM projects
-		WHERE id = $1;
+		select p.name as project_name, COUNT(DISTINCT t.ID) as testkeys_total, COUNT(DISTINCT b.ID) as tickets_total
+		from test_keys t
+		join tickets b on b.project_id = t.project_id
+		join projects p on p.id = t.project_id
+		where p.id = $1
+		group by p.name
 	`
 
 	row := r.postgres.DB.QueryRow(query, id)
-	var p models.Project
-	if err := row.Scan(&p.ID, &p.Name); err != nil {
+	var p models.ProjectID
+
+	if err := row.Scan(&p.ProjectName, &p.TestKeys_total, &p.Tickets_total); err != nil {
 		if err == sql.ErrNoRows {
 			return nil, nil
 		}

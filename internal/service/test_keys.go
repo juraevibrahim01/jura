@@ -33,6 +33,6 @@ func (s *Test_keys_service) GetProjects() ([]models.Project, error) {
 	return s.repository.GetProjects()
 }
 
-func (s *Test_keys_service) GetProjectByID(id int) (*models.Project, error) {
+func (s *Test_keys_service) GetProjectByID(id int) (*models.ProjectID, error) {
 	return s.repository.GetProjectByID(id)
 }

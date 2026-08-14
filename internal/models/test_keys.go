@@ -51,6 +51,12 @@ type Project struct {
 	Name string `json:"name"`
 }
 
+type ProjectID struct {
+	ProjectName    string `json:"project_name"`
+	TestKeys_total int    `json:"testkeys_total"`
+	Tickets_total  int    `json:"tickets_total"`
+}
+
 type ProjectsResponse struct {
 	Status      string    `json:"status"`
 	Description string    `json:"description"`
