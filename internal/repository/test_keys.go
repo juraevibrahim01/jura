@@ -89,10 +89,10 @@ func (r *Test_keys_repository) GetTestKeyByID(id *int, user_id *int) (*models.Te
 	return &testKey, nil
 }
 
-func (r *Test_keys_repository) CreateTestKey(request *models.TestKeyCreateRequest, user_id *int) error {
+func (r *Test_keys_repository) CreateTestKey(request *models.TestKeyCreateRequest, user_id *int, project_id *int) error {
 	query := `
-		INSERT INTO test_keys (date, name, module, precondition, steps, expectation_res, actual_res, comment, user_id)
-		VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);
+		INSERT INTO test_keys (date, name, module, precondition, steps, expectation_res, actual_res, comment, user_id, project_id)
+		VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10);
 	`
 
 	_, err := r.postgres.DB.Exec(query,
@@ -105,6 +105,7 @@ func (r *Test_keys_repository) CreateTestKey(request *models.TestKeyCreateReques
 		request.ActualRes,
 		request.Comment,
 		*user_id,
+		*project_id,
 	)
 	if err != nil {
 		log.Print("Ошибка при создании тестового кейса: ", err)

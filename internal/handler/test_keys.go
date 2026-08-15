@@ -186,8 +186,6 @@ func (h *Test_keys_handler) CreateTestKey(w http.ResponseWriter, r *http.Request
 	// 	return
 	// }
 
-	_ = mux.Vars(r)["project_id"]
-
 	var UserID string
 	UserID = r.Header.Get("X-User-UserID")
 	userIDInt, err := strconv.Atoi(UserID)
@@ -200,6 +198,19 @@ func (h *Test_keys_handler) CreateTestKey(w http.ResponseWriter, r *http.Request
 		})
 		return
 	}
+
+	var projectID string
+	projectID = mux.Vars(r)["X-User-ProjectID"]
+	projectIDInt, err := strconv.Atoi(projectID)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
+			Status:      "error",
+			Description: "Неверный id проекта",
+		})
+		return
+	}
+
 	var request models.TestKeyCreateRequest
 	if err := json.NewDecoder(r.Body).Decode(&request); err != nil {
 		w.WriteHeader(http.StatusBadRequest)
@@ -210,7 +221,7 @@ func (h *Test_keys_handler) CreateTestKey(w http.ResponseWriter, r *http.Request
 		return
 	}
 
-	if err := h.service.CreateTestKey(&request, &userIDInt); err != nil {
+	if err := h.service.CreateTestKey(&request, &userIDInt, &projectIDInt); err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
 			Status:      "error",

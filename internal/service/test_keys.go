@@ -21,8 +21,8 @@ func (s *Test_keys_service) GetTestKeyByID(id *int, user_id *int) (*models.TestK
 	return s.repository.GetTestKeyByID(id, user_id)
 }
 
-func (s *Test_keys_service) CreateTestKey(request *models.TestKeyCreateRequest, user_id *int) error {
-	return s.repository.CreateTestKey(request, user_id)
+func (s *Test_keys_service) CreateTestKey(request *models.TestKeyCreateRequest, user_id *int, project_id *int) error {
+	return s.repository.CreateTestKey(request, user_id, project_id)
 }
 
 func (s *Test_keys_service) GetCategories() ([]models.Category, error) {
