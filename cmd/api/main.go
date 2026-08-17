@@ -43,6 +43,11 @@ func main() {
 	test_keys_service := service.New_Test_keys_service(test_keys_repository)
 	test_keys_handler := handler.New_Test_keys_handler(test_keys_service)
 
+	// ----------------------------------TestRepository------- for you -----------------------------
+	for_you := repository.NewForYou()
+	for_you_service := service.NewForYouService(for_you)
+	for_you_hamdler := handler.NewForYouHandler(for_you_service)
+
 	// ---------------------------------- ai -----------------------------------
 
 	// Загружаем .env до того, как обращаемся к os.Getenv
@@ -79,6 +84,7 @@ func main() {
 	router.Handle("/projects/{project_id}/test-cases/{id}", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetTestKeyByID))).Methods("GET")
 	router.Handle("/projects", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetProjects))).Methods("GET")
 	router.Handle("/project/{id}", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetProjectByID))).Methods("GET")
+	router.Handle("/moc/for_you", http.HandlerFunc(for_you_hamdler.GetTest)).Methods("GET")
 	router.Handle("/ai", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ai_handler.Chat)))).Methods("POST")
 	handleWithCors := middleware.CORSMiddleware(router)
 
