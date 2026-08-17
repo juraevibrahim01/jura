@@ -4,7 +4,6 @@ import "github.com/juraevibrahim01/jura/internal/repository"
 
 type TestService interface {
 	GetTest() repository.TestResult
-	GetTestNull() repository.TestResult
 }
 
 type testService struct {
@@ -19,8 +18,4 @@ func NewForYouService(repo repository.TestRepository) TestService {
 
 func (s *testService) GetTest() repository.TestResult {
 	return s.repo.GetTest()
-}
-
-func (s *testService) GetTestNull() repository.TestResult {
-	return s.repo.GetTestNull()
 }
