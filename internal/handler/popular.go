@@ -25,12 +25,3 @@ func (h *PopularHandler) PopularGetTest(w http.ResponseWriter, r *http.Request) 
 
 	json.NewEncoder(w).Encode(response)
 }
-
-func (h *PopularHandler) PopularGetTestNull(w http.ResponseWriter, r *http.Request) {
-	response := h.service.GetPopularNull()
-
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-
-	json.NewEncoder(w).Encode(response)
-}

@@ -4,7 +4,6 @@ import "github.com/juraevibrahim01/jura/internal/repository"
 
 type PopularService interface {
 	GetPopular() repository.PopularResult
-	GetPopularNull() repository.PopularResult
 }
 
 type popularService struct {
@@ -19,8 +18,4 @@ func NewPopularService(repo repository.PopularRepository) PopularService {
 
 func (s *popularService) GetPopular() repository.PopularResult {
 	return s.repo.GetPopular()
-}
-
-func (s *popularService) GetPopularNull() repository.PopularResult {
-	return s.repo.GetPopularNull()
 }

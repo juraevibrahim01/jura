@@ -91,7 +91,6 @@ func main() {
 	router.Handle("/project/{id}", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetProjectByID))).Methods("GET")
 	router.Handle("/moc/for_you", http.HandlerFunc(for_you_hamdler.GetTest)).Methods("GET")
 	router.Handle("/moc/popular", http.HandlerFunc(popular_hadler.PopularGetTest)).Methods("GET")
-	router.HandleFunc("/moc/popular/null", popular_hadler.PopularGetTestNull).Methods("GET")
 	router.Handle("/ai", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ai_handler.Chat)))).Methods("POST")
 	handleWithCors := middleware.CORSMiddleware(router)
 
