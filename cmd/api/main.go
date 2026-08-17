@@ -48,6 +48,11 @@ func main() {
 	for_you_service := service.NewForYouService(for_you)
 	for_you_hamdler := handler.NewForYouHandler(for_you_service)
 
+	// ------------------------------ popular --------------------------------------------
+	popular := repository.NewPopularYou()
+	popular_service := service.NewPopularService(popular)
+	popular_hadler := handler.NewPopularHandler(popular_service)
+
 	// ---------------------------------- ai -----------------------------------
 
 	// Загружаем .env до того, как обращаемся к os.Getenv
@@ -85,6 +90,9 @@ func main() {
 	router.Handle("/projects", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetProjects))).Methods("GET")
 	router.Handle("/project/{id}", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetProjectByID))).Methods("GET")
 	router.Handle("/moc/for_you", http.HandlerFunc(for_you_hamdler.GetTest)).Methods("GET")
+	router.HandleFunc("/moc/for_you/null", for_you_hamdler.GetTestNull).Methods("GET")
+	router.Handle("/moc/popular", http.HandlerFunc(popular_hadler.PopularGetTest)).Methods("GET")
+	router.HandleFunc("/moc/popular/null", popular_hadler.PopularGetTestNull).Methods("GET")
 	router.Handle("/ai", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ai_handler.Chat)))).Methods("POST")
 	handleWithCors := middleware.CORSMiddleware(router)
 

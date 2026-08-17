@@ -40,6 +40,7 @@ type TestResult struct {
 
 type TestRepository interface {
 	GetTest() TestResult
+	GetTestNull() TestResult
 }
 
 type testRepository struct{}
@@ -147,5 +148,17 @@ func (r *testRepository) GetTest() TestResult {
 				MonthlyPayment:  "495.00",
 			},
 		},
+	}
+}
+
+func (r *testRepository) GetTestNull() TestResult {
+	return TestResult{
+		Meta: Meta{
+			Error:      false,
+			Message:    "",
+			StatusCode: 200,
+		},
+
+		Response: nil,
 	}
 }
