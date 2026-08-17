@@ -20,14 +20,10 @@ func NewForYouHandler(service service.TestService) *TestHandler {
 func (h *TestHandler) GetTest(w http.ResponseWriter, r *http.Request) {
 	response := h.service.GetTest()
 
-	result := map[string]interface{}{
-		"data": response,
-	}
-
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 
-	json.NewEncoder(w).Encode(result)
+	json.NewEncoder(w).Encode(response)
 }
 
 func (h *TestHandler) GetTestNull(w http.ResponseWriter, r *http.Request) {
@@ -43,5 +39,3 @@ func (h *TestHandler) GetTestNull(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(result)
 
 }
-
-
