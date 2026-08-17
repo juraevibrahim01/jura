@@ -254,6 +254,6 @@ func (r *popularRepository) GetPopular() PopularResult {
 			Message:    "",
 			StatusCode: 200,
 		},
-		Response: []PopularResponse{},
+		Response: nil,
 	}
 }
