@@ -141,7 +141,7 @@ func (r *testRepository) GetTest() TestResult {
 				},
 				DiscountPercent: 0,
 				MonthlyPayment:  "495.00",
-
+			},
 		},
 	}
 }
