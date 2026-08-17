@@ -48,104 +48,6 @@ func NewForYou() TestRepository {
 	return &testRepository{}
 }
 
-func (r *testRepository) GetTest() TestResult {
-	return TestResult{
-		Meta: Meta{
-			Error:      false,
-			Message:    "",
-			StatusCode: 200,
-		},
-
-		Response: []TestResponse{
-			{
-				ID:              62729,
-				Name:            "Диван Артkор Пуфак 290х105 см, бежевый",
-				Slug:            "divan-artkor-pufak-290h105-sm-bezhevyy",
-				Rating:          "0.0",
-				RatingCount:     0,
-				MinPrice:        "12800.00",
-				FinalPrice:      "12800.00",
-				DefaultDuration: 24,
-				MaxCommission:   37,
-				MaxConditionID:  25296,
-				Images: []string{
-					"https://storage.alifshop.tj/media/images/alifshop/62729/divan-artkor-pufak-290h105-sm-bezhevyy-1784725701437-ttuxWaJO.png",
-					"https://storage.alifshop.tj/media/images/alifshop/62729/divan-artkor-pufak-290h105-sm-bezhevyy-1784725692887-V4MQUWt6.png",
-				},
-				WishlistID: nil,
-				Discount:   "0.00",
-				Gifts:      []any{},
-				Labels: []Label{
-					{
-						ID:      "new",
-						Label:   "Новинка",
-						Color:   "#ffffff",
-						BgColor: "#9833FD",
-					},
-				},
-				DiscountPercent: 0,
-				MonthlyPayment:  "730.66",
-			}, {
-				ID:              62730,
-				Name:            "Диван Комфорт 250х100 см, серый",
-				Slug:            "divan-komfort-250h100-sm-seryy",
-				Rating:          "4.5",
-				RatingCount:     18,
-				MinPrice:        "15000.00",
-				FinalPrice:      "13500.00",
-				DefaultDuration: 24,
-				MaxCommission:   35,
-				MaxConditionID:  25297,
-				Images: []string{
-					"https://storage.alifshop.tj/media/images/alifshop/62730/divan-komfort-250h100-sm-seryy.png",
-					"https://storage.alifshop.tj/media/images/alifshop/62730/divan-komfort-250h100-sm-seryy-2.png",
-				},
-				WishlistID: nil,
-				Discount:   "1500.00",
-				Gifts:      []any{},
-				Labels: []Label{
-					{
-						ID:      "sale",
-						Label:   "Скидка",
-						Color:   "#ffffff",
-						BgColor: "#FF3B30",
-					},
-				},
-				DiscountPercent: 10,
-				MonthlyPayment:  "770.12",
-			}, {
-				ID:              62731,
-				Name:            "Кресло Комфорт 85х90 см, зеленый",
-				Slug:            "kreslo-komfort-85h90-sm-zelenyy",
-				Rating:          "4.8",
-				RatingCount:     32,
-				MinPrice:        "5500.00",
-				FinalPrice:      "5500.00",
-				DefaultDuration: 12,
-				MaxCommission:   30,
-				MaxConditionID:  25298,
-				Images: []string{
-					"https://storage.alifshop.tj/media/images/alifshop/62731/kreslo-komfort-85h90-sm-zelenyy.png",
-					"https://storage.alifshop.tj/media/images/alifshop/62731/kreslo-komfort-85h90-sm-zelenyy-2.png",
-				},
-				WishlistID: nil,
-				Discount:   "0.00",
-				Gifts:      []any{},
-				Labels: []Label{
-					{
-						ID:      "new",
-						Label:   "Новинка",
-						Color:   "#ffffff",
-						BgColor: "#9833FD",
-					},
-				},
-				DiscountPercent: 0,
-				MonthlyPayment:  "495.00",
-			},
-		},
-	}
-}
-
 // func (r *testRepository) GetTest() TestResult {
 // 	return TestResult{
 // 		Meta: Meta{
@@ -154,6 +56,216 @@ func (r *testRepository) GetTest() TestResult {
 // 			StatusCode: 200,
 // 		},
 
-// 		Response: nil,
+// 		Response: []TestResponse{
+// 			{
+// 				ID:              62729,
+// 				Name:            "Диван Артkор Пуфак 290х105 см, бежевый",
+// 				Slug:            "divan-artkor-pufak-290h105-sm-bezhevyy",
+// 				Rating:          "0.0",
+// 				RatingCount:     0,
+// 				MinPrice:        "12800.00",
+// 				FinalPrice:      "12800.00",
+// 				DefaultDuration: 24,
+// 				MaxCommission:   37,
+// 				MaxConditionID:  25296,
+// 				Images: []string{
+// 					"https://storage.alifshop.tj/media/images/alifshop/62729/divan-artkor-pufak-290h105-sm-bezhevyy-1784725701437-ttuxWaJO.png",
+// 					"https://storage.alifshop.tj/media/images/alifshop/62729/divan-artkor-pufak-290h105-sm-bezhevyy-1784725692887-V4MQUWt6.png",
+// 				},
+// 				WishlistID: nil,
+// 				Discount:   "0.00",
+// 				Gifts:      []any{},
+// 				Labels: []Label{
+// 					{
+// 						ID:      "new",
+// 						Label:   "Новинка",
+// 						Color:   "#ffffff",
+// 						BgColor: "#9833FD",
+// 					},
+// 				},
+// 				DiscountPercent: 0,
+// 				MonthlyPayment:  "730.66",
+// 			}, {
+// 				ID:              62730,
+// 				Name:            "Диван Комфорт 250х100 см, серый",
+// 				Slug:            "divan-komfort-250h100-sm-seryy",
+// 				Rating:          "4.5",
+// 				RatingCount:     18,
+// 				MinPrice:        "15000.00",
+// 				FinalPrice:      "13500.00",
+// 				DefaultDuration: 24,
+// 				MaxCommission:   35,
+// 				MaxConditionID:  25297,
+// 				Images: []string{
+// 					"https://storage.alifshop.tj/media/images/alifshop/62730/divan-komfort-250h100-sm-seryy.png",
+// 					"https://storage.alifshop.tj/media/images/alifshop/62730/divan-komfort-250h100-sm-seryy-2.png",
+// 				},
+// 				WishlistID: nil,
+// 				Discount:   "1500.00",
+// 				Gifts:      []any{},
+// 				Labels: []Label{
+// 					{
+// 						ID:      "sale",
+// 						Label:   "Скидка",
+// 						Color:   "#ffffff",
+// 						BgColor: "#FF3B30",
+// 					},
+// 				},
+// 				DiscountPercent: 10,
+// 				MonthlyPayment:  "770.12",
+// 			}, {
+// 				ID:              62731,
+// 				Name:            "Кресло Комфорт 85х90 см, зеленый",
+// 				Slug:            "kreslo-komfort-85h90-sm-zelenyy",
+// 				Rating:          "4.8",
+// 				RatingCount:     32,
+// 				MinPrice:        "5500.00",
+// 				FinalPrice:      "5500.00",
+// 				DefaultDuration: 12,
+// 				MaxCommission:   30,
+// 				MaxConditionID:  25298,
+// 				Images: []string{
+// 					"https://storage.alifshop.tj/media/images/alifshop/62731/kreslo-komfort-85h90-sm-zelenyy.png",
+// 					"https://storage.alifshop.tj/media/images/alifshop/62731/kreslo-komfort-85h90-sm-zelenyy-2.png",
+// 				},
+// 				WishlistID: nil,
+// 				Discount:   "0.00",
+// 				Gifts:      []any{},
+// 				Labels: []Label{
+// 					{
+// 						ID:      "new",
+// 						Label:   "Новинка",
+// 						Color:   "#ffffff",
+// 						BgColor: "#9833FD",
+// 					},
+// 				},
+// 				DiscountPercent: 0,
+// 				MonthlyPayment:  "495.00",
+// 			}, {
+// 				ID:              62730,
+// 				Name:            "Диван Комфорт 250х100 см, серый",
+// 				Slug:            "divan-komfort-250h100-sm-seryy",
+// 				Rating:          "4.5",
+// 				RatingCount:     18,
+// 				MinPrice:        "15000.00",
+// 				FinalPrice:      "13500.00",
+// 				DefaultDuration: 24,
+// 				MaxCommission:   35,
+// 				MaxConditionID:  25297,
+// 				Images: []string{
+// 					"https://storage.alifshop.tj/media/images/alifshop/62730/divan-komfort-250h100-sm-seryy.png",
+// 					"https://storage.alifshop.tj/media/images/alifshop/62730/divan-komfort-250h100-sm-seryy-2.png",
+// 				},
+// 				WishlistID: nil,
+// 				Discount:   "1500.00",
+// 				Gifts:      []any{},
+// 				Labels: []Label{
+// 					{
+// 						ID:      "sale",
+// 						Label:   "Скидка",
+// 						Color:   "#ffffff",
+// 						BgColor: "#FF3B30",
+// 					},
+// 				},
+// 				DiscountPercent: 10,
+// 				MonthlyPayment:  "770.12",
+// 			}, {
+// 				ID:              62730,
+// 				Name:            "Диван Комфорт 250х100 см, серый",
+// 				Slug:            "divan-komfort-250h100-sm-seryy",
+// 				Rating:          "4.5",
+// 				RatingCount:     18,
+// 				MinPrice:        "15000.00",
+// 				FinalPrice:      "13500.00",
+// 				DefaultDuration: 24,
+// 				MaxCommission:   35,
+// 				MaxConditionID:  25297,
+// 				Images: []string{
+// 					"https://storage.alifshop.tj/media/images/alifshop/62730/divan-komfort-250h100-sm-seryy.png",
+// 					"https://storage.alifshop.tj/media/images/alifshop/62730/divan-komfort-250h100-sm-seryy-2.png",
+// 				},
+// 				WishlistID: nil,
+// 				Discount:   "1500.00",
+// 				Gifts:      []any{},
+// 				Labels: []Label{
+// 					{
+// 						ID:      "sale",
+// 						Label:   "Скидка",
+// 						Color:   "#ffffff",
+// 						BgColor: "#FF3B30",
+// 					},
+// 				},
+// 				DiscountPercent: 10,
+// 				MonthlyPayment:  "770.12",
+// 			}, {
+// 				ID:              62730,
+// 				Name:            "Диван Комфорт 250х100 см, серый",
+// 				Slug:            "divan-komfort-250h100-sm-seryy",
+// 				Rating:          "4.5",
+// 				RatingCount:     18,
+// 				MinPrice:        "15000.00",
+// 				FinalPrice:      "13500.00",
+// 				DefaultDuration: 24,
+// 				MaxCommission:   35,
+// 				MaxConditionID:  25297,
+// 				Images: []string{
+// 					"https://storage.alifshop.tj/media/images/alifshop/62730/divan-komfort-250h100-sm-seryy.png",
+// 					"https://storage.alifshop.tj/media/images/alifshop/62730/divan-komfort-250h100-sm-seryy-2.png",
+// 				},
+// 				WishlistID: nil,
+// 				Discount:   "1500.00",
+// 				Gifts:      []any{},
+// 				Labels: []Label{
+// 					{
+// 						ID:      "sale",
+// 						Label:   "Скидка",
+// 						Color:   "#ffffff",
+// 						BgColor: "#FF3B30",
+// 					},
+// 				},
+// 				DiscountPercent: 10,
+// 				MonthlyPayment:  "770.12",
+// 			}, {
+// 				ID:              62730,
+// 				Name:            "Диван Комфорт 250х100 см, серый",
+// 				Slug:            "divan-komfort-250h100-sm-seryy",
+// 				Rating:          "4.5",
+// 				RatingCount:     18,
+// 				MinPrice:        "15000.00",
+// 				FinalPrice:      "13500.00",
+// 				DefaultDuration: 24,
+// 				MaxCommission:   35,
+// 				MaxConditionID:  25297,
+// 				Images: []string{
+// 					"https://storage.alifshop.tj/media/images/alifshop/62730/divan-komfort-250h100-sm-seryy.png",
+// 					"https://storage.alifshop.tj/media/images/alifshop/62730/divan-komfort-250h100-sm-seryy-2.png",
+// 				},
+// 				WishlistID: nil,
+// 				Discount:   "1500.00",
+// 				Gifts:      []any{},
+// 				Labels: []Label{
+// 					{
+// 						ID:      "sale",
+// 						Label:   "Скидка",
+// 						Color:   "#ffffff",
+// 						BgColor: "#FF3B30",
+// 					},
+// 				},
+// 				DiscountPercent: 10,
+// 				MonthlyPayment:  "770.12",
+// 			},
+// 		},
 // 	}
 // }
+
+func (r *testRepository) GetTest() TestResult {
+	return TestResult{
+		Meta: Meta{
+			Error:      false,
+			Message:    "",
+			StatusCode: 200,
+		},
+
+		Response: nil,
+	}
+}
