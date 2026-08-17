@@ -86,9 +86,7 @@ func (r *testRepository) GetTest() TestResult {
 				},
 				DiscountPercent: 0,
 				MonthlyPayment:  "730.66",
-			},
-
-			{
+			}, {
 				ID:              62730,
 				Name:            "Диван Комфорт 250х100 см, серый",
 				Slug:            "divan-komfort-250h100-sm-seryy",
@@ -116,9 +114,7 @@ func (r *testRepository) GetTest() TestResult {
 				},
 				DiscountPercent: 10,
 				MonthlyPayment:  "770.12",
-			},
-
-			{
+			}, {
 				ID:              62731,
 				Name:            "Кресло Комфорт 85х90 см, зеленый",
 				Slug:            "kreslo-komfort-85h90-sm-zelenyy",
