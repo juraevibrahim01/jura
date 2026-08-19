@@ -3,7 +3,6 @@ package repository
 import (
 	"database/sql"
 	"log"
-	"strings"
 
 	"github.com/juraevibrahim01/jura/internal/models"
 	"github.com/juraevibrahim01/jura/pkg"
@@ -17,15 +16,14 @@ func Ticket_new_repository(postgres *pkg.Postgres) *Ticket_repository {
 	return &Ticket_repository{postgres: postgres}
 }
 
-func (r *Ticket_repository) GetTickets(email *string) ([]models.Ticket, error) {
+func (r *Ticket_repository) GetTickets(userID, projectID *int) ([]models.Ticket, error) {
 	query := `
-		SELECT t.id, t."Title"
+		SELECT t.id, t.Name
 		FROM tickets t
-        JOIN users u on u.id = t.user_id
-        WHERE u.email = $1;
+        where t.user_id = $1 and t.project_id = $2 and t.id = $3;
 	`
 
-	rows, err := r.postgres.DB.Query(query, email)
+	rows, err := r.postgres.DB.Query(query, userID, projectID)
 	if err != nil {
 		log.Print("Ошибка при получении тикетов: ", err)
 		return nil, err
@@ -35,7 +33,7 @@ func (r *Ticket_repository) GetTickets(email *string) ([]models.Ticket, error) {
 	var tickets []models.Ticket
 	for rows.Next() {
 		var ticket models.Ticket
-		err = rows.Scan(&ticket.ID, &ticket.Title)
+		err = rows.Scan(&ticket.ID, &ticket.Name)
 		if err != nil {
 			if err == sql.ErrNoRows {
 				return []models.Ticket{}, nil
@@ -53,16 +51,49 @@ func (r *Ticket_repository) GetTickets(email *string) ([]models.Ticket, error) {
 	return tickets, nil
 }
 
-func (r *Ticket_repository) Ticket_create(title *string, email *string, priority *string, severity *string, environment *string, stepsToReproduce *string, expectedResult *string, actualResult *string, attachments *[]string) error {
+func (r *Ticket_repository) GetTicketsByID(userID, projectID, ticketsID *int) ([]models.Ticket, error) {
+	query := `
+		SELECT t.id, t.Data, t.Name, t.module, t.Precondition, t.Steps, t.Expectation_res, t.Actual_res, t.Comment
+		FROM tickets t
+        where t.user_id = $1 and t.project_id = $2 and t.id = $3;
+	`
 
-	attachmentsStr := strings.Join(*attachments, ",")
+	rows, err := r.postgres.DB.Query(query, userID, projectID, ticketsID)
+	if err != nil {
+		log.Print("Ошибка при получении тикетов: ", err)
+		return nil, err
+	}
+	defer rows.Close()
+
+	var tickets []models.Ticket
+	for rows.Next() {
+		var ticket models.Ticket
+		err = rows.Scan(&ticket.ID, &ticket.Data, &ticket.Name, &ticket.Module, &ticket.Precondition, &ticket.Steps, &ticket.Expectation_res, &ticket.Actual_res, &ticket.Comment)
+		if err != nil {
+			if err == sql.ErrNoRows {
+				return []models.Ticket{}, nil
+			}
+			log.Print("Ошибка при сканировании тикетов: ", err)
+			return nil, err
+		}
+		tickets = append(tickets, ticket)
+	}
+
+	if err = rows.Err(); err != nil {
+		return nil, err
+	}
+
+	return tickets, nil
+}
+
+func (r *Ticket_repository) Ticket_create(data, name, module, precondition, steps, expectation_res, actual_res, comment *string, user_id, project_id *int) error {
 
 	query := `
-		INSERT INTO tickets ("Title", user_id, "Priority", "Severity", "Environment", "Steps", "Expected_Result", "Actual_Result", "Attachments")
+		INSERT INTO tickets (date, name, module, precondition, "steps", "expectation_res", "actual_res", "comment", user_id, project_id)
 		VALUES ($1, (SELECT id FROM users WHERE email = $2), $3, $4, $5, $6, $7, $8, $9);
 	`
 
-	_, err := r.postgres.DB.Exec(query, title, email, priority, severity, environment, stepsToReproduce, expectedResult, actualResult, attachmentsStr)
+	_, err := r.postgres.DB.Exec(query, data, name, module, precondition, steps, expectation_res, actual_res, comment, user_id, project_id)
 	if err != nil {
 		log.Print("Ошибка при создании тикета: ", err)
 		return err

@@ -1,8 +1,15 @@
 package models
 
 type Ticket struct {
-	ID    int    `json:"id"`
-	Title string `json:"title"`
+	ID              int    `json:"id"`
+	Data            string `json:"data"`
+	Name            string `json:"name"`
+	Module          string `json:"module"`
+	Precondition    string `json:"precondition"`
+	Steps           string `json:"Steps"`
+	Expectation_res string `json:"expectation_res"`
+	Actual_res      string `json:"actual_res"`
+	Comment         string `json:"comment"`
 }
 
 type TicketsResponse struct {
@@ -12,12 +19,12 @@ type TicketsResponse struct {
 }
 
 type TicketCreateRequest struct {
-	Title            string   `json:"title"`
-	Priority         string   `json:"priority"`
-	Severity         string   `json:"severity"`
-	Environment      string   `json:"environment"`
-	StepsToReproduce string   `json:"steps_to_reproduce"`
-	ExpectedResult   string   `json:"expected_result"`
-	ActualResult     string   `json:"actual_result"`
-	Attachments      []string `json:"attachments"`
+	Data            string `json:"data"`
+	Name            string `json:"name"`
+	Module          string `json:"module"`
+	Precondition    string `json:"precondition"`
+	Steps           string `json:"Steps"`
+	Expectation_res string `json:"expectation_res"`
+	Actual_res      string `json:"actual_res"`
+	Comment         string `json:"comment"`
 }
