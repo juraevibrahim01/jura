@@ -18,9 +18,9 @@ func Ticket_new_repository(postgres *pkg.Postgres) *Ticket_repository {
 
 func (r *Ticket_repository) GetTickets(userID, projectID *int) ([]models.Ticket, error) {
 	query := `
-		SELECT t.id, t.title
+		SELECT t.id, t."title"
 		FROM tickets t
-        where t.user_id = $1 and t.project_id = $2 and t.id = $3;
+        where t.user_id = $1 and t.project_id = $2;
 	`
 
 	rows, err := r.postgres.DB.Query(query, userID, projectID)
@@ -33,7 +33,7 @@ func (r *Ticket_repository) GetTickets(userID, projectID *int) ([]models.Ticket,
 	var tickets []models.Ticket
 	for rows.Next() {
 		var ticket models.Ticket
-		err = rows.Scan(&ticket.ID, &ticket.Name)
+		err = rows.Scan(&ticket.ID, &ticket.Title)
 		if err != nil {
 			if err == sql.ErrNoRows {
 				return []models.Ticket{}, nil
@@ -53,7 +53,7 @@ func (r *Ticket_repository) GetTickets(userID, projectID *int) ([]models.Ticket,
 
 func (r *Ticket_repository) GetTicketsByID(userID, projectID, ticketsID *int) ([]models.Ticket, error) {
 	query := `
-		SELECT t.id, t.data, t.title, t.module, t.precondition, t.steps, t.expectation_res, t.actual_res, t.comment
+		SELECT t.id, t."title", t."priority", t."severity", t."environment", t."steps", t."expected_result", t."actual_result", t."attachments", t."created_at"
 		FROM tickets t
         where t.user_id = $1 and t.project_id = $2 and t.id = $3;
 	`
@@ -68,7 +68,7 @@ func (r *Ticket_repository) GetTicketsByID(userID, projectID, ticketsID *int) ([
 	var tickets []models.Ticket
 	for rows.Next() {
 		var ticket models.Ticket
-		err = rows.Scan(&ticket.ID, &ticket.Data, &ticket.Name, &ticket.Module, &ticket.Precondition, &ticket.Steps, &ticket.Expectation_res, &ticket.Actual_res, &ticket.Comment)
+		err = rows.Scan(&ticket.ID, &ticket.Title, &ticket.Priority, &ticket.Severity, &ticket.Environment, &ticket.Steps, &ticket.ExpectedResult, &ticket.ActualResult, &ticket.Attachments, &ticket.CreatedAt)
 		if err != nil {
 			if err == sql.ErrNoRows {
 				return []models.Ticket{}, nil
@@ -86,14 +86,14 @@ func (r *Ticket_repository) GetTicketsByID(userID, projectID, ticketsID *int) ([
 	return tickets, nil
 }
 
-func (r *Ticket_repository) Ticket_create(data, name, module, precondition, steps, expectation_res, actual_res, comment *string, user_id, project_id *int) error {
+func (r *Ticket_repository) Ticket_create(user_id *int, title, priority, severity, environment, steps, expected_result, actual_result, attachments *string, project_id *int) error {
 
 	query := `
-		INSERT INTO tickets (date, "title", "module", "precondition", "steps", "expectation_res", "actual_res", "comment", user_id, project_id)
-		VALUES ($1, (SELECT id FROM users WHERE email = $2), $3, $4, $5, $6, $7, $8, $9);
+		INSERT INTO tickets (user_id, "title", "priority", "severity", "environment", "steps", "expected_result", "actual_result", "attachments", project_id)
+		VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10);
 	`
 
-	_, err := r.postgres.DB.Exec(query, data, name, module, precondition, steps, expectation_res, actual_res, comment, user_id, project_id)
+	_, err := r.postgres.DB.Exec(query, user_id, title, priority, severity, environment, steps, expected_result, actual_result, attachments, project_id)
 	if err != nil {
 		log.Print("Ошибка при создании тикета: ", err)
 		return err

@@ -1,15 +1,16 @@
 package models
 
 type Ticket struct {
-	ID              int    `json:"id"`
-	Data            string `json:"data"`
-	Name            string `json:"name"`
-	Module          string `json:"module"`
-	Precondition    string `json:"precondition"`
-	Steps           string `json:"Steps"`
-	Expectation_res string `json:"expectation_res"`
-	Actual_res      string `json:"actual_res"`
-	Comment         string `json:"comment"`
+	ID             int    `json:"id"`
+	Title          string `json:"title"`
+	Priority       string `json:"priority"`
+	Severity       string `json:"severity"`
+	Environment    string `json:"environment"`
+	Steps          string `json:"steps"`
+	ExpectedResult string `json:"expected_result"`
+	ActualResult   string `json:"actual_result"`
+	Attachments    string `json:"attachments"`
+	CreatedAt      string `json:"created_at"`
 }
 
 type TicketsResponse struct {
@@ -19,12 +20,13 @@ type TicketsResponse struct {
 }
 
 type TicketCreateRequest struct {
-	Data           string `json:"data"`
-	Name           string `json:"name"`
-	Module         string `json:"module"`
-	Precondition   string `json:"precondition"`
-	Steps          string `json:"Steps"`
-	ExpectationRes string `json:"expectation_res"`
-	ActualRes      string `json:"actual_res"`
-	Comment        string `json:"comment"`
+	Title          string `json:"title"`
+	Priority       string `json:"priority"`
+	Severity       string `json:"severity"`
+	Environment    string `json:"	environment"`
+	Steps          string `json:"steps"`
+	ExpectedResult string `json:"expected_result"`
+	ActualResult   string `json:"actual_result"`
+	Attachments    string `json:"attachments"`
+	CreatedAt      string `json:"created_at"`
 }

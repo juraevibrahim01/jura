@@ -17,8 +17,8 @@ func (s *Ticket_service) GetTickets(userID, projectID *int) ([]models.Ticket, er
 	return s.repository.GetTickets(userID, projectID)
 }
 
-func (s *Ticket_service) Ticket_create(data, name, module, precondition, steps, expectation_res, actual_res, comment *string, user_id, project_id *int) error {
-	return s.repository.Ticket_create(data, name, module, precondition, steps, expectation_res, actual_res, comment, user_id, project_id)
+func (s *Ticket_service) Ticket_create(user_id *int, title, priority, severity, environment, steps, expected_result, actual_result, attachments *string, project_id *int) error {
+	return s.repository.Ticket_create(user_id, title, priority, severity, environment, steps, expected_result, actual_result, attachments, project_id)
 }
 
 func (s *Ticket_service) GetTicketsByID(userID, projectID, ticketsID *int) ([]models.Ticket, error) {

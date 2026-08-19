@@ -246,7 +246,7 @@ func (h *Ticket_handler) Ticket_create(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = h.service.Ticket_create(&request.Data, &request.Name, &request.Module, &request.Precondition, &request.Steps, &request.ExpectationRes, &request.ActualRes, &request.Comment, &UserIDInt, &projectID_int)
+	err = h.service.Ticket_create(&UserIDInt, &request.Title, &request.Priority, &request.Severity, &request.Environment, &request.Steps, &request.ExpectedResult, &request.ActualResult, &request.Attachments, &projectID_int)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
