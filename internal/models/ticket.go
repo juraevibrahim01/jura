@@ -19,12 +19,12 @@ type TicketsResponse struct {
 }
 
 type TicketCreateRequest struct {
-	Data            string `json:"data"`
-	Name            string `json:"name"`
-	Module          string `json:"module"`
-	Precondition    string `json:"precondition"`
-	Steps           string `json:"Steps"`
-	Expectation_res string `json:"expectation_res"`
-	Actual_res      string `json:"actual_res"`
-	Comment         string `json:"comment"`
+	Data           string `json:"data"`
+	Name           string `json:"name"`
+	Module         string `json:"module"`
+	Precondition   string `json:"precondition"`
+	Steps          string `json:"Steps"`
+	ExpectationRes string `json:"expectation_res"`
+	ActualRes      string `json:"actual_res"`
+	Comment        string `json:"comment"`
 }

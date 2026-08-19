@@ -82,12 +82,15 @@ func main() {
 	router.HandleFunc("/login", auth_handler.Login).Methods("POST")
 	router.HandleFunc("/login/check_otp", auth_handler.Check_otp).Methods("POST")
 	router.Handle("/user", middleware.AuthMiddleware(auth_service, http.HandlerFunc(user_handler.User_create))).Methods("POST")
+	
 	router.Handle("/projects/{project_id}/tickets", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(ticket_handler.GetTickets))).Methods("GET")
 	router.Handle("/projects/{project_id}/tickets", middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ticket_handler.Ticket_create))).Methods("POST")
 	router.Handle("/projects/{project_id}/tickets/{id}", middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ticket_handler.GetTicketsByID))).Methods("GET")
+	
 	router.Handle("/projects/{project_id}/test-cases", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetTestKeys))).Methods("GET")
 	router.Handle("/projects/{project_id}/test-cases", middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(test_keys_handler.CreateTestKey))).Methods("POST")
 	router.Handle("/projects/{project_id}/test-cases/{id}", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetTestKeyByID))).Methods("GET")
+	
 	router.Handle("/projects", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetProjects))).Methods("GET")
 	router.Handle("/project/{id}", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetProjectByID))).Methods("GET")
 	router.Handle("/moc/for_you", http.HandlerFunc(for_you_hamdler.GetTest)).Methods("GET")
