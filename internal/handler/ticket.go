@@ -19,7 +19,6 @@ func Ticket_new_handler(service *service.Ticket_service) *Ticket_handler {
 }
 
 func (h *Ticket_handler) GetTickets(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
 
 	// claims, ok := r.Context().Value(middleware.ClaimsKey).(*models.Claims)
 	// if !ok || claims == nil {
@@ -55,7 +54,7 @@ func (h *Ticket_handler) GetTickets(w http.ResponseWriter, r *http.Request) {
 	}
 
 	projectID := vars["project_id"]
-	if projectID != "" {
+	if projectID == "" {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
 			Status:      "error",
@@ -128,7 +127,7 @@ func (h *Ticket_handler) GetTicketsByID(w http.ResponseWriter, r *http.Request) 
 	}
 
 	projectID := vars["project_id"]
-	if projectID != "" {
+	if projectID == "" {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
 			Status:      "error",
@@ -147,7 +146,7 @@ func (h *Ticket_handler) GetTicketsByID(w http.ResponseWriter, r *http.Request) 
 	}
 
 	ticketsID := vars["id"]
-	if ticketsID != "" {
+	if ticketsID == "" {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
 			Status:      "error",
@@ -217,7 +216,7 @@ func (h *Ticket_handler) Ticket_create(w http.ResponseWriter, r *http.Request) {
 	}
 
 	projectID := vars["project_id"]
-	if projectID != "" {
+	if projectID == "" {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
 			Status:      "error",
