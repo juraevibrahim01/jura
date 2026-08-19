@@ -18,7 +18,7 @@ func Ticket_new_repository(postgres *pkg.Postgres) *Ticket_repository {
 
 func (r *Ticket_repository) GetTickets(userID, projectID *int) ([]models.Ticket, error) {
 	query := `
-		SELECT t.id, t.name
+		SELECT t.id, t.title
 		FROM tickets t
         where t.user_id = $1 and t.project_id = $2 and t.id = $3;
 	`
@@ -53,7 +53,7 @@ func (r *Ticket_repository) GetTickets(userID, projectID *int) ([]models.Ticket,
 
 func (r *Ticket_repository) GetTicketsByID(userID, projectID, ticketsID *int) ([]models.Ticket, error) {
 	query := `
-		SELECT t.id, t.data, t.name, t.module, t.precondition, t.steps, t.expectation_res, t.actual_res, t.comment
+		SELECT t.id, t.data, t.title, t.module, t.precondition, t.steps, t.expectation_res, t.actual_res, t.comment
 		FROM tickets t
         where t.user_id = $1 and t.project_id = $2 and t.id = $3;
 	`
@@ -89,7 +89,7 @@ func (r *Ticket_repository) GetTicketsByID(userID, projectID, ticketsID *int) ([
 func (r *Ticket_repository) Ticket_create(data, name, module, precondition, steps, expectation_res, actual_res, comment *string, user_id, project_id *int) error {
 
 	query := `
-		INSERT INTO tickets (date, "name", "module", "precondition", "steps", "expectation_res", "actual_res", "comment", user_id, project_id)
+		INSERT INTO tickets (date, "title", "module", "precondition", "steps", "expectation_res", "actual_res", "comment", user_id, project_id)
 		VALUES ($1, (SELECT id FROM users WHERE email = $2), $3, $4, $5, $6, $7, $8, $9);
 	`
 
