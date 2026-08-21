@@ -21,6 +21,6 @@ func (s *Ticket_service) Ticket_create(user_id *int, title, priority, severity, 
 	return s.repository.Ticket_create(user_id, title, priority, severity, environment, steps, expected_result, actual_result, attachments, project_id)
 }
 
-func (s *Ticket_service) GetTicketsByID(userID, projectID, ticketsID *int) ([]models.Ticket, error) {
+func (s *Ticket_service) GetTicketsByID(userID, projectID, ticketsID *int) (models.Ticket, error) {
 	return s.repository.GetTicketsByID(userID, projectID, ticketsID)
 }

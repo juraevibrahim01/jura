@@ -19,6 +19,12 @@ type TicketsResponse struct {
 	Tickets     []Ticket `json:"tickets"`
 }
 
+type TicketResponse struct {
+	Status      string `json:"status"`
+	Description string `json:"description"`
+	Tickets     Ticket `json:"tickets"`
+}
+
 type TicketCreateRequest struct {
 	Title          string `json:"title"`
 	Priority       string `json:"priority"`
