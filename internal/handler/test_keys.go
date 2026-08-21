@@ -199,10 +199,12 @@ func (h *Test_keys_handler) CreateTestKey(w http.ResponseWriter, r *http.Request
 		return
 	}
 
-	var projectID string
-	projectID = mux.Vars(r)["X-User-ProjectID"]
+	vars := mux.Vars(r)
+
+	projectID := vars["project_id"]
+
 	projectIDInt, err := strconv.Atoi(projectID)
-	if err != nil {
+	if projectID == "" || err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
 			Status:      "error",
