@@ -177,7 +177,7 @@ func (h *Ticket_handler) GetTicketsByID(w http.ResponseWriter, r *http.Request) 
 	_ = json.NewEncoder(w).Encode(models.TicketResponse{
 		Status:      "success",
 		Description: "Тикеты получены",
-		Tickets:     tickets,
+		Tickets:     *tickets,
 	})
 }
 

@@ -51,31 +51,26 @@ func (r *Ticket_repository) GetTickets(userID, projectID *int) ([]models.Ticket,
 	return tickets, nil
 }
 
-func (r *Ticket_repository) GetTicketsByID(userID, projectID, ticketsID *int) (models.Ticket, error) {
+func (r *Ticket_repository) GetTicketsByID(userID, projectID, ticketsID *int) (*models.Ticket, error) {
 	query := `
 		SELECT t.id, t."title", t."priority", t."severity", t."environment", t."steps", t."expected_result", t."actual_result", t."attachments", t."created_at"
 		FROM tickets t
         where t.user_id = $1 and t.project_id = $2 and t.id = $3;
 	`
 
-	rows, err := r.postgres.DB.Query(query, userID, projectID, ticketsID)
-	if err != nil {
-		log.Print("Ошибка при получении тикетов: ", err)
-		return models.Ticket{}, err
-	}
-	defer rows.Close()
+	row := r.postgres.DB.QueryRow(query, userID, projectID, ticketsID)
 
 	var ticket models.Ticket
-	err = rows.Scan(&ticket.ID, &ticket.Title, &ticket.Priority, &ticket.Severity, &ticket.Environment, &ticket.Steps, &ticket.ExpectedResult, &ticket.ActualResult, &ticket.Attachments, &ticket.CreatedAt)
-	if err != nil {
+
+	if err := row.Scan(&ticket.ID, &ticket.Title, &ticket.Priority, &ticket.Severity, &ticket.Environment, &ticket.Steps, &ticket.ExpectedResult, &ticket.ActualResult, &ticket.Attachments, &ticket.CreatedAt); err != nil {
 		if err == sql.ErrNoRows {
-			return models.Ticket{}, nil
+			return nil, nil
 		}
-		log.Print("Ошибка при сканировании тикетов: ", err)
-		return models.Ticket{}, err
+		log.Print("Ошибка при получении багрепорта: ", err)
+		return nil, err
 	}
 
-	return ticket, nil
+	return &ticket, nil
 }
 
 func (r *Ticket_repository) Ticket_create(user_id *int, title, priority, severity, environment, steps, expected_result, actual_result, attachments *string, project_id *int) error {
