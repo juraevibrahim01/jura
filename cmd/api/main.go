@@ -58,6 +58,11 @@ func main() {
 	categori_service := service.NewCategori(categori)
 	categori_handler := handler.NewCategory(categori_service)
 
+	// ----------------------------- subcategori ------------------------------------------
+	subcategori := repository.NewSubCategories(db)
+	subcategori_service := service.NewSubCategori(subcategori)
+	subcategori_handler := handler.NewSubCategories(subcategori_service)
+
 	// ---------------------------------- ai -----------------------------------
 
 	// Загружаем .env до того, как обращаемся к os.Getenv
@@ -97,6 +102,8 @@ func main() {
 	router.Handle("/projects/{project_id}/test-cases/{id}", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetTestKeyByID))).Methods("GET")
 
 	router.Handle("/project/{project_id}/categories", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc((categori_handler.GetCategories)))).Methods("GET")
+
+	router.Handle("/project/{categori_id}/subcategories", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc((subcategori_handler.GetSubCategories)))).Methods("GET")
 
 	router.Handle("/projects", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetProjects))).Methods("GET")
 	router.Handle("/project/{id}", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetProjectByID))).Methods("GET")

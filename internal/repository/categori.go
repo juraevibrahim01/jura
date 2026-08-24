@@ -46,7 +46,7 @@ func (r *CategoriReposotori) GetCategoti(projectID *int) (*[]models.Categoridbre
 	}
 
 	if rows.Err() != nil {
-		log.Print("Ошибка при итерации по строкам проектов: ", rows.Err())
+		log.Print("Ошибка при итерации по строкам категорийы: ", rows.Err())
 		return nil, rows.Err()
 	}
 
