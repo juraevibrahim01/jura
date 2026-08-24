@@ -325,8 +325,8 @@ func (h *Test_keys_handler) GetProjectByID(w http.ResponseWriter, r *http.Reques
 			Description string            `json:"description"`
 			Project     *models.ProjectID `json:"project,omitempty"`
 		}{
-			Status:      "error",
-			Description: "Проект не найден",
+			Status:      "",
+			Description: "Test-keys not found",
 			Project:     nil,
 		})
 		return
