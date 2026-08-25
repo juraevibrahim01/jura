@@ -43,11 +43,33 @@ func (h *Test_keys_handler) GetTestKeys(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
-	if projectID == "" {
+	categoriID := vars["categori_id"]
+	categoriID_int, err := strconv.Atoi(categoriID)
+	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
 			Status:      "error",
-			Description: "Project ID not found in path",
+			Description: "Invalid Category ID format",
+		})
+		return
+	}
+
+	subCategoriID := vars["subcategori_id"]
+	subCategoriID_int, err := strconv.Atoi(subCategoriID)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
+			Status:      "error",
+			Description: "Invalid Subcategory ID format",
+		})
+		return
+	}
+
+	if projectID == "" || categoriID == "" || subCategoriID == "" {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
+			Status:      "error",
+			Description: "Keys ID not found in path",
 		})
 		return
 	}
@@ -63,17 +85,17 @@ func (h *Test_keys_handler) GetTestKeys(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
-	UserIDInt, err := strconv.Atoi(UserID)
-	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
-		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
-			Status:      "error",
-			Description: "Invalid UserID format",
-		})
-		return
-	}
+	// UserIDInt, err := strconv.Atoi(UserID)
+	// if err != nil {
+	// 	w.WriteHeader(http.StatusBadRequest)
+	// 	_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
+	// 		Status:      "error",
+	// 		Description: "Invalid UserID format",
+	// 	})
+	// 	return
+	// }
 
-	testKeys, err := h.service.GetTestKeys(&UserIDInt, &ProjectID_int)
+	testKeys, err := h.service.GetTestKeys(&ProjectID_int, &categoriID_int, &subCategoriID_int)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{

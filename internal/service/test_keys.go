@@ -13,8 +13,8 @@ func New_Test_keys_service(repository *repository.Test_keys_repository) *Test_ke
 	return &Test_keys_service{repository: repository}
 }
 
-func (s *Test_keys_service) GetTestKeys(user_id, project_id *int) ([]models.TestKey, error) {
-	return s.repository.GetTestKeys(user_id, project_id)
+func (s *Test_keys_service) GetTestKeys(project_id, category_id, subcategory_id *int) ([]models.TestKey, error) {
+	return s.repository.GetTestKeys(project_id, category_id, subcategory_id)
 }
 
 func (s *Test_keys_service) GetTestKeyByID(id *int, user_id *int) (*models.TestKey, error) {

@@ -16,14 +16,29 @@ func New_Test_keys_repository(postgres *pkg.Postgres) *Test_keys_repository {
 	return &Test_keys_repository{postgres: postgres}
 }
 
-func (r *Test_keys_repository) GetTestKeys(user_id, project_id *int) ([]models.TestKey, error) {
+func (r *Test_keys_repository) GetTestKeys(project_id, category_id, subcategoryID *int) ([]models.TestKey, error) {
 	query := `
-		SELECT id, date, name, module, precondition, steps, expectation_res, actual_res, comment
-		FROM test_keys
-		WHERE user_id = $1 AND project_id = $2;
+		SELECT
+			id,
+			date,
+			name,
+			module,
+			precondition,
+			steps,
+			expectation_res,
+			actual_res,
+			comment
+		FROM test_keys tk
+		JOIN projects p
+			on p.id = tk.project_id
+		JOIN categories c
+			on c.project_id = p.id
+		JOIN subcategories sc
+			on sc.categori_id = c.id
+		where p.id = $1 and c.id = $2 and sc.id = $3;
 	`
 
-	rows, err := r.postgres.DB.Query(query, *user_id, *project_id)
+	rows, err := r.postgres.DB.Query(query, *project_id, *category_id, *subcategoryID)
 	if err != nil {
 		log.Print("Ошибка при получении тестовых ключей: ", err)
 		return nil, err
