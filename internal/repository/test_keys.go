@@ -19,15 +19,15 @@ func New_Test_keys_repository(postgres *pkg.Postgres) *Test_keys_repository {
 func (r *Test_keys_repository) GetTestKeys(project_id, category_id, subcategoryID *int) ([]models.TestKey, error) {
 	query := `
 		SELECT
-			id,
-			date,
-			name,
-			module,
-			precondition,
-			steps,
-			expectation_res,
-			actual_res,
-			comment
+			tk.id,
+			tk.date,
+			tk.name,
+			tk.module,
+			tk.precondition,
+			tk.steps,
+			tk.expectation_res,
+			tk.actual_res,
+			tk.comment
 		FROM test_keys tk
 		JOIN projects p
 			on p.id = tk.project_id
@@ -35,7 +35,7 @@ func (r *Test_keys_repository) GetTestKeys(project_id, category_id, subcategoryI
 			on c.project_id = p.id
 		JOIN subcategories sc
 			on sc.categori_id = c.id
-		where p.id = $1 and c.id = $2 and sc.id = $3;
+		where p.id = 1 and c.id = 1 and sc.id = 1;
 	`
 
 	rows, err := r.postgres.DB.Query(query, *project_id, *category_id, *subcategoryID)
