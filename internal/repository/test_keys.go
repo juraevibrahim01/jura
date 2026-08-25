@@ -35,7 +35,7 @@ func (r *Test_keys_repository) GetTestKeys(project_id, category_id, subcategoryI
 			on c.project_id = p.id
 		JOIN subcategories sc
 			on sc.categori_id = c.id
-		where p.id = 1 and c.id = 1 and sc.id = 1;
+		where p.id = $1 and c.id = $2 and sc.id = $3;
 	`
 
 	rows, err := r.postgres.DB.Query(query, *project_id, *category_id, *subcategoryID)
