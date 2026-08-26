@@ -43,15 +43,15 @@ func (h *Ticket_handler) GetTickets(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	UserIDInt, err := strconv.Atoi(UserID)
-	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
-		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
-			Status:      "error",
-			Description: "Invalid UserID format",
-		})
-		return
-	}
+	// UserIDInt, err := strconv.Atoi(UserID)
+	// if err != nil {
+	// 	w.WriteHeader(http.StatusBadRequest)
+	// 	_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
+	// 		Status:      "error",
+	// 		Description: "Invalid UserID format",
+	// 	})
+	// 	return
+	// }
 
 	projectID := vars["project_id"]
 	if projectID == "" {
@@ -62,7 +62,6 @@ func (h *Ticket_handler) GetTickets(w http.ResponseWriter, r *http.Request) {
 		})
 		return
 	}
-
 	projectID_int, err := strconv.Atoi(projectID)
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
@@ -73,7 +72,45 @@ func (h *Ticket_handler) GetTickets(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tickets, err := h.service.GetTickets(&UserIDInt, &projectID_int)
+	categoryID := vars["categori_id"]
+	if categoryID == "" {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
+			Status:      "error",
+			Description: "Category ID not found in path",
+		})
+		return
+	}
+	categoryID_int, err := strconv.Atoi(categoryID)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
+			Status:      "error",
+			Description: "Category ID not found in path",
+		})
+		return
+	}
+
+	subCategoryID := vars["subcategori_id"]
+	if subCategoryID == "" {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
+			Status:      "error",
+			Description: "subcategory ID not found in path",
+		})
+		return
+	}
+	subcategoryID_int, err := strconv.Atoi(subCategoryID)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
+			Status:      "error",
+			Description: "Category ID not found in path",
+		})
+		return
+	}
+
+	tickets, err := h.service.GetTickets(&projectID_int, &categoryID_int, &subcategoryID_int)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(models.TicketsResponse{

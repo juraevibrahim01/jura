@@ -16,14 +16,22 @@ func Ticket_new_repository(postgres *pkg.Postgres) *Ticket_repository {
 	return &Ticket_repository{postgres: postgres}
 }
 
-func (r *Ticket_repository) GetTickets(userID, projectID *int) ([]models.Ticket, error) {
+func (r *Ticket_repository) GetTickets(projectID, categoryID, subcategoryID *int) ([]models.Ticket, error) {
 	query := `
-		SELECT t.id, t."title"
+		SELECT
+			t.id,
+			t."title"
 		FROM tickets t
-        where t.user_id = $1 and t.project_id = $2;
+		JOIN projects p
+			on p.id = t.project_id
+		JOIN categories c
+			on c.project_id = p.id
+		JOIN subcategories sc
+			on sc.categori_id = c.id
+		where p.id = $1 and c.id = $2 and sc.id = $3;
 	`
 
-	rows, err := r.postgres.DB.Query(query, userID, projectID)
+	rows, err := r.postgres.DB.Query(query, projectID, categoryID, subcategoryID)
 	if err != nil {
 		log.Print("Ошибка при получении тикетов: ", err)
 		return nil, err

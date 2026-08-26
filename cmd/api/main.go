@@ -93,7 +93,7 @@ func main() {
 	router.HandleFunc("/login/check_otp", auth_handler.Check_otp).Methods("POST")
 	router.Handle("/user", middleware.AuthMiddleware(auth_service, http.HandlerFunc(user_handler.User_create))).Methods("POST")
 
-	router.Handle("/projects/{project_id}/tickets", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(ticket_handler.GetTickets))).Methods("GET")
+	router.Handle("/projects/{project_id}/categories/{categori_id}/subcategories/{subcategori_id}/tickets", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(ticket_handler.GetTickets))).Methods("GET")
 	router.Handle("/projects/{project_id}/tickets", middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ticket_handler.Ticket_create))).Methods("POST")
 	router.Handle("/projects/{project_id}/tickets/{id}", middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ticket_handler.GetTicketsByID))).Methods("GET")
 

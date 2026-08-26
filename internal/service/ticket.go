@@ -13,8 +13,8 @@ func Ticket_new_service(repository *repository.Ticket_repository) *Ticket_servic
 	return &Ticket_service{repository: repository}
 }
 
-func (s *Ticket_service) GetTickets(userID, projectID *int) ([]models.Ticket, error) {
-	return s.repository.GetTickets(userID, projectID)
+func (s *Ticket_service) GetTickets(projectID, categoryID, subcategoryID *int) ([]models.Ticket, error) {
+	return s.repository.GetTickets(projectID, categoryID, subcategoryID)
 }
 
 func (s *Ticket_service) Ticket_create(user_id *int, title, priority, severity, environment, steps, expected_result, actual_result, attachments *string, project_id *int) error {
