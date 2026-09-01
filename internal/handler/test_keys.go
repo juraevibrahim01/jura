@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/gorilla/mux"
 	"github.com/juraevibrahim01/jura/internal/models"
@@ -208,29 +209,47 @@ func (h *Test_keys_handler) CreateTestKey(w http.ResponseWriter, r *http.Request
 	// 	return
 	// }
 
-	var UserID string
-	UserID = r.Header.Get("X-User-UserID")
-	userIDInt, err := strconv.Atoi(UserID)
-	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
+	// var UserID string
+	// UserID = r.Header.Get("X-User-UserID")
+	// userIDInt, err := strconv.Atoi(UserID)
+	// if err != nil {
+	// 	w.WriteHeader(http.StatusBadRequest)
 
-		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
-			Status:      "error",
-			Description: "Неверный id пользователя",
-		})
-		return
-	}
+	// 	_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
+	// 		Status:      "error",
+	// 		Description: "Неверный id пользователя",
+	// 	})
+	// 	return
+	// }
 
 	vars := mux.Vars(r)
 
-	projectID := vars["project_id"]
+	// projectID := vars["project_id"]
+	// projectIDInt, err := strconv.Atoi(projectID)
+	// if projectID == "" || err != nil {
+	// 	w.WriteHeader(http.StatusBadRequest)
+	// 	_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
+	// 		Status:      "error",
+	// 		Description: "Неверный id проекта",
+	// 	})
+	// 	return
+	// }
 
-	projectIDInt, err := strconv.Atoi(projectID)
-	if projectID == "" || err != nil {
+	subCategoryID := vars["subcategori_id"]
+	if subCategoryID == "" {
 		w.WriteHeader(http.StatusBadRequest)
-		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
+		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
 			Status:      "error",
-			Description: "Неверный id проекта",
+			Description: "Subcategory ID not found in path",
+		})
+		return
+	}
+	subCategoryID_int, err := strconv.Atoi(subCategoryID)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
+			Status:      "error",
+			Description: "Invalid subcategory_id format",
 		})
 		return
 	}
@@ -245,7 +264,18 @@ func (h *Test_keys_handler) CreateTestKey(w http.ResponseWriter, r *http.Request
 		return
 	}
 
-	if err := h.service.CreateTestKey(&request, &userIDInt, &projectIDInt); err != nil {
+	date, err := time.Parse("2006-01-02", request.Date)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
+			Status:      "error",
+			Description: "Неверный формат даты. Ожидаемый формат: YYYY-MM-DD",
+		})
+		return
+	}
+	request.Date = date.Format("2006-01-02")
+
+	if err := h.service.CreateTestKey(&request, &subCategoryID_int); err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(models.TestKeyResponse{
 			Status:      "error",
@@ -347,8 +377,8 @@ func (h *Test_keys_handler) GetProjectByID(w http.ResponseWriter, r *http.Reques
 			Description string            `json:"description"`
 			Project     *models.ProjectID `json:"project,omitempty"`
 		}{
-			Status:      "",
-			Description: "Test-keys not found",
+			Status:      "error",
+			Description: "Project not found",
 			Project:     nil,
 		})
 		return

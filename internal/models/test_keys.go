@@ -33,6 +33,7 @@ type TestKeyCreateRequest struct {
 	ExpectationRes string `json:"expectation_res"`
 	ActualRes      string `json:"actual_res"`
 	Comment        string `json:"comment"`
+	Status         string `json:"status"`
 }
 
 type Category struct {

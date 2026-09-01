@@ -232,41 +232,79 @@ func (h *Ticket_handler) Ticket_create(w http.ResponseWriter, r *http.Request) {
 
 	vars := mux.Vars(r)
 
-	var UserID string
-	UserID = r.Header.Get("X-User-UserID")
-	if UserID == "" {
-		w.WriteHeader(http.StatusBadRequest)
-		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
-			Status:      "error",
-			Description: "UserID not found in header",
-		})
-		return
-	}
-	UserIDInt, err := strconv.Atoi(UserID)
-	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
-		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
-			Status:      "error",
-			Description: "Invalid UserID format",
-		})
-		return
-	}
+	// var UserID string
+	// UserID = r.Header.Get("X-User-UserID")
+	// if UserID == "" {
+	// 	w.WriteHeader(http.StatusBadRequest)
+	// 	_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
+	// 		Status:      "error",
+	// 		Description: "UserID not found in header",
+	// 	})
+	// 	return
+	// }
+	// UserIDInt, err := strconv.Atoi(UserID)
+	// if err != nil {
+	// 	w.WriteHeader(http.StatusBadRequest)
+	// 	_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
+	// 		Status:      "error",
+	// 		Description: "Invalid UserID format",
+	// 	})
+	// 	return
+	// }
 
-	projectID := vars["project_id"]
-	if projectID == "" {
+	// projectID := vars["project_id"]
+	// if projectID == "" {
+	// 	w.WriteHeader(http.StatusBadRequest)
+	// 	_ = json.NewEncoder(w).Encode(models.TicketsResponse{
+	// 		Status:      "error",
+	// 		Description: "Project ID not found in path",
+	// 	})
+	// 	return
+	// }
+	// projectID_int, err := strconv.Atoi(projectID)
+	// if err != nil {
+	// 	w.WriteHeader(http.StatusBadRequest)
+	// 	_ = json.NewEncoder(w).Encode(models.TicketsResponse{
+	// 		Status:      "error",
+	// 		Description: "Invalid project_id format",
+	// 	})
+	// 	return
+	// }
+
+	// categoryID := vars["category_id"]
+	// if projectID == "" {
+	// 	w.WriteHeader(http.StatusBadRequest)
+	// 	_ = json.NewEncoder(w).Encode(models.TicketsResponse{
+	// 		Status:      "error",
+	// 		Description: "Category ID not found in path",
+	// 	})
+	// 	return
+	// }
+	// categoryID_int, err := strconv.Atoi(categoryID)
+	// if err != nil {
+	// 	w.WriteHeader(http.StatusBadRequest)
+	// 	_ = json.NewEncoder(w).Encode(models.TicketsResponse{
+	// 		Status:      "error",
+	// 		Description: "Invalid category_id format",
+	// 	})
+	// 	return
+	// }
+
+	subCategoryID := vars["subcategori_id"]
+	if subCategoryID == "" {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
 			Status:      "error",
-			Description: "Project ID not found in path",
+			Description: "Subcategory ID not found in path",
 		})
 		return
 	}
-	projectID_int, err := strconv.Atoi(projectID)
+	subCategoryID_int, err := strconv.Atoi(subCategoryID)
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TicketsResponse{
 			Status:      "error",
-			Description: "Invalid project_id format",
+			Description: "Invalid subcategory_id format",
 		})
 		return
 	}
@@ -283,7 +321,7 @@ func (h *Ticket_handler) Ticket_create(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = h.service.Ticket_create(&UserIDInt, &request.Title, &request.Priority, &request.Severity, &request.Environment, &request.Steps, &request.ExpectedResult, &request.ActualResult, &request.Attachments, &projectID_int)
+	err = h.service.Ticket_create(&request.Title, &request.Priority, &request.Severity, &request.Environment, &request.Steps, &request.Expected_res, &request.Actual_res, &request.Attachments, &subCategoryID_int)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(models.TicketsResponse{

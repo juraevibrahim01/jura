@@ -22,12 +22,9 @@ func (r *Ticket_repository) GetTickets(projectID, categoryID, subcategoryID *int
 			t.id,
 			t."title"
 		FROM tickets t
-		JOIN projects p
-			on p.id = t.project_id
-		JOIN categories c
-			on c.project_id = p.id
-		JOIN subcategories sc
-			on sc.categori_id = c.id
+		JOIN subcategories sc on sc.id = t.subcategory_id
+		JOIN categories c on c.id = sc.categori_id
+		JOIN projects p on p.id = c.project_id
 		where p.id = $1 and c.id = $2 and sc.id = $3;
 	`
 
@@ -81,14 +78,14 @@ func (r *Ticket_repository) GetTicketsByID(userID, projectID, ticketsID *int) (*
 	return &ticket, nil
 }
 
-func (r *Ticket_repository) Ticket_create(user_id *int, title, priority, severity, environment, steps, expected_result, actual_result, attachments *string, project_id *int) error {
+func (r *Ticket_repository) Ticket_create(title, priority, severity, environment, steps, expected_res, actual_res, attachments *string, subCategoryID_int *int) error {
 
 	query := `
-		INSERT INTO tickets (user_id, "title", "priority", "severity", "environment", "steps", "expected_result", "actual_result", "attachments", project_id)
-		VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10);
+		INSERT INTO tickets ("title", "priority", "severity", "environment", "steps", "expected_result", "actual_result", "attachments", subcategory_id)
+		VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);
 	`
 
-	_, err := r.postgres.DB.Exec(query, user_id, title, priority, severity, environment, steps, expected_result, actual_result, attachments, project_id)
+	_, err := r.postgres.DB.Exec(query, title, priority, severity, environment, steps, expected_res, actual_res, attachments, subCategoryID_int)
 	if err != nil {
 		log.Print("Ошибка при создании тикета: ", err)
 		return err
