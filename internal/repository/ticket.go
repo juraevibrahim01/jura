@@ -58,9 +58,23 @@ func (r *Ticket_repository) GetTickets(projectID, categoryID, subcategoryID *int
 
 func (r *Ticket_repository) GetTicketsByID(userID, projectID, ticketsID *int) (*models.Ticket, error) {
 	query := `
-		SELECT t.id, t."title", t."priority", t."severity", t."environment", t."steps", t."expected_result", t."actual_result", t."attachments", t."created_at"
+		SELECT
+			t.id,
+			t."title",
+			t."priority",
+			t."severity",
+			t."environment",
+			t."steps",
+			t."expected_result",
+			t."actual_result",
+			t."attachments",
+			t."created_at"
 		FROM tickets t
-        where t.user_id = $1 and t.project_id = $2 and t.id = $3;
+		JOIN subcategories sc on sc.id = t.subcategory_id
+		JOIN categories c on c.id = sc.categori_id
+		JOIN projects p on p.id = c.project_id
+		JOIN users u on u.id = p.user_id
+        where u.id = $1 and p.id = $2 and t.id = $3;
 	`
 
 	row := r.postgres.DB.QueryRow(query, userID, projectID, ticketsID)
