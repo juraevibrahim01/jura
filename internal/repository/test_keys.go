@@ -207,16 +207,33 @@ func (r *Test_keys_repository) GetProjects() ([]models.Project, error) {
 
 func (r *Test_keys_repository) GetProjectByID(id int) (*models.ProjectID, error) {
 	query := `
-		select
-			p.name as project_name,
-			COUNT(DISTINCT t.ID) as testkeys_total,
-			COUNT(DISTINCT b.ID) as tickets_total
-		from test_keys t
-		JOIN subcategories sc on sc.id = t.subcategory_id
-		JOIN categories c on c.id = sc.categori_id
-		JOIN projects p on p.id = c.project_id
-		where p.id = $1
-		group by p.name
+		SELECT
+    		p.name AS project_name,
+    		COALESCE(tk.testkeys_total, 0) AS testkeys_total,
+    		COALESCE(t.ticket_total, 0) AS ticket_total
+		FROM projects p
+
+		LEFT JOIN (
+    		SELECT
+        		c.project_id,
+        		COUNT(DISTINCT tk.id) AS testkeys_total
+    		FROM test_keys tk
+    		JOIN subcategories sc ON sc.id = tk.subcategory_id
+    		JOIN categories c ON c.id = sc.categori_id
+    		GROUP BY c.project_id
+		) tk ON tk.project_id = p.id
+
+		LEFT JOIN (
+    		SELECT
+        		c.project_id,
+        		COUNT(DISTINCT t.id) AS ticket_total
+    		FROM tickets t
+    		JOIN subcategories sc ON sc.id = t.subcategory_id
+    		JOIN categories c ON c.id = sc.categori_id
+   			GROUP BY c.project_id
+		) t ON t.project_id = p.id
+
+		WHERE p.id = 1;
 	`
 
 	row := r.postgres.DB.QueryRow(query, id)
