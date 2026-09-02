@@ -233,7 +233,7 @@ func (r *Test_keys_repository) GetProjectByID(id int) (*models.ProjectID, error)
    			GROUP BY c.project_id
 		) t ON t.project_id = p.id
 
-		WHERE p.id = 1;
+		WHERE p.id = $1;
 	`
 
 	row := r.postgres.DB.QueryRow(query, id)
