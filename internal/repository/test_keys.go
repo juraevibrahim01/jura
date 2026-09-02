@@ -207,10 +207,14 @@ func (r *Test_keys_repository) GetProjects() ([]models.Project, error) {
 
 func (r *Test_keys_repository) GetProjectByID(id int) (*models.ProjectID, error) {
 	query := `
-		select p.name as project_name, COUNT(DISTINCT t.ID) as testkeys_total, COUNT(DISTINCT b.ID) as tickets_total
+		select
+			p.name as project_name,
+			COUNT(DISTINCT t.ID) as testkeys_total,
+			COUNT(DISTINCT b.ID) as tickets_total
 		from test_keys t
-		join tickets b on b.project_id = t.project_id
-		join projects p on p.id = t.project_id
+		JOIN subcategories sc on sc.id = t.subcategory_id
+		JOIN categories c on c.id = sc.categori_id
+		JOIN projects p on p.id = c.project_id
 		where p.id = $1
 		group by p.name
 	`
