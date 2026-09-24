@@ -17,7 +17,37 @@ func NewPopularHandler(service service.PopularService) *PopularHandler {
 	}
 }
 
+func NewRecentHandler(service service.PopularService) *PopularHandler {
+	return &PopularHandler{
+		service: service,
+	}
+}
+
+func NewBuyAgainHandler(service service.PopularService) *PopularHandler {
+	return &PopularHandler{
+		service: service,
+	}
+}
+
 func (h *PopularHandler) PopularGetTest(w http.ResponseWriter, r *http.Request) {
+	response := h.service.GetPopular()
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+
+	json.NewEncoder(w).Encode(response)
+}
+
+func (h *PopularHandler) RecentGetTest(w http.ResponseWriter, r *http.Request) {
+	response := h.service.GetPopular()
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+
+	json.NewEncoder(w).Encode(response)
+}
+
+func (h *PopularHandler) BuyAgainGetTest(w http.ResponseWriter, r *http.Request) {
 	response := h.service.GetPopular()
 
 	w.Header().Set("Content-Type", "application/json")

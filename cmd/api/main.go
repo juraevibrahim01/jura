@@ -53,6 +53,14 @@ func main() {
 	popular_service := service.NewPopularService(popular)
 	popular_hadler := handler.NewPopularHandler(popular_service)
 
+	recent := repository.NewRecent()
+	recent_service := service.NewRecentService(recent)
+	recent_handler := handler.NewRecentHandler(recent_service)
+
+	buy_again := repository.NewBuyAgain()
+	buy_again_service := service.NewBuyAgainService(buy_again)
+	buy_again_handler := handler.NewBuyAgainHandler(buy_again_service)
+
 	// ------------------------------ categories ----------------------------------------
 	categori := repository.NewReCategori(db)
 	categori_service := service.NewCategori(categori)
@@ -109,6 +117,8 @@ func main() {
 	router.Handle("/project/{id}", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetProjectByID))).Methods("GET")
 	router.Handle("/moc/for_you", http.HandlerFunc(for_you_hamdler.GetTest)).Methods("GET")
 	router.Handle("/moc/popular", http.HandlerFunc(popular_hadler.PopularGetTest)).Methods("GET")
+	router.Handle("/moc/recent", http.HandlerFunc(recent_handler.RecentGetTest)).Methods("GET")
+	router.Handle("/moc/buy_again", http.HandlerFunc(buy_again_handler.BuyAgainGetTest)).Methods("GET")
 	router.Handle("/ai", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ai_handler.Chat)))).Methods("POST")
 	handleWithCors := middleware.CORSMiddleware(router)
 

@@ -30,12 +30,22 @@ type PopularRepository interface {
 }
 
 type popularRepository struct{}
+type recentRepository struct{}
+type buyAgainRepository struct{}
 
 func NewPopularYou() PopularRepository {
 	return &popularRepository{}
 }
 
-func (r *popularRepository) GetPopular() PopularResult {
+func NewRecent() PopularRepository {
+	return &recentRepository{}
+}
+
+func NewBuyAgain() PopularRepository {
+	return &buyAgainRepository{}
+}
+
+func buildPopularResult() PopularResult {
 	return PopularResult{
 		Meta: Meta{
 			Error:      false,
@@ -245,6 +255,18 @@ func (r *popularRepository) GetPopular() PopularResult {
 			},
 		},
 	}
+}
+
+func (r *popularRepository) GetPopular() PopularResult {
+	return buildPopularResult()
+}
+
+func (r *recentRepository) GetPopular() PopularResult {
+	return buildPopularResult()
+}
+
+func (r *buyAgainRepository) GetPopular() PopularResult {
+	return buildPopularResult()
 }
 
 // func (r *popularRepository) GetPopular() PopularResult {
