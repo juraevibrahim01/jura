@@ -257,6 +257,50 @@ func buildPopularResult() PopularResult {
 	}
 }
 
+func buildRecentResult() PopularResult {
+	return PopularResult{
+		Meta: Meta{
+			Error:      false,
+			Message:    "",
+			StatusCode: 200,
+		},
+
+		Response: []PopularResponse{
+			{
+				ID:              62729,
+				Name:            "Диван Арткор Пуфак 290х105 см, бежевый",
+				Slug:            "divan-artkor-pufak-290h105-sm-bezhevyy",
+				Rating:          "0.0",
+				RatingCount:     0,
+				MinPrice:        "12800.00",
+				FinalPrice:      "12800.00",
+				DefaultDuration: 24,
+				MaxCommission:   37,
+				MaxConditionID:  25296,
+				Images: []string{
+					"https://storage.alifshop.tj/media/images/alifshop/62729/divan-artkor-pufak-290h105-sm-bezhevyy-1784725701437-ttuxWaJO.png",
+					"https://storage.alifshop.tj/media/images/alifshop/62729/divan-artkor-pufak-290h105-sm-bezhevyy-1784725692887-V4MQUWt6.png",
+				},
+				WishlistID: nil,
+				Discount:   "0.00",
+				Gifts:      []any{},
+				Labels: []Label{
+					{
+						ID:      "new",
+						Label:   "Новинка",
+						Color:   "#ffffff",
+						BgColor: "#9833FD",
+					},
+				},
+				DiscountPercent: 0,
+				MonthlyPayment:  "730.66",
+			},
+			
+		},
+	}
+}
+
+
 func buildByAgainResult() PopularResult {
 	return PopularResult{
 		Meta: Meta{
@@ -464,7 +508,7 @@ func buildByAgainResult() PopularResult {
 				},
 				DiscountPercent: 0,
 				MonthlyPayment:  "730.66",
-			},{
+			}, {
 				ID:              62729,
 				Name:            "Диван Арткор Пуфак 290х105 см, бежевый",
 				Slug:            "divan-artkor-pufak-290h105-sm-bezhevyy",
@@ -492,7 +536,7 @@ func buildByAgainResult() PopularResult {
 				},
 				DiscountPercent: 0,
 				MonthlyPayment:  "730.66",
-			},{
+			}, {
 				ID:              62729,
 				Name:            "Диван Арткор Пуфак 290х105 см, бежевый",
 				Slug:            "divan-artkor-pufak-290h105-sm-bezhevyy",
@@ -520,7 +564,7 @@ func buildByAgainResult() PopularResult {
 				},
 				DiscountPercent: 0,
 				MonthlyPayment:  "730.66",
-			},{
+			}, {
 				ID:              62729,
 				Name:            "Диван Арткор Пуфак 290х105 см, бежевый",
 				Slug:            "divan-artkor-pufak-290h105-sm-bezhevyy",
@@ -548,7 +592,7 @@ func buildByAgainResult() PopularResult {
 				},
 				DiscountPercent: 0,
 				MonthlyPayment:  "730.66",
-			},{
+			}, {
 				ID:              62729,
 				Name:            "Диван Арткор Пуфак 290х105 см, бежевый",
 				Slug:            "divan-artkor-pufak-290h105-sm-bezhevyy",
@@ -576,7 +620,35 @@ func buildByAgainResult() PopularResult {
 				},
 				DiscountPercent: 0,
 				MonthlyPayment:  "730.66",
-			},{
+			}, {
+				ID:              62729,
+				Name:            "Диван Арткор Пуфак 290х105 см, бежевый",
+				Slug:            "divan-artkor-pufak-290h105-sm-bezhevyy",
+				Rating:          "0.0",
+				RatingCount:     0,
+				MinPrice:        "12800.00",
+				FinalPrice:      "12800.00",
+				DefaultDuration: 24,
+				MaxCommission:   37,
+				MaxConditionID:  25296,
+				Images: []string{
+					"https://storage.alifshop.tj/media/images/alifshop/62729/divan-artkor-pufak-290h105-sm-bezhevyy-1784725701437-ttuxWaJO.png",
+					"https://storage.alifshop.tj/media/images/alifshop/62729/divan-artkor-pufak-290h105-sm-bezhevyy-1784725692887-V4MQUWt6.png",
+				},
+				WishlistID: nil,
+				Discount:   "0.00",
+				Gifts:      []any{},
+				Labels: []Label{
+					{
+						ID:      "new",
+						Label:   "Новинка",
+						Color:   "#ffffff",
+						BgColor: "#9833FD",
+					},
+				},
+				DiscountPercent: 0,
+				MonthlyPayment:  "730.66",
+			}, {
 				ID:              62729,
 				Name:            "Диван Арткор Пуфак 290х105 см, бежевый",
 				Slug:            "divan-artkor-pufak-290h105-sm-bezhevyy",
@@ -614,7 +686,7 @@ func (r *popularRepository) GetPopular() PopularResult {
 }
 
 func (r *recentRepository) GetPopular() PopularResult {
-	return buildPopularResult()
+	return buildRecentResult()
 }
 
 func (r *buyAgainRepository) GetPopular() PopularResult {
