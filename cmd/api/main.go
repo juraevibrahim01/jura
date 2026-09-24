@@ -118,7 +118,7 @@ func main() {
 	router.Handle("/moc/for_you", http.HandlerFunc(for_you_hamdler.GetTest)).Methods("GET")
 	router.Handle("/moc/popular", http.HandlerFunc(popular_hadler.PopularGetTest)).Methods("GET")
 	router.Handle("/moc/recent", http.HandlerFunc(recent_handler.RecentGetTest)).Methods("GET")
-	router.Handle("/moc/buy_again", http.HandlerFunc(buy_again_handler.BuyAgainGetTest)).Methods("GET")
+	router.Handle("/moc/by_again", http.HandlerFunc(buy_again_handler.BuyAgainGetTest)).Methods("GET")
 	router.Handle("/ai", middleware.AuthMiddleware(auth_service, middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc(ai_handler.Chat)))).Methods("POST")
 	handleWithCors := middleware.CORSMiddleware(router)
 
