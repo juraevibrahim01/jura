@@ -54,3 +54,20 @@ func (s *SubCategories) GetSubCategories(categoriID *int) (*[]models.SubCategori
 	return &subCategories, nil
 
 }
+
+
+func (r *SubCategories) CreateSubCategory(name *string, categoriID *int) (string, error) {
+
+	query := `
+		INSERT INTO subcategories ("name", categori_id)
+		VALUES ($1, $2)
+	`
+
+	_, err := r.postgres.DB.Exec(query, name, categoriID)
+	if err != nil {
+		log.Print("Ошибка при создании подкатегории: ", err)
+		return "", err
+	}
+
+	return "success", nil
+}

@@ -16,3 +16,7 @@ func NewCategori(repo *repository.CategoriReposotori) *CategotiService {
 func (c *CategotiService) GetCategories(projectID *int) (*[]models.Categoridbres, error) {
 	return c.repo.GetCategoti(projectID)
 }
+
+func (c *CategotiService) CreateCategory(name *string, projectID *int) (string, error) {
+	return c.repo.CreateCategory(name, projectID)
+}

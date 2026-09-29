@@ -16,3 +16,7 @@ func NewSubCategori(repo *repository.SubCategories) *SubCategoriesService {
 func (s *SubCategoriesService) GetSubCategories(categoriID *int) (*[]models.SubCategoriResdb, error) {
 	return s.repo.GetSubCategories(categoriID)
 }
+
+func (s *SubCategoriesService) CreateSubCategory(name *string, categoriID *int) (string, error) {
+	return s.repo.CreateSubCategory(name, categoriID)
+}

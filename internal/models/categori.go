@@ -10,3 +10,4 @@ type CategoriesRes struct {
 	Description string          `json:"description"`
 	Categories  []Categoridbres `json:"categories"`
 }
+

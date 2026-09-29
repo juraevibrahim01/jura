@@ -63,3 +63,7 @@ type ProjectsResponse struct {
 	Description string    `json:"description"`
 	Projects    []Project `json:"projects"`
 }
+
+type CreateCategoryRequest struct {
+	Name string `json:"name"`
+}

@@ -53,3 +53,19 @@ func (r *CategoriReposotori) GetCategoti(projectID *int) (*[]models.Categoridbre
 	return &categories, nil
 
 }
+
+func (r *CategoriReposotori) CreateCategory(name *string, projectID *int) (string, error) {
+
+	query := `
+		INSERT INTO categories ("name", project_id)
+		VALUES ($1, $2)
+	`
+
+	_, err := r.postgres.DB.Exec(query, name, projectID)
+	if err != nil {
+		log.Print("Ошибка при создании категории: ", err)
+		return "", err
+	}
+
+	return "success", nil
+}
