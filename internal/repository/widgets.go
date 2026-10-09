@@ -5623,6 +5623,3 @@ func (r *widgetsRepository) GetWidgets() WidgetsResult {
         ]
     }
 }
-		},
-	}
-}
