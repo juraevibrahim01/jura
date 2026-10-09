@@ -91,7 +91,6 @@ func (r *widgetsRepository) GetWidgets() WidgetsResult {
 				To:           13,
 			},
 			Items: []WidgetItem{
-				{
 			"meta": {
 				"error": false,
 				"message": "",
@@ -5622,7 +5621,6 @@ func (r *widgetsRepository) GetWidgets() WidgetsResult {
 					}
 				]
     }
-}
 }
 }
 }
