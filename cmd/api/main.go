@@ -48,6 +48,10 @@ func main() {
 	for_you_service := service.NewForYouService(for_you)
 	for_you_hamdler := handler.NewForYouHandler(for_you_service)
 
+	widgets := repository.NewWidgets()
+	widgets_service := service.NewWidgetsService(widgets)
+	widgets_handler := handler.NewWidgetsHandler(widgets_service)
+
 	// ------------------------------ popular --------------------------------------------
 	popular := repository.NewPopularYou()
 	popular_service := service.NewPopularService(popular)
@@ -118,6 +122,7 @@ func main() {
 	router.Handle("/projects", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetProjects))).Methods("GET")
 	router.Handle("/project/{id}", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc(test_keys_handler.GetProjectByID))).Methods("GET")
 	router.Handle("/moc/for_you", http.HandlerFunc(for_you_hamdler.GetTest)).Methods("GET")
+	router.Handle("/moc/widgets", http.HandlerFunc(widgets_handler.GetWidgets)).Methods("GET")
 	router.Handle("/moc/popular", http.HandlerFunc(popular_hadler.PopularGetTest)).Methods("GET")
 	router.Handle("/moc/recent", http.HandlerFunc(recent_handler.RecentGetTest)).Methods("GET")
 	router.Handle("/moc/by_again", http.HandlerFunc(buy_again_handler.BuyAgainGetTest)).Methods("GET")
