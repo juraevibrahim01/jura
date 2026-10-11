@@ -65,4243 +65,4243 @@ func NewWidgets() WidgetsRepository {
 }
 
 func (r *widgetsRepository) GetWidgets() WidgetsResult {
-	payload2 := []byte(
-		`{
-    "meta": {
-        "error": false,
-        "message": "",
-        "statusCode": 200
-    },
-    "response": {
-        "simple_pagination": {
-            "current_page": 1,
-            "per_page": 4,
-            "has_more_pages": true,
-            "from": 1,
-            "to": 21
-        },
-        "items": [
-            {
-                "id": 9001,
-                "city_id": 1,
-                "name": "Recent_",
-                "title": "Recent_",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "view_all_url": "/recent/all",
-                "position": 0.001,
-                "properties": {
-                    "rec_type": "recent"
-                }
-            },
-            {
-                "id": 9002,
-                "city_id": 1,
-                "name": "Recent_1",
-                "title": "Recent_1",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 10001,
-                        "name": "Samsung Galaxy A1 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10001/image-1-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10001/image-1-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a1-5g-12-512-gb-seryy",
-                        "min_price": "5501.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5501.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1028.04",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 1,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/recent/1",
-                "position": 0.002,
-                "properties": {
-                    "rec_type": "recent"
-                }
-            },
-            {
-                "id": 9003,
-                "city_id": 1,
-                "name": "Recent_4",
-                "title": "Recent_4",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 10002,
-                        "name": "Samsung Galaxy A2 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10002/image-2-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10002/image-2-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a2-5g-12-512-gb-seryy",
-                        "min_price": "5502.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5502.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1029.72",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 2,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10003,
-                        "name": "Samsung Galaxy A3 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10003/image-3-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10003/image-3-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a3-5g-12-512-gb-seryy",
-                        "min_price": "5503.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5503.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1031.40",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "4.9",
-                        "rating_count": 3,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10004,
-                        "name": "Samsung Galaxy A4 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10004/image-4-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10004/image-4-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a4-5g-12-512-gb-seryy",
-                        "min_price": "5504.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5504.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1033.08",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 4,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10005,
-                        "name": "Samsung Galaxy A5 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10005/image-5-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10005/image-5-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a5-5g-12-512-gb-seryy",
-                        "min_price": "5505.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5505.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1034.76",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 5,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/recent/4",
-                "position": 0.003,
-                "properties": {
-                    "rec_type": "recent"
-                }
-            },
-            {
-                "id": 9004,
-                "city_id": 1,
-                "name": "Recent_6",
-                "title": "Recent_6",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 10006,
-                        "name": "Samsung Galaxy A6 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10006/image-6-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10006/image-6-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a6-5g-12-512-gb-seryy",
-                        "min_price": "5506.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5506.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1036.44",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 6,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10007,
-                        "name": "Samsung Galaxy A7 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10007/image-7-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10007/image-7-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a7-5g-12-512-gb-seryy",
-                        "min_price": "5507.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5507.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1038.12",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 7,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10008,
-                        "name": "Samsung Galaxy A8 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10008/image-8-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10008/image-8-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a8-5g-12-512-gb-seryy",
-                        "min_price": "5508.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5508.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1039.80",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.9",
-                        "rating_count": 8,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10009,
-                        "name": "Samsung Galaxy A9 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10009/image-9-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10009/image-9-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a9-5g-12-512-gb-seryy",
-                        "min_price": "5509.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5509.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1041.48",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 9,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10010,
-                        "name": "Samsung Galaxy A10 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10010/image-10-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10010/image-10-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a10-5g-12-512-gb-seryy",
-                        "min_price": "5510.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5510.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1043.16",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 10,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10011,
-                        "name": "Samsung Galaxy A11 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10011/image-11-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10011/image-11-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a11-5g-12-512-gb-seryy",
-                        "min_price": "5511.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5511.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1044.84",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 11,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/recent/6",
-                "position": 0.004,
-                "properties": {
-                    "rec_type": "recent"
-                }
-            },
-            {
-                "id": 9005,
-                "city_id": 1,
-                "name": "Recent_8",
-                "title": "Recent_8",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 10012,
-                        "name": "Samsung Galaxy A12 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10012/image-12-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10012/image-12-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a12-5g-12-512-gb-seryy",
-                        "min_price": "5512.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5512.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1046.52",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 12,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10013,
-                        "name": "Samsung Galaxy A13 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10013/image-13-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10013/image-13-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a13-5g-12-512-gb-seryy",
-                        "min_price": "5513.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5513.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1048.20",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 13,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10014,
-                        "name": "Samsung Galaxy A14 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10014/image-14-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10014/image-14-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a14-5g-12-512-gb-seryy",
-                        "min_price": "5514.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5514.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1049.88",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 14,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10015,
-                        "name": "Samsung Galaxy A15 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10015/image-15-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10015/image-15-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a15-5g-12-512-gb-seryy",
-                        "min_price": "5515.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5515.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1051.56",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 15,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10016,
-                        "name": "Samsung Galaxy A16 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10016/image-16-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10016/image-16-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a16-5g-12-512-gb-seryy",
-                        "min_price": "5516.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5516.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1053.24",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 16,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10017,
-                        "name": "Samsung Galaxy A17 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10017/image-17-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10017/image-17-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a17-5g-12-512-gb-seryy",
-                        "min_price": "5517.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5517.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1054.92",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 17,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10018,
-                        "name": "Samsung Galaxy A18 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10018/image-18-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10018/image-18-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a18-5g-12-512-gb-seryy",
-                        "min_price": "5518.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5518.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1056.60",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 18,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10019,
-                        "name": "Samsung Galaxy A19 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10019/image-19-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10019/image-19-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a19-5g-12-512-gb-seryy",
-                        "min_price": "5519.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5519.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1058.28",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 19,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/recent/8",
-                "position": 0.005,
-                "properties": {
-                    "rec_type": "recent"
-                }
-            },
-            {
-                "id": 9006,
-                "city_id": 1,
-                "name": "Recent_12",
-                "title": "Recent_12",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 10020,
-                        "name": "Samsung Galaxy A20 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10020/image-20-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10020/image-20-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a20-5g-12-512-gb-seryy",
-                        "min_price": "5520.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5520.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1059.96",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 20,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10021,
-                        "name": "Samsung Galaxy A21 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10021/image-21-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10021/image-21-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a21-5g-12-512-gb-seryy",
-                        "min_price": "5521.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5521.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1061.64",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 21,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10022,
-                        "name": "Samsung Galaxy A22 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10022/image-22-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10022/image-22-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a22-5g-12-512-gb-seryy",
-                        "min_price": "5522.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5522.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1063.32",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 22,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10023,
-                        "name": "Samsung Galaxy A23 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10023/image-23-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10023/image-23-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a23-5g-12-512-gb-seryy",
-                        "min_price": "5523.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5523.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1065.00",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 23,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10024,
-                        "name": "Samsung Galaxy A24 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10024/image-24-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10024/image-24-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a24-5g-12-512-gb-seryy",
-                        "min_price": "5524.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5524.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1066.68",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 24,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10025,
-                        "name": "Samsung Galaxy A25 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10025/image-25-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10025/image-25-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a25-5g-12-512-gb-seryy",
-                        "min_price": "5525.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5525.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1068.36",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 25,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10026,
-                        "name": "Samsung Galaxy A26 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10026/image-26-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10026/image-26-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a26-5g-12-512-gb-seryy",
-                        "min_price": "5526.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5526.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1070.04",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 26,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10027,
-                        "name": "Samsung Galaxy A27 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10027/image-27-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10027/image-27-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a27-5g-12-512-gb-seryy",
-                        "min_price": "5527.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5527.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1071.72",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 27,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10028,
-                        "name": "Samsung Galaxy A28 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10028/image-28-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10028/image-28-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a28-5g-12-512-gb-seryy",
-                        "min_price": "5528.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5528.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1073.40",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 28,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10029,
-                        "name": "Samsung Galaxy A29 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10029/image-29-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10029/image-29-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a29-5g-12-512-gb-seryy",
-                        "min_price": "5529.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5529.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1075.08",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 29,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10030,
-                        "name": "Samsung Galaxy A30 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10030/image-30-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10030/image-30-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a30-5g-12-512-gb-seryy",
-                        "min_price": "5530.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5530.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1076.76",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 30,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10031,
-                        "name": "Samsung Galaxy A31 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10031/image-31-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10031/image-31-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a31-5g-12-512-gb-seryy",
-                        "min_price": "5531.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5531.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1078.44",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 31,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/recent/12",
-                "position": 0.006,
-                "properties": {
-                    "rec_type": "recent"
-                }
-            },
-            {
-                "id": 9007,
-                "city_id": 1,
-                "name": "Recent_15",
-                "title": "Recent_15",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 10032,
-                        "name": "Samsung Galaxy A32 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10032/image-32-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10032/image-32-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a32-5g-12-512-gb-seryy",
-                        "min_price": "5532.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5532.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1080.12",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 32,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10033,
-                        "name": "Samsung Galaxy A33 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10033/image-33-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10033/image-33-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a33-5g-12-512-gb-seryy",
-                        "min_price": "5533.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5533.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1081.80",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 33,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10034,
-                        "name": "Samsung Galaxy A34 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10034/image-34-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10034/image-34-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a34-5g-12-512-gb-seryy",
-                        "min_price": "5534.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5534.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1083.48",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 34,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10035,
-                        "name": "Samsung Galaxy A35 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10035/image-35-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10035/image-35-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a35-5g-12-512-gb-seryy",
-                        "min_price": "5535.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5535.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1085.16",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 35,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10036,
-                        "name": "Samsung Galaxy A36 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10036/image-36-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10036/image-36-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a36-5g-12-512-gb-seryy",
-                        "min_price": "5536.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5536.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1086.84",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 36,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10037,
-                        "name": "Samsung Galaxy A37 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10037/image-37-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10037/image-37-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a37-5g-12-512-gb-seryy",
-                        "min_price": "5537.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5537.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1088.52",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 37,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10038,
-                        "name": "Samsung Galaxy A38 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10038/image-38-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10038/image-38-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a38-5g-12-512-gb-seryy",
-                        "min_price": "5538.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5538.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1090.20",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 38,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10039,
-                        "name": "Samsung Galaxy A39 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10039/image-39-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10039/image-39-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a39-5g-12-512-gb-seryy",
-                        "min_price": "5539.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5539.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1091.88",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 39,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10040,
-                        "name": "Samsung Galaxy A40 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10040/image-40-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10040/image-40-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a40-5g-12-512-gb-seryy",
-                        "min_price": "5540.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5540.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1093.56",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 40,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10041,
-                        "name": "Samsung Galaxy A41 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10041/image-41-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10041/image-41-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a41-5g-12-512-gb-seryy",
-                        "min_price": "5541.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5541.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1095.24",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 41,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10042,
-                        "name": "Samsung Galaxy A42 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10042/image-42-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10042/image-42-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a42-5g-12-512-gb-seryy",
-                        "min_price": "5542.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5542.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1096.92",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 42,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10043,
-                        "name": "Samsung Galaxy A43 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10043/image-43-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10043/image-43-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a43-5g-12-512-gb-seryy",
-                        "min_price": "5543.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5543.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1098.60",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 43,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10044,
-                        "name": "Samsung Galaxy A44 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10044/image-44-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10044/image-44-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a44-5g-12-512-gb-seryy",
-                        "min_price": "5544.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5544.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1100.28",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 44,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10045,
-                        "name": "Samsung Galaxy A45 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10045/image-45-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10045/image-45-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a45-5g-12-512-gb-seryy",
-                        "min_price": "5545.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5545.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1101.96",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 45,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 10046,
-                        "name": "Samsung Galaxy A46 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/10046/image-46-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/10046/image-46-2.png"
-                        ],
-                        "slug": "samsung-galaxy-a46-5g-12-512-gb-seryy",
-                        "min_price": "5546.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5546.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1103.64",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 46,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/recent/15",
-                "position": 0.007,
-                "properties": {
-                    "rec_type": "recent"
-                }
-            },
-            {
-                "id": 9011,
-                "city_id": 1,
-                "name": "Buy_again_",
-                "title": "Buy_again_",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "view_all_url": "/buy_again/all",
-                "position": 0.011,
-                "properties": {
-                    "rec_type": "buy_again"
-                }
-            },
-            {
-                "id": 9012,
-                "city_id": 1,
-                "name": "Buy_again_1",
-                "title": "Buy_again_1",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 20001,
-                        "name": "Samsung Galaxy B1 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20001/image-1-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20001/image-1-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b1-5g-12-512-gb-seryy",
-                        "min_price": "5601.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5601.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1048.20",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 1,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/buy_again/1",
-                "position": 0.012,
-                "properties": {
-                    "rec_type": "buy_again"
-                }
-            },
-            {
-                "id": 9013,
-                "city_id": 1,
-                "name": "Buy_again_4",
-                "title": "Buy_again_4",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 20002,
-                        "name": "Samsung Galaxy B2 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20002/image-2-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20002/image-2-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b2-5g-12-512-gb-seryy",
-                        "min_price": "5602.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5602.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1049.88",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "4.9",
-                        "rating_count": 2,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20003,
-                        "name": "Samsung Galaxy B3 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20003/image-3-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20003/image-3-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b3-5g-12-512-gb-seryy",
-                        "min_price": "5603.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5603.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1051.56",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 3,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20004,
-                        "name": "Samsung Galaxy B4 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20004/image-4-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20004/image-4-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b4-5g-12-512-gb-seryy",
-                        "min_price": "5604.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5604.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1053.24",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 4,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20005,
-                        "name": "Samsung Galaxy B5 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20005/image-5-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20005/image-5-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b5-5g-12-512-gb-seryy",
-                        "min_price": "5605.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5605.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1054.92",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 5,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/buy_again/4",
-                "position": 0.013,
-                "properties": {
-                    "rec_type": "buy_again"
-                }
-            },
-            {
-                "id": 9014,
-                "city_id": 1,
-                "name": "Buy_again_6",
-                "title": "Buy_again_6",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 20006,
-                        "name": "Samsung Galaxy B6 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20006/image-6-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20006/image-6-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b6-5g-12-512-gb-seryy",
-                        "min_price": "5606.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5606.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1056.60",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 6,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20007,
-                        "name": "Samsung Galaxy B7 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20007/image-7-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20007/image-7-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b7-5g-12-512-gb-seryy",
-                        "min_price": "5607.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5607.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1058.28",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 7,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20008,
-                        "name": "Samsung Galaxy B8 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20008/image-8-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20008/image-8-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b8-5g-12-512-gb-seryy",
-                        "min_price": "5608.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5608.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1059.96",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.9",
-                        "rating_count": 8,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20009,
-                        "name": "Samsung Galaxy B9 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20009/image-9-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20009/image-9-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b9-5g-12-512-gb-seryy",
-                        "min_price": "5609.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5609.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1061.64",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 9,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20010,
-                        "name": "Samsung Galaxy B10 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20010/image-10-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20010/image-10-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b10-5g-12-512-gb-seryy",
-                        "min_price": "5610.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5610.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1063.32",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 10,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20011,
-                        "name": "Samsung Galaxy B11 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20011/image-11-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20011/image-11-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b11-5g-12-512-gb-seryy",
-                        "min_price": "5611.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5611.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1065.00",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 11,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/buy_again/6",
-                "position": 0.014,
-                "properties": {
-                    "rec_type": "buy_again"
-                }
-            },
-            {
-                "id": 9015,
-                "city_id": 1,
-                "name": "Buy_again_8",
-                "title": "Buy_again_8",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 20012,
-                        "name": "Samsung Galaxy B12 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20012/image-12-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20012/image-12-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b12-5g-12-512-gb-seryy",
-                        "min_price": "5612.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5612.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1066.68",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 12,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20013,
-                        "name": "Samsung Galaxy B13 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20013/image-13-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20013/image-13-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b13-5g-12-512-gb-seryy",
-                        "min_price": "5613.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5613.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1068.36",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 13,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20014,
-                        "name": "Samsung Galaxy B14 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20014/image-14-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20014/image-14-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b14-5g-12-512-gb-seryy",
-                        "min_price": "5614.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5614.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1070.04",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 14,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20015,
-                        "name": "Samsung Galaxy B15 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20015/image-15-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20015/image-15-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b15-5g-12-512-gb-seryy",
-                        "min_price": "5615.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5615.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1071.72",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 15,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20016,
-                        "name": "Samsung Galaxy B16 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20016/image-16-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20016/image-16-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b16-5g-12-512-gb-seryy",
-                        "min_price": "5616.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5616.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1073.40",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 16,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20017,
-                        "name": "Samsung Galaxy B17 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20017/image-17-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20017/image-17-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b17-5g-12-512-gb-seryy",
-                        "min_price": "5617.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5617.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1075.08",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 17,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20018,
-                        "name": "Samsung Galaxy B18 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20018/image-18-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20018/image-18-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b18-5g-12-512-gb-seryy",
-                        "min_price": "5618.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5618.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1076.76",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 18,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20019,
-                        "name": "Samsung Galaxy B19 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20019/image-19-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20019/image-19-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b19-5g-12-512-gb-seryy",
-                        "min_price": "5619.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5619.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1078.44",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 19,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/buy_again/8",
-                "position": 0.015,
-                "properties": {
-                    "rec_type": "buy_again"
-                }
-            },
-            {
-                "id": 9016,
-                "city_id": 1,
-                "name": "Buy_again_12",
-                "title": "Buy_again_12",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 20020,
-                        "name": "Samsung Galaxy B20 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20020/image-20-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20020/image-20-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b20-5g-12-512-gb-seryy",
-                        "min_price": "5620.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5620.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1080.12",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 20,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20021,
-                        "name": "Samsung Galaxy B21 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20021/image-21-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20021/image-21-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b21-5g-12-512-gb-seryy",
-                        "min_price": "5621.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5621.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1081.80",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 21,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20022,
-                        "name": "Samsung Galaxy B22 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20022/image-22-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20022/image-22-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b22-5g-12-512-gb-seryy",
-                        "min_price": "5622.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5622.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1083.48",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 22,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20023,
-                        "name": "Samsung Galaxy B23 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20023/image-23-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20023/image-23-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b23-5g-12-512-gb-seryy",
-                        "min_price": "5623.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5623.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1085.16",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 23,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20024,
-                        "name": "Samsung Galaxy B24 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20024/image-24-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20024/image-24-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b24-5g-12-512-gb-seryy",
-                        "min_price": "5624.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5624.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1086.84",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 24,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20025,
-                        "name": "Samsung Galaxy B25 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20025/image-25-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20025/image-25-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b25-5g-12-512-gb-seryy",
-                        "min_price": "5625.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5625.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1088.52",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 25,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20026,
-                        "name": "Samsung Galaxy B26 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20026/image-26-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20026/image-26-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b26-5g-12-512-gb-seryy",
-                        "min_price": "5626.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5626.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1090.20",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 26,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20027,
-                        "name": "Samsung Galaxy B27 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20027/image-27-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20027/image-27-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b27-5g-12-512-gb-seryy",
-                        "min_price": "5627.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5627.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1091.88",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 27,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20028,
-                        "name": "Samsung Galaxy B28 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20028/image-28-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20028/image-28-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b28-5g-12-512-gb-seryy",
-                        "min_price": "5628.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5628.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1093.56",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 28,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20029,
-                        "name": "Samsung Galaxy B29 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20029/image-29-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20029/image-29-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b29-5g-12-512-gb-seryy",
-                        "min_price": "5629.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5629.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1095.24",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 29,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20030,
-                        "name": "Samsung Galaxy B30 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20030/image-30-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20030/image-30-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b30-5g-12-512-gb-seryy",
-                        "min_price": "5630.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5630.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1096.92",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 30,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20031,
-                        "name": "Samsung Galaxy B31 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20031/image-31-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20031/image-31-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b31-5g-12-512-gb-seryy",
-                        "min_price": "5631.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5631.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1098.60",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 31,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/buy_again/12",
-                "position": 0.016,
-                "properties": {
-                    "rec_type": "buy_again"
-                }
-            },
-            {
-                "id": 9017,
-                "city_id": 1,
-                "name": "Buy_again_15",
-                "title": "Buy_again_15",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 20032,
-                        "name": "Samsung Galaxy B32 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20032/image-32-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20032/image-32-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b32-5g-12-512-gb-seryy",
-                        "min_price": "5632.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5632.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1100.28",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 32,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20033,
-                        "name": "Samsung Galaxy B33 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20033/image-33-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20033/image-33-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b33-5g-12-512-gb-seryy",
-                        "min_price": "5633.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5633.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1101.96",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 33,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20034,
-                        "name": "Samsung Galaxy B34 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20034/image-34-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20034/image-34-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b34-5g-12-512-gb-seryy",
-                        "min_price": "5634.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5634.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1103.64",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 34,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20035,
-                        "name": "Samsung Galaxy B35 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20035/image-35-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20035/image-35-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b35-5g-12-512-gb-seryy",
-                        "min_price": "5635.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5635.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1105.32",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 35,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20036,
-                        "name": "Samsung Galaxy B36 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20036/image-36-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20036/image-36-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b36-5g-12-512-gb-seryy",
-                        "min_price": "5636.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5636.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1107.00",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 36,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20037,
-                        "name": "Samsung Galaxy B37 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20037/image-37-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20037/image-37-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b37-5g-12-512-gb-seryy",
-                        "min_price": "5637.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5637.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1108.68",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 37,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20038,
-                        "name": "Samsung Galaxy B38 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20038/image-38-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20038/image-38-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b38-5g-12-512-gb-seryy",
-                        "min_price": "5638.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5638.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1110.36",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 38,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20039,
-                        "name": "Samsung Galaxy B39 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20039/image-39-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20039/image-39-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b39-5g-12-512-gb-seryy",
-                        "min_price": "5639.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5639.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1112.04",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 39,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20040,
-                        "name": "Samsung Galaxy B40 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20040/image-40-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20040/image-40-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b40-5g-12-512-gb-seryy",
-                        "min_price": "5640.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5640.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1113.72",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 40,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20041,
-                        "name": "Samsung Galaxy B41 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20041/image-41-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20041/image-41-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b41-5g-12-512-gb-seryy",
-                        "min_price": "5641.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5641.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1115.40",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 41,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20042,
-                        "name": "Samsung Galaxy B42 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20042/image-42-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20042/image-42-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b42-5g-12-512-gb-seryy",
-                        "min_price": "5642.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5642.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1117.08",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 42,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20043,
-                        "name": "Samsung Galaxy B43 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20043/image-43-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20043/image-43-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b43-5g-12-512-gb-seryy",
-                        "min_price": "5643.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5643.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1118.76",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 43,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20044,
-                        "name": "Samsung Galaxy B44 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20044/image-44-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20044/image-44-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b44-5g-12-512-gb-seryy",
-                        "min_price": "5644.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5644.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1120.44",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 44,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20045,
-                        "name": "Samsung Galaxy B45 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20045/image-45-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20045/image-45-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b45-5g-12-512-gb-seryy",
-                        "min_price": "5645.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5645.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1122.12",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 45,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 20046,
-                        "name": "Samsung Galaxy B46 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/20046/image-46-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/20046/image-46-2.png"
-                        ],
-                        "slug": "samsung-galaxy-b46-5g-12-512-gb-seryy",
-                        "min_price": "5646.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5646.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1123.80",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 46,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/buy_again/15",
-                "position": 0.017,
-                "properties": {
-                    "rec_type": "buy_again"
-                }
-            },
-            {
-                "id": 9021,
-                "city_id": 1,
-                "name": "For_you_",
-                "title": "For_you_",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "view_all_url": "/for_you/all",
-                "position": 0.021,
-                "properties": {
-                    "rec_type": "for_you_popular"
-                }
-            },
-            {
-                "id": 9022,
-                "city_id": 1,
-                "name": "For_you_1",
-                "title": "For_you_1",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 30001,
-                        "name": "Samsung Galaxy C1 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30001/image-1-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30001/image-1-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c1-5g-12-512-gb-seryy",
-                        "min_price": "5701.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5701.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1068.36",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 1,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/for_you/1",
-                "position": 0.022,
-                "properties": {
-                    "rec_type": "for_you_popular"
-                }
-            },
-            {
-                "id": 9023,
-                "city_id": 1,
-                "name": "For_you_4",
-                "title": "For_you_4",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 30002,
-                        "name": "Samsung Galaxy C2 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30002/image-2-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30002/image-2-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c2-5g-12-512-gb-seryy",
-                        "min_price": "5702.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5702.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1070.04",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "4.9",
-                        "rating_count": 2,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30003,
-                        "name": "Samsung Galaxy C3 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30003/image-3-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30003/image-3-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c3-5g-12-512-gb-seryy",
-                        "min_price": "5703.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5703.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1071.72",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 3,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30004,
-                        "name": "Samsung Galaxy C4 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30004/image-4-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30004/image-4-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c4-5g-12-512-gb-seryy",
-                        "min_price": "5704.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5704.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1073.40",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 4,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30005,
-                        "name": "Samsung Galaxy C5 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30005/image-5-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30005/image-5-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c5-5g-12-512-gb-seryy",
-                        "min_price": "5705.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5705.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1075.08",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 5,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/for_you/4",
-                "position": 0.023,
-                "properties": {
-                    "rec_type": "for_you_popular"
-                }
-            },
-            {
-                "id": 9024,
-                "city_id": 1,
-                "name": "For_you_6",
-                "title": "For_you_6",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 30006,
-                        "name": "Samsung Galaxy C6 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30006/image-6-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30006/image-6-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c6-5g-12-512-gb-seryy",
-                        "min_price": "5706.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5706.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1076.76",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 6,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30007,
-                        "name": "Samsung Galaxy C7 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30007/image-7-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30007/image-7-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c7-5g-12-512-gb-seryy",
-                        "min_price": "5707.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5707.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1078.44",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 7,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30008,
-                        "name": "Samsung Galaxy C8 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30008/image-8-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30008/image-8-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c8-5g-12-512-gb-seryy",
-                        "min_price": "5708.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5708.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1080.12",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.9",
-                        "rating_count": 8,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30009,
-                        "name": "Samsung Galaxy C9 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30009/image-9-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30009/image-9-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c9-5g-12-512-gb-seryy",
-                        "min_price": "5709.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5709.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1081.80",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 9,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30010,
-                        "name": "Samsung Galaxy C10 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30010/image-10-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30010/image-10-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c10-5g-12-512-gb-seryy",
-                        "min_price": "5710.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5710.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1083.48",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 10,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30011,
-                        "name": "Samsung Galaxy C11 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30011/image-11-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30011/image-11-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c11-5g-12-512-gb-seryy",
-                        "min_price": "5711.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5711.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1085.16",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 11,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/for_you/6",
-                "position": 0.024,
-                "properties": {
-                    "rec_type": "for_you_popular"
-                }
-            },
-            {
-                "id": 9025,
-                "city_id": 1,
-                "name": "For_you_8",
-                "title": "For_you_8",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 30012,
-                        "name": "Samsung Galaxy C12 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30012/image-12-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30012/image-12-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c12-5g-12-512-gb-seryy",
-                        "min_price": "5712.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5712.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1086.84",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 12,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30013,
-                        "name": "Samsung Galaxy C13 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30013/image-13-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30013/image-13-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c13-5g-12-512-gb-seryy",
-                        "min_price": "5713.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5713.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1088.52",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 13,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30014,
-                        "name": "Samsung Galaxy C14 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30014/image-14-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30014/image-14-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c14-5g-12-512-gb-seryy",
-                        "min_price": "5714.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5714.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1090.20",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 14,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30015,
-                        "name": "Samsung Galaxy C15 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30015/image-15-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30015/image-15-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c15-5g-12-512-gb-seryy",
-                        "min_price": "5715.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5715.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1091.88",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 15,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30016,
-                        "name": "Samsung Galaxy C16 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30016/image-16-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30016/image-16-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c16-5g-12-512-gb-seryy",
-                        "min_price": "5716.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5716.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1093.56",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 16,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30017,
-                        "name": "Samsung Galaxy C17 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30017/image-17-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30017/image-17-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c17-5g-12-512-gb-seryy",
-                        "min_price": "5717.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5717.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1095.24",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "original",
-                                "label": "Оригинал",
-                                "color": "#336BFD",
-                                "bg_color": "#F0F9FF"
-                            }
-                        ],
-                        "rating": "4.8",
-                        "rating_count": 17,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30018,
-                        "name": "Samsung Galaxy C18 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30018/image-18-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30018/image-18-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c18-5g-12-512-gb-seryy",
-                        "min_price": "5718.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5718.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1096.92",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 18,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30019,
-                        "name": "Samsung Galaxy C19 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30019/image-19-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30019/image-19-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c19-5g-12-512-gb-seryy",
-                        "min_price": "5719.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5719.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1098.60",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 19,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/for_you/8",
-                "position": 0.025,
-                "properties": {
-                    "rec_type": "for_you_popular"
-                }
-            },
-            {
-                "id": 9026,
-                "city_id": 1,
-                "name": "For_you_12",
-                "title": "For_you_12",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 30020,
-                        "name": "Samsung Galaxy C20 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30020/image-20-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30020/image-20-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c20-5g-12-512-gb-seryy",
-                        "min_price": "5720.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5720.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1100.28",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 20,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30021,
-                        "name": "Samsung Galaxy C21 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30021/image-21-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30021/image-21-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c21-5g-12-512-gb-seryy",
-                        "min_price": "5721.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5721.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1101.96",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 21,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30022,
-                        "name": "Samsung Galaxy C22 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30022/image-22-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30022/image-22-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c22-5g-12-512-gb-seryy",
-                        "min_price": "5722.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5722.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1103.64",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 22,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30023,
-                        "name": "Samsung Galaxy C23 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30023/image-23-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30023/image-23-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c23-5g-12-512-gb-seryy",
-                        "min_price": "5723.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5723.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1105.32",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 23,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30024,
-                        "name": "Samsung Galaxy C24 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30024/image-24-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30024/image-24-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c24-5g-12-512-gb-seryy",
-                        "min_price": "5724.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5724.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1107.00",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 24,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30025,
-                        "name": "Samsung Galaxy C25 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30025/image-25-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30025/image-25-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c25-5g-12-512-gb-seryy",
-                        "min_price": "5725.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5725.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1108.68",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 25,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30026,
-                        "name": "Samsung Galaxy C26 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30026/image-26-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30026/image-26-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c26-5g-12-512-gb-seryy",
-                        "min_price": "5726.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5726.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1110.36",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 26,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30027,
-                        "name": "Samsung Galaxy C27 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30027/image-27-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30027/image-27-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c27-5g-12-512-gb-seryy",
-                        "min_price": "5727.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5727.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1112.04",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 27,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30028,
-                        "name": "Samsung Galaxy C28 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30028/image-28-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30028/image-28-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c28-5g-12-512-gb-seryy",
-                        "min_price": "5728.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5728.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1113.72",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 28,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30029,
-                        "name": "Samsung Galaxy C29 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30029/image-29-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30029/image-29-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c29-5g-12-512-gb-seryy",
-                        "min_price": "5729.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5729.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1115.40",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 29,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30030,
-                        "name": "Samsung Galaxy C30 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30030/image-30-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30030/image-30-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c30-5g-12-512-gb-seryy",
-                        "min_price": "5730.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5730.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1117.08",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 30,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30031,
-                        "name": "Samsung Galaxy C31 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30031/image-31-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30031/image-31-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c31-5g-12-512-gb-seryy",
-                        "min_price": "5731.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5731.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1118.76",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 31,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/for_you/12",
-                "position": 0.026,
-                "properties": {
-                    "rec_type": "for_you_popular"
-                }
-            },
-            {
-                "id": 9027,
-                "city_id": 1,
-                "name": "For_you_15",
-                "title": "For_you_15",
-                "is_hidden_title": 0,
-                "widget_type": "product_rec",
-                "view_mode": "web",
-                "source": "main",
-                "widget_items": [
-                    {
-                        "id": 30032,
-                        "name": "Samsung Galaxy C32 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30032/image-32-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30032/image-32-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c32-5g-12-512-gb-seryy",
-                        "min_price": "5732.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5732.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1120.44",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 32,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30033,
-                        "name": "Samsung Galaxy C33 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30033/image-33-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30033/image-33-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c33-5g-12-512-gb-seryy",
-                        "min_price": "5733.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5733.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1122.12",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 33,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30034,
-                        "name": "Samsung Galaxy C34 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30034/image-34-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30034/image-34-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c34-5g-12-512-gb-seryy",
-                        "min_price": "5734.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5734.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1123.80",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 34,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30035,
-                        "name": "Samsung Galaxy C35 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30035/image-35-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30035/image-35-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c35-5g-12-512-gb-seryy",
-                        "min_price": "5735.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5735.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1125.48",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 35,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30036,
-                        "name": "Samsung Galaxy C36 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30036/image-36-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30036/image-36-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c36-5g-12-512-gb-seryy",
-                        "min_price": "5736.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5736.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1127.16",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 36,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30037,
-                        "name": "Samsung Galaxy C37 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30037/image-37-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30037/image-37-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c37-5g-12-512-gb-seryy",
-                        "min_price": "5737.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5737.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1128.84",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 37,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30038,
-                        "name": "Samsung Galaxy C38 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30038/image-38-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30038/image-38-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c38-5g-12-512-gb-seryy",
-                        "min_price": "5738.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5738.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1130.52",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 38,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30039,
-                        "name": "Samsung Galaxy C39 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30039/image-39-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30039/image-39-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c39-5g-12-512-gb-seryy",
-                        "min_price": "5739.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5739.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1132.20",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 39,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30040,
-                        "name": "Samsung Galaxy C40 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30040/image-40-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30040/image-40-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c40-5g-12-512-gb-seryy",
-                        "min_price": "5740.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5740.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1133.88",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 40,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30041,
-                        "name": "Samsung Galaxy C41 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30041/image-41-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30041/image-41-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c41-5g-12-512-gb-seryy",
-                        "min_price": "5741.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5741.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1135.56",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 41,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30042,
-                        "name": "Samsung Galaxy C42 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30042/image-42-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30042/image-42-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c42-5g-12-512-gb-seryy",
-                        "min_price": "5742.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5742.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1137.24",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 42,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30043,
-                        "name": "Samsung Galaxy C43 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30043/image-43-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30043/image-43-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c43-5g-12-512-gb-seryy",
-                        "min_price": "5743.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5743.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1138.92",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 43,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30044,
-                        "name": "Samsung Galaxy C44 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30044/image-44-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30044/image-44-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c44-5g-12-512-gb-seryy",
-                        "min_price": "5744.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5744.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1140.60",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 44,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30045,
-                        "name": "Samsung Galaxy C45 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30045/image-45-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30045/image-45-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c45-5g-12-512-gb-seryy",
-                        "min_price": "5745.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5745.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1142.28",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 45,
-                        "wishlist_id": null
-                    },
-                    {
-                        "id": 30046,
-                        "name": "Samsung Galaxy C46 5G 12/512 ГБ, серый",
-                        "images": [
-                            "https://storage.alifshop.tj/media/images/alifshop/30046/image-46-1.png",
-                            "https://storage.alifshop.tj/media/images/alifshop/30046/image-46-2.png"
-                        ],
-                        "slug": "samsung-galaxy-c46-5g-12-512-gb-seryy",
-                        "min_price": "5746.00",
-                        "discount": "0.00",
-                        "discount_percent": 0,
-                        "default_duration": 6,
-                        "final_price": "5746.00",
-                        "max_commission": 12,
-                        "monthly_payment": "1143.96",
-                        "gifts": [],
-                        "labels": [
-                            {
-                                "id": "new",
-                                "label": "Новинка",
-                                "color": "#ffffff",
-                                "bg_color": "#9833FD"
-                            }
-                        ],
-                        "rating": "5.0",
-                        "rating_count": 46,
-                        "wishlist_id": null
-                    }
-                ],
-                "view_all_url": "/for_you/15",
-                "position": 0.027,
-                "properties": {
-                    "rec_type": "for_you_popular"
-                }
-            }
-        ]
-    }
-}`,
-	)
+	// 	payload2 := []byte(
+	// 		`{
+	//     "meta": {
+	//         "error": false,
+	//         "message": "",
+	//         "statusCode": 200
+	//     },
+	//     "response": {
+	//         "simple_pagination": {
+	//             "current_page": 1,
+	//             "per_page": 4,
+	//             "has_more_pages": true,
+	//             "from": 1,
+	//             "to": 21
+	//         },
+	//         "items": [
+	//             {
+	//                 "id": 9001,
+	//                 "city_id": 1,
+	//                 "name": "Recent_",
+	//                 "title": "Recent_",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "view_all_url": "/recent/all",
+	//                 "position": 0.001,
+	//                 "properties": {
+	//                     "rec_type": "recent"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9002,
+	//                 "city_id": 1,
+	//                 "name": "Recent_1",
+	//                 "title": "Recent_1",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 10001,
+	//                         "name": "Samsung Galaxy A1 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10001/image-1-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10001/image-1-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a1-5g-12-512-gb-seryy",
+	//                         "min_price": "5501.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5501.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1028.04",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 1,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/recent/1",
+	//                 "position": 0.002,
+	//                 "properties": {
+	//                     "rec_type": "recent"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9003,
+	//                 "city_id": 1,
+	//                 "name": "Recent_4",
+	//                 "title": "Recent_4",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 10002,
+	//                         "name": "Samsung Galaxy A2 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10002/image-2-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10002/image-2-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a2-5g-12-512-gb-seryy",
+	//                         "min_price": "5502.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5502.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1029.72",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 2,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10003,
+	//                         "name": "Samsung Galaxy A3 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10003/image-3-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10003/image-3-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a3-5g-12-512-gb-seryy",
+	//                         "min_price": "5503.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5503.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1031.40",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "4.9",
+	//                         "rating_count": 3,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10004,
+	//                         "name": "Samsung Galaxy A4 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10004/image-4-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10004/image-4-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a4-5g-12-512-gb-seryy",
+	//                         "min_price": "5504.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5504.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1033.08",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 4,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10005,
+	//                         "name": "Samsung Galaxy A5 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10005/image-5-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10005/image-5-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a5-5g-12-512-gb-seryy",
+	//                         "min_price": "5505.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5505.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1034.76",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 5,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/recent/4",
+	//                 "position": 0.003,
+	//                 "properties": {
+	//                     "rec_type": "recent"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9004,
+	//                 "city_id": 1,
+	//                 "name": "Recent_6",
+	//                 "title": "Recent_6",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 10006,
+	//                         "name": "Samsung Galaxy A6 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10006/image-6-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10006/image-6-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a6-5g-12-512-gb-seryy",
+	//                         "min_price": "5506.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5506.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1036.44",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 6,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10007,
+	//                         "name": "Samsung Galaxy A7 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10007/image-7-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10007/image-7-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a7-5g-12-512-gb-seryy",
+	//                         "min_price": "5507.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5507.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1038.12",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 7,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10008,
+	//                         "name": "Samsung Galaxy A8 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10008/image-8-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10008/image-8-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a8-5g-12-512-gb-seryy",
+	//                         "min_price": "5508.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5508.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1039.80",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.9",
+	//                         "rating_count": 8,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10009,
+	//                         "name": "Samsung Galaxy A9 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10009/image-9-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10009/image-9-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a9-5g-12-512-gb-seryy",
+	//                         "min_price": "5509.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5509.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1041.48",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 9,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10010,
+	//                         "name": "Samsung Galaxy A10 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10010/image-10-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10010/image-10-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a10-5g-12-512-gb-seryy",
+	//                         "min_price": "5510.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5510.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1043.16",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 10,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10011,
+	//                         "name": "Samsung Galaxy A11 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10011/image-11-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10011/image-11-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a11-5g-12-512-gb-seryy",
+	//                         "min_price": "5511.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5511.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1044.84",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 11,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/recent/6",
+	//                 "position": 0.004,
+	//                 "properties": {
+	//                     "rec_type": "recent"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9005,
+	//                 "city_id": 1,
+	//                 "name": "Recent_8",
+	//                 "title": "Recent_8",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 10012,
+	//                         "name": "Samsung Galaxy A12 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10012/image-12-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10012/image-12-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a12-5g-12-512-gb-seryy",
+	//                         "min_price": "5512.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5512.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1046.52",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 12,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10013,
+	//                         "name": "Samsung Galaxy A13 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10013/image-13-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10013/image-13-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a13-5g-12-512-gb-seryy",
+	//                         "min_price": "5513.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5513.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1048.20",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 13,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10014,
+	//                         "name": "Samsung Galaxy A14 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10014/image-14-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10014/image-14-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a14-5g-12-512-gb-seryy",
+	//                         "min_price": "5514.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5514.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1049.88",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 14,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10015,
+	//                         "name": "Samsung Galaxy A15 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10015/image-15-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10015/image-15-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a15-5g-12-512-gb-seryy",
+	//                         "min_price": "5515.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5515.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1051.56",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 15,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10016,
+	//                         "name": "Samsung Galaxy A16 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10016/image-16-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10016/image-16-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a16-5g-12-512-gb-seryy",
+	//                         "min_price": "5516.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5516.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1053.24",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 16,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10017,
+	//                         "name": "Samsung Galaxy A17 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10017/image-17-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10017/image-17-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a17-5g-12-512-gb-seryy",
+	//                         "min_price": "5517.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5517.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1054.92",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 17,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10018,
+	//                         "name": "Samsung Galaxy A18 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10018/image-18-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10018/image-18-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a18-5g-12-512-gb-seryy",
+	//                         "min_price": "5518.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5518.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1056.60",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 18,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10019,
+	//                         "name": "Samsung Galaxy A19 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10019/image-19-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10019/image-19-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a19-5g-12-512-gb-seryy",
+	//                         "min_price": "5519.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5519.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1058.28",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 19,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/recent/8",
+	//                 "position": 0.005,
+	//                 "properties": {
+	//                     "rec_type": "recent"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9006,
+	//                 "city_id": 1,
+	//                 "name": "Recent_12",
+	//                 "title": "Recent_12",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 10020,
+	//                         "name": "Samsung Galaxy A20 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10020/image-20-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10020/image-20-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a20-5g-12-512-gb-seryy",
+	//                         "min_price": "5520.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5520.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1059.96",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 20,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10021,
+	//                         "name": "Samsung Galaxy A21 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10021/image-21-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10021/image-21-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a21-5g-12-512-gb-seryy",
+	//                         "min_price": "5521.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5521.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1061.64",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 21,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10022,
+	//                         "name": "Samsung Galaxy A22 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10022/image-22-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10022/image-22-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a22-5g-12-512-gb-seryy",
+	//                         "min_price": "5522.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5522.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1063.32",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 22,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10023,
+	//                         "name": "Samsung Galaxy A23 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10023/image-23-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10023/image-23-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a23-5g-12-512-gb-seryy",
+	//                         "min_price": "5523.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5523.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1065.00",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 23,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10024,
+	//                         "name": "Samsung Galaxy A24 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10024/image-24-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10024/image-24-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a24-5g-12-512-gb-seryy",
+	//                         "min_price": "5524.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5524.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1066.68",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 24,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10025,
+	//                         "name": "Samsung Galaxy A25 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10025/image-25-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10025/image-25-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a25-5g-12-512-gb-seryy",
+	//                         "min_price": "5525.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5525.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1068.36",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 25,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10026,
+	//                         "name": "Samsung Galaxy A26 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10026/image-26-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10026/image-26-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a26-5g-12-512-gb-seryy",
+	//                         "min_price": "5526.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5526.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1070.04",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 26,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10027,
+	//                         "name": "Samsung Galaxy A27 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10027/image-27-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10027/image-27-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a27-5g-12-512-gb-seryy",
+	//                         "min_price": "5527.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5527.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1071.72",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 27,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10028,
+	//                         "name": "Samsung Galaxy A28 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10028/image-28-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10028/image-28-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a28-5g-12-512-gb-seryy",
+	//                         "min_price": "5528.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5528.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1073.40",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 28,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10029,
+	//                         "name": "Samsung Galaxy A29 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10029/image-29-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10029/image-29-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a29-5g-12-512-gb-seryy",
+	//                         "min_price": "5529.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5529.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1075.08",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 29,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10030,
+	//                         "name": "Samsung Galaxy A30 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10030/image-30-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10030/image-30-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a30-5g-12-512-gb-seryy",
+	//                         "min_price": "5530.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5530.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1076.76",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 30,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10031,
+	//                         "name": "Samsung Galaxy A31 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10031/image-31-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10031/image-31-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a31-5g-12-512-gb-seryy",
+	//                         "min_price": "5531.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5531.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1078.44",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 31,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/recent/12",
+	//                 "position": 0.006,
+	//                 "properties": {
+	//                     "rec_type": "recent"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9007,
+	//                 "city_id": 1,
+	//                 "name": "Recent_15",
+	//                 "title": "Recent_15",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 10032,
+	//                         "name": "Samsung Galaxy A32 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10032/image-32-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10032/image-32-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a32-5g-12-512-gb-seryy",
+	//                         "min_price": "5532.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5532.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1080.12",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 32,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10033,
+	//                         "name": "Samsung Galaxy A33 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10033/image-33-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10033/image-33-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a33-5g-12-512-gb-seryy",
+	//                         "min_price": "5533.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5533.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1081.80",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 33,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10034,
+	//                         "name": "Samsung Galaxy A34 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10034/image-34-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10034/image-34-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a34-5g-12-512-gb-seryy",
+	//                         "min_price": "5534.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5534.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1083.48",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 34,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10035,
+	//                         "name": "Samsung Galaxy A35 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10035/image-35-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10035/image-35-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a35-5g-12-512-gb-seryy",
+	//                         "min_price": "5535.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5535.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1085.16",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 35,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10036,
+	//                         "name": "Samsung Galaxy A36 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10036/image-36-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10036/image-36-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a36-5g-12-512-gb-seryy",
+	//                         "min_price": "5536.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5536.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1086.84",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 36,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10037,
+	//                         "name": "Samsung Galaxy A37 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10037/image-37-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10037/image-37-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a37-5g-12-512-gb-seryy",
+	//                         "min_price": "5537.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5537.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1088.52",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 37,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10038,
+	//                         "name": "Samsung Galaxy A38 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10038/image-38-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10038/image-38-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a38-5g-12-512-gb-seryy",
+	//                         "min_price": "5538.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5538.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1090.20",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 38,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10039,
+	//                         "name": "Samsung Galaxy A39 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10039/image-39-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10039/image-39-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a39-5g-12-512-gb-seryy",
+	//                         "min_price": "5539.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5539.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1091.88",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 39,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10040,
+	//                         "name": "Samsung Galaxy A40 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10040/image-40-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10040/image-40-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a40-5g-12-512-gb-seryy",
+	//                         "min_price": "5540.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5540.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1093.56",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 40,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10041,
+	//                         "name": "Samsung Galaxy A41 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10041/image-41-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10041/image-41-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a41-5g-12-512-gb-seryy",
+	//                         "min_price": "5541.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5541.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1095.24",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 41,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10042,
+	//                         "name": "Samsung Galaxy A42 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10042/image-42-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10042/image-42-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a42-5g-12-512-gb-seryy",
+	//                         "min_price": "5542.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5542.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1096.92",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 42,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10043,
+	//                         "name": "Samsung Galaxy A43 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10043/image-43-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10043/image-43-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a43-5g-12-512-gb-seryy",
+	//                         "min_price": "5543.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5543.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1098.60",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 43,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10044,
+	//                         "name": "Samsung Galaxy A44 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10044/image-44-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10044/image-44-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a44-5g-12-512-gb-seryy",
+	//                         "min_price": "5544.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5544.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1100.28",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 44,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10045,
+	//                         "name": "Samsung Galaxy A45 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10045/image-45-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10045/image-45-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a45-5g-12-512-gb-seryy",
+	//                         "min_price": "5545.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5545.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1101.96",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 45,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 10046,
+	//                         "name": "Samsung Galaxy A46 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10046/image-46-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/10046/image-46-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-a46-5g-12-512-gb-seryy",
+	//                         "min_price": "5546.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5546.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1103.64",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 46,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/recent/15",
+	//                 "position": 0.007,
+	//                 "properties": {
+	//                     "rec_type": "recent"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9011,
+	//                 "city_id": 1,
+	//                 "name": "Buy_again_",
+	//                 "title": "Buy_again_",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "view_all_url": "/buy_again/all",
+	//                 "position": 0.011,
+	//                 "properties": {
+	//                     "rec_type": "buy_again"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9012,
+	//                 "city_id": 1,
+	//                 "name": "Buy_again_1",
+	//                 "title": "Buy_again_1",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 20001,
+	//                         "name": "Samsung Galaxy B1 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20001/image-1-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20001/image-1-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b1-5g-12-512-gb-seryy",
+	//                         "min_price": "5601.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5601.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1048.20",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 1,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/buy_again/1",
+	//                 "position": 0.012,
+	//                 "properties": {
+	//                     "rec_type": "buy_again"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9013,
+	//                 "city_id": 1,
+	//                 "name": "Buy_again_4",
+	//                 "title": "Buy_again_4",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 20002,
+	//                         "name": "Samsung Galaxy B2 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20002/image-2-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20002/image-2-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b2-5g-12-512-gb-seryy",
+	//                         "min_price": "5602.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5602.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1049.88",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "4.9",
+	//                         "rating_count": 2,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20003,
+	//                         "name": "Samsung Galaxy B3 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20003/image-3-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20003/image-3-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b3-5g-12-512-gb-seryy",
+	//                         "min_price": "5603.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5603.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1051.56",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 3,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20004,
+	//                         "name": "Samsung Galaxy B4 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20004/image-4-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20004/image-4-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b4-5g-12-512-gb-seryy",
+	//                         "min_price": "5604.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5604.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1053.24",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 4,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20005,
+	//                         "name": "Samsung Galaxy B5 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20005/image-5-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20005/image-5-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b5-5g-12-512-gb-seryy",
+	//                         "min_price": "5605.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5605.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1054.92",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 5,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/buy_again/4",
+	//                 "position": 0.013,
+	//                 "properties": {
+	//                     "rec_type": "buy_again"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9014,
+	//                 "city_id": 1,
+	//                 "name": "Buy_again_6",
+	//                 "title": "Buy_again_6",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 20006,
+	//                         "name": "Samsung Galaxy B6 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20006/image-6-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20006/image-6-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b6-5g-12-512-gb-seryy",
+	//                         "min_price": "5606.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5606.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1056.60",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 6,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20007,
+	//                         "name": "Samsung Galaxy B7 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20007/image-7-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20007/image-7-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b7-5g-12-512-gb-seryy",
+	//                         "min_price": "5607.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5607.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1058.28",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 7,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20008,
+	//                         "name": "Samsung Galaxy B8 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20008/image-8-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20008/image-8-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b8-5g-12-512-gb-seryy",
+	//                         "min_price": "5608.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5608.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1059.96",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.9",
+	//                         "rating_count": 8,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20009,
+	//                         "name": "Samsung Galaxy B9 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20009/image-9-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20009/image-9-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b9-5g-12-512-gb-seryy",
+	//                         "min_price": "5609.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5609.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1061.64",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 9,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20010,
+	//                         "name": "Samsung Galaxy B10 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20010/image-10-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20010/image-10-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b10-5g-12-512-gb-seryy",
+	//                         "min_price": "5610.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5610.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1063.32",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 10,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20011,
+	//                         "name": "Samsung Galaxy B11 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20011/image-11-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20011/image-11-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b11-5g-12-512-gb-seryy",
+	//                         "min_price": "5611.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5611.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1065.00",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 11,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/buy_again/6",
+	//                 "position": 0.014,
+	//                 "properties": {
+	//                     "rec_type": "buy_again"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9015,
+	//                 "city_id": 1,
+	//                 "name": "Buy_again_8",
+	//                 "title": "Buy_again_8",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 20012,
+	//                         "name": "Samsung Galaxy B12 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20012/image-12-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20012/image-12-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b12-5g-12-512-gb-seryy",
+	//                         "min_price": "5612.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5612.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1066.68",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 12,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20013,
+	//                         "name": "Samsung Galaxy B13 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20013/image-13-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20013/image-13-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b13-5g-12-512-gb-seryy",
+	//                         "min_price": "5613.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5613.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1068.36",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 13,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20014,
+	//                         "name": "Samsung Galaxy B14 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20014/image-14-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20014/image-14-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b14-5g-12-512-gb-seryy",
+	//                         "min_price": "5614.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5614.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1070.04",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 14,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20015,
+	//                         "name": "Samsung Galaxy B15 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20015/image-15-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20015/image-15-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b15-5g-12-512-gb-seryy",
+	//                         "min_price": "5615.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5615.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1071.72",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 15,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20016,
+	//                         "name": "Samsung Galaxy B16 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20016/image-16-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20016/image-16-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b16-5g-12-512-gb-seryy",
+	//                         "min_price": "5616.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5616.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1073.40",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 16,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20017,
+	//                         "name": "Samsung Galaxy B17 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20017/image-17-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20017/image-17-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b17-5g-12-512-gb-seryy",
+	//                         "min_price": "5617.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5617.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1075.08",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 17,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20018,
+	//                         "name": "Samsung Galaxy B18 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20018/image-18-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20018/image-18-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b18-5g-12-512-gb-seryy",
+	//                         "min_price": "5618.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5618.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1076.76",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 18,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20019,
+	//                         "name": "Samsung Galaxy B19 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20019/image-19-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20019/image-19-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b19-5g-12-512-gb-seryy",
+	//                         "min_price": "5619.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5619.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1078.44",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 19,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/buy_again/8",
+	//                 "position": 0.015,
+	//                 "properties": {
+	//                     "rec_type": "buy_again"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9016,
+	//                 "city_id": 1,
+	//                 "name": "Buy_again_12",
+	//                 "title": "Buy_again_12",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 20020,
+	//                         "name": "Samsung Galaxy B20 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20020/image-20-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20020/image-20-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b20-5g-12-512-gb-seryy",
+	//                         "min_price": "5620.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5620.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1080.12",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 20,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20021,
+	//                         "name": "Samsung Galaxy B21 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20021/image-21-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20021/image-21-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b21-5g-12-512-gb-seryy",
+	//                         "min_price": "5621.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5621.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1081.80",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 21,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20022,
+	//                         "name": "Samsung Galaxy B22 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20022/image-22-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20022/image-22-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b22-5g-12-512-gb-seryy",
+	//                         "min_price": "5622.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5622.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1083.48",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 22,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20023,
+	//                         "name": "Samsung Galaxy B23 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20023/image-23-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20023/image-23-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b23-5g-12-512-gb-seryy",
+	//                         "min_price": "5623.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5623.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1085.16",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 23,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20024,
+	//                         "name": "Samsung Galaxy B24 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20024/image-24-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20024/image-24-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b24-5g-12-512-gb-seryy",
+	//                         "min_price": "5624.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5624.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1086.84",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 24,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20025,
+	//                         "name": "Samsung Galaxy B25 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20025/image-25-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20025/image-25-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b25-5g-12-512-gb-seryy",
+	//                         "min_price": "5625.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5625.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1088.52",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 25,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20026,
+	//                         "name": "Samsung Galaxy B26 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20026/image-26-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20026/image-26-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b26-5g-12-512-gb-seryy",
+	//                         "min_price": "5626.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5626.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1090.20",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 26,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20027,
+	//                         "name": "Samsung Galaxy B27 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20027/image-27-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20027/image-27-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b27-5g-12-512-gb-seryy",
+	//                         "min_price": "5627.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5627.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1091.88",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 27,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20028,
+	//                         "name": "Samsung Galaxy B28 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20028/image-28-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20028/image-28-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b28-5g-12-512-gb-seryy",
+	//                         "min_price": "5628.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5628.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1093.56",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 28,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20029,
+	//                         "name": "Samsung Galaxy B29 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20029/image-29-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20029/image-29-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b29-5g-12-512-gb-seryy",
+	//                         "min_price": "5629.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5629.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1095.24",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 29,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20030,
+	//                         "name": "Samsung Galaxy B30 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20030/image-30-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20030/image-30-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b30-5g-12-512-gb-seryy",
+	//                         "min_price": "5630.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5630.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1096.92",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 30,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20031,
+	//                         "name": "Samsung Galaxy B31 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20031/image-31-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20031/image-31-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b31-5g-12-512-gb-seryy",
+	//                         "min_price": "5631.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5631.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1098.60",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 31,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/buy_again/12",
+	//                 "position": 0.016,
+	//                 "properties": {
+	//                     "rec_type": "buy_again"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9017,
+	//                 "city_id": 1,
+	//                 "name": "Buy_again_15",
+	//                 "title": "Buy_again_15",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 20032,
+	//                         "name": "Samsung Galaxy B32 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20032/image-32-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20032/image-32-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b32-5g-12-512-gb-seryy",
+	//                         "min_price": "5632.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5632.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1100.28",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 32,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20033,
+	//                         "name": "Samsung Galaxy B33 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20033/image-33-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20033/image-33-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b33-5g-12-512-gb-seryy",
+	//                         "min_price": "5633.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5633.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1101.96",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 33,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20034,
+	//                         "name": "Samsung Galaxy B34 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20034/image-34-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20034/image-34-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b34-5g-12-512-gb-seryy",
+	//                         "min_price": "5634.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5634.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1103.64",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 34,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20035,
+	//                         "name": "Samsung Galaxy B35 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20035/image-35-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20035/image-35-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b35-5g-12-512-gb-seryy",
+	//                         "min_price": "5635.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5635.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1105.32",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 35,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20036,
+	//                         "name": "Samsung Galaxy B36 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20036/image-36-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20036/image-36-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b36-5g-12-512-gb-seryy",
+	//                         "min_price": "5636.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5636.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1107.00",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 36,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20037,
+	//                         "name": "Samsung Galaxy B37 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20037/image-37-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20037/image-37-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b37-5g-12-512-gb-seryy",
+	//                         "min_price": "5637.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5637.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1108.68",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 37,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20038,
+	//                         "name": "Samsung Galaxy B38 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20038/image-38-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20038/image-38-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b38-5g-12-512-gb-seryy",
+	//                         "min_price": "5638.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5638.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1110.36",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 38,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20039,
+	//                         "name": "Samsung Galaxy B39 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20039/image-39-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20039/image-39-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b39-5g-12-512-gb-seryy",
+	//                         "min_price": "5639.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5639.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1112.04",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 39,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20040,
+	//                         "name": "Samsung Galaxy B40 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20040/image-40-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20040/image-40-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b40-5g-12-512-gb-seryy",
+	//                         "min_price": "5640.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5640.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1113.72",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 40,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20041,
+	//                         "name": "Samsung Galaxy B41 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20041/image-41-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20041/image-41-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b41-5g-12-512-gb-seryy",
+	//                         "min_price": "5641.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5641.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1115.40",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 41,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20042,
+	//                         "name": "Samsung Galaxy B42 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20042/image-42-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20042/image-42-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b42-5g-12-512-gb-seryy",
+	//                         "min_price": "5642.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5642.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1117.08",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 42,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20043,
+	//                         "name": "Samsung Galaxy B43 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20043/image-43-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20043/image-43-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b43-5g-12-512-gb-seryy",
+	//                         "min_price": "5643.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5643.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1118.76",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 43,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20044,
+	//                         "name": "Samsung Galaxy B44 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20044/image-44-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20044/image-44-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b44-5g-12-512-gb-seryy",
+	//                         "min_price": "5644.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5644.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1120.44",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 44,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20045,
+	//                         "name": "Samsung Galaxy B45 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20045/image-45-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20045/image-45-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b45-5g-12-512-gb-seryy",
+	//                         "min_price": "5645.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5645.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1122.12",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 45,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 20046,
+	//                         "name": "Samsung Galaxy B46 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20046/image-46-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/20046/image-46-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-b46-5g-12-512-gb-seryy",
+	//                         "min_price": "5646.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5646.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1123.80",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 46,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/buy_again/15",
+	//                 "position": 0.017,
+	//                 "properties": {
+	//                     "rec_type": "buy_again"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9021,
+	//                 "city_id": 1,
+	//                 "name": "For_you_",
+	//                 "title": "For_you_",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "view_all_url": "/for_you/all",
+	//                 "position": 0.021,
+	//                 "properties": {
+	//                     "rec_type": "for_you_popular"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9022,
+	//                 "city_id": 1,
+	//                 "name": "For_you_1",
+	//                 "title": "For_you_1",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 30001,
+	//                         "name": "Samsung Galaxy C1 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30001/image-1-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30001/image-1-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c1-5g-12-512-gb-seryy",
+	//                         "min_price": "5701.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5701.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1068.36",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 1,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/for_you/1",
+	//                 "position": 0.022,
+	//                 "properties": {
+	//                     "rec_type": "for_you_popular"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9023,
+	//                 "city_id": 1,
+	//                 "name": "For_you_4",
+	//                 "title": "For_you_4",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 30002,
+	//                         "name": "Samsung Galaxy C2 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30002/image-2-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30002/image-2-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c2-5g-12-512-gb-seryy",
+	//                         "min_price": "5702.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5702.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1070.04",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "4.9",
+	//                         "rating_count": 2,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30003,
+	//                         "name": "Samsung Galaxy C3 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30003/image-3-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30003/image-3-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c3-5g-12-512-gb-seryy",
+	//                         "min_price": "5703.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5703.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1071.72",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 3,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30004,
+	//                         "name": "Samsung Galaxy C4 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30004/image-4-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30004/image-4-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c4-5g-12-512-gb-seryy",
+	//                         "min_price": "5704.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5704.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1073.40",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 4,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30005,
+	//                         "name": "Samsung Galaxy C5 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30005/image-5-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30005/image-5-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c5-5g-12-512-gb-seryy",
+	//                         "min_price": "5705.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5705.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1075.08",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 5,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/for_you/4",
+	//                 "position": 0.023,
+	//                 "properties": {
+	//                     "rec_type": "for_you_popular"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9024,
+	//                 "city_id": 1,
+	//                 "name": "For_you_6",
+	//                 "title": "For_you_6",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 30006,
+	//                         "name": "Samsung Galaxy C6 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30006/image-6-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30006/image-6-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c6-5g-12-512-gb-seryy",
+	//                         "min_price": "5706.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5706.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1076.76",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 6,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30007,
+	//                         "name": "Samsung Galaxy C7 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30007/image-7-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30007/image-7-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c7-5g-12-512-gb-seryy",
+	//                         "min_price": "5707.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5707.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1078.44",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 7,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30008,
+	//                         "name": "Samsung Galaxy C8 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30008/image-8-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30008/image-8-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c8-5g-12-512-gb-seryy",
+	//                         "min_price": "5708.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5708.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1080.12",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.9",
+	//                         "rating_count": 8,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30009,
+	//                         "name": "Samsung Galaxy C9 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30009/image-9-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30009/image-9-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c9-5g-12-512-gb-seryy",
+	//                         "min_price": "5709.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5709.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1081.80",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 9,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30010,
+	//                         "name": "Samsung Galaxy C10 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30010/image-10-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30010/image-10-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c10-5g-12-512-gb-seryy",
+	//                         "min_price": "5710.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5710.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1083.48",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 10,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30011,
+	//                         "name": "Samsung Galaxy C11 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30011/image-11-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30011/image-11-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c11-5g-12-512-gb-seryy",
+	//                         "min_price": "5711.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5711.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1085.16",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 11,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/for_you/6",
+	//                 "position": 0.024,
+	//                 "properties": {
+	//                     "rec_type": "for_you_popular"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9025,
+	//                 "city_id": 1,
+	//                 "name": "For_you_8",
+	//                 "title": "For_you_8",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 30012,
+	//                         "name": "Samsung Galaxy C12 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30012/image-12-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30012/image-12-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c12-5g-12-512-gb-seryy",
+	//                         "min_price": "5712.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5712.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1086.84",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 12,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30013,
+	//                         "name": "Samsung Galaxy C13 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30013/image-13-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30013/image-13-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c13-5g-12-512-gb-seryy",
+	//                         "min_price": "5713.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5713.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1088.52",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 13,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30014,
+	//                         "name": "Samsung Galaxy C14 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30014/image-14-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30014/image-14-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c14-5g-12-512-gb-seryy",
+	//                         "min_price": "5714.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5714.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1090.20",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 14,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30015,
+	//                         "name": "Samsung Galaxy C15 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30015/image-15-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30015/image-15-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c15-5g-12-512-gb-seryy",
+	//                         "min_price": "5715.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5715.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1091.88",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 15,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30016,
+	//                         "name": "Samsung Galaxy C16 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30016/image-16-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30016/image-16-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c16-5g-12-512-gb-seryy",
+	//                         "min_price": "5716.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5716.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1093.56",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 16,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30017,
+	//                         "name": "Samsung Galaxy C17 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30017/image-17-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30017/image-17-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c17-5g-12-512-gb-seryy",
+	//                         "min_price": "5717.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5717.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1095.24",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "original",
+	//                                 "label": "Оригинал",
+	//                                 "color": "#336BFD",
+	//                                 "bg_color": "#F0F9FF"
+	//                             }
+	//                         ],
+	//                         "rating": "4.8",
+	//                         "rating_count": 17,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30018,
+	//                         "name": "Samsung Galaxy C18 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30018/image-18-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30018/image-18-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c18-5g-12-512-gb-seryy",
+	//                         "min_price": "5718.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5718.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1096.92",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 18,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30019,
+	//                         "name": "Samsung Galaxy C19 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30019/image-19-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30019/image-19-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c19-5g-12-512-gb-seryy",
+	//                         "min_price": "5719.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5719.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1098.60",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 19,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/for_you/8",
+	//                 "position": 0.025,
+	//                 "properties": {
+	//                     "rec_type": "for_you_popular"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9026,
+	//                 "city_id": 1,
+	//                 "name": "For_you_12",
+	//                 "title": "For_you_12",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 30020,
+	//                         "name": "Samsung Galaxy C20 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30020/image-20-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30020/image-20-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c20-5g-12-512-gb-seryy",
+	//                         "min_price": "5720.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5720.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1100.28",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 20,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30021,
+	//                         "name": "Samsung Galaxy C21 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30021/image-21-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30021/image-21-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c21-5g-12-512-gb-seryy",
+	//                         "min_price": "5721.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5721.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1101.96",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 21,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30022,
+	//                         "name": "Samsung Galaxy C22 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30022/image-22-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30022/image-22-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c22-5g-12-512-gb-seryy",
+	//                         "min_price": "5722.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5722.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1103.64",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 22,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30023,
+	//                         "name": "Samsung Galaxy C23 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30023/image-23-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30023/image-23-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c23-5g-12-512-gb-seryy",
+	//                         "min_price": "5723.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5723.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1105.32",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 23,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30024,
+	//                         "name": "Samsung Galaxy C24 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30024/image-24-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30024/image-24-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c24-5g-12-512-gb-seryy",
+	//                         "min_price": "5724.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5724.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1107.00",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 24,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30025,
+	//                         "name": "Samsung Galaxy C25 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30025/image-25-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30025/image-25-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c25-5g-12-512-gb-seryy",
+	//                         "min_price": "5725.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5725.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1108.68",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 25,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30026,
+	//                         "name": "Samsung Galaxy C26 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30026/image-26-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30026/image-26-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c26-5g-12-512-gb-seryy",
+	//                         "min_price": "5726.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5726.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1110.36",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 26,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30027,
+	//                         "name": "Samsung Galaxy C27 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30027/image-27-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30027/image-27-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c27-5g-12-512-gb-seryy",
+	//                         "min_price": "5727.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5727.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1112.04",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 27,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30028,
+	//                         "name": "Samsung Galaxy C28 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30028/image-28-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30028/image-28-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c28-5g-12-512-gb-seryy",
+	//                         "min_price": "5728.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5728.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1113.72",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 28,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30029,
+	//                         "name": "Samsung Galaxy C29 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30029/image-29-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30029/image-29-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c29-5g-12-512-gb-seryy",
+	//                         "min_price": "5729.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5729.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1115.40",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 29,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30030,
+	//                         "name": "Samsung Galaxy C30 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30030/image-30-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30030/image-30-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c30-5g-12-512-gb-seryy",
+	//                         "min_price": "5730.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5730.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1117.08",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 30,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30031,
+	//                         "name": "Samsung Galaxy C31 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30031/image-31-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30031/image-31-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c31-5g-12-512-gb-seryy",
+	//                         "min_price": "5731.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5731.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1118.76",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 31,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/for_you/12",
+	//                 "position": 0.026,
+	//                 "properties": {
+	//                     "rec_type": "for_you_popular"
+	//                 }
+	//             },
+	//             {
+	//                 "id": 9027,
+	//                 "city_id": 1,
+	//                 "name": "For_you_15",
+	//                 "title": "For_you_15",
+	//                 "is_hidden_title": 0,
+	//                 "widget_type": "product_rec",
+	//                 "view_mode": "web",
+	//                 "source": "main",
+	//                 "widget_items": [
+	//                     {
+	//                         "id": 30032,
+	//                         "name": "Samsung Galaxy C32 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30032/image-32-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30032/image-32-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c32-5g-12-512-gb-seryy",
+	//                         "min_price": "5732.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5732.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1120.44",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 32,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30033,
+	//                         "name": "Samsung Galaxy C33 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30033/image-33-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30033/image-33-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c33-5g-12-512-gb-seryy",
+	//                         "min_price": "5733.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5733.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1122.12",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 33,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30034,
+	//                         "name": "Samsung Galaxy C34 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30034/image-34-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30034/image-34-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c34-5g-12-512-gb-seryy",
+	//                         "min_price": "5734.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5734.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1123.80",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 34,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30035,
+	//                         "name": "Samsung Galaxy C35 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30035/image-35-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30035/image-35-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c35-5g-12-512-gb-seryy",
+	//                         "min_price": "5735.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5735.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1125.48",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 35,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30036,
+	//                         "name": "Samsung Galaxy C36 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30036/image-36-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30036/image-36-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c36-5g-12-512-gb-seryy",
+	//                         "min_price": "5736.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5736.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1127.16",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 36,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30037,
+	//                         "name": "Samsung Galaxy C37 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30037/image-37-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30037/image-37-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c37-5g-12-512-gb-seryy",
+	//                         "min_price": "5737.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5737.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1128.84",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 37,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30038,
+	//                         "name": "Samsung Galaxy C38 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30038/image-38-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30038/image-38-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c38-5g-12-512-gb-seryy",
+	//                         "min_price": "5738.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5738.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1130.52",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 38,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30039,
+	//                         "name": "Samsung Galaxy C39 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30039/image-39-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30039/image-39-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c39-5g-12-512-gb-seryy",
+	//                         "min_price": "5739.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5739.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1132.20",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 39,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30040,
+	//                         "name": "Samsung Galaxy C40 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30040/image-40-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30040/image-40-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c40-5g-12-512-gb-seryy",
+	//                         "min_price": "5740.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5740.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1133.88",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 40,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30041,
+	//                         "name": "Samsung Galaxy C41 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30041/image-41-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30041/image-41-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c41-5g-12-512-gb-seryy",
+	//                         "min_price": "5741.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5741.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1135.56",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 41,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30042,
+	//                         "name": "Samsung Galaxy C42 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30042/image-42-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30042/image-42-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c42-5g-12-512-gb-seryy",
+	//                         "min_price": "5742.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5742.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1137.24",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 42,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30043,
+	//                         "name": "Samsung Galaxy C43 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30043/image-43-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30043/image-43-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c43-5g-12-512-gb-seryy",
+	//                         "min_price": "5743.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5743.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1138.92",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 43,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30044,
+	//                         "name": "Samsung Galaxy C44 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30044/image-44-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30044/image-44-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c44-5g-12-512-gb-seryy",
+	//                         "min_price": "5744.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5744.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1140.60",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 44,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30045,
+	//                         "name": "Samsung Galaxy C45 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30045/image-45-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30045/image-45-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c45-5g-12-512-gb-seryy",
+	//                         "min_price": "5745.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5745.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1142.28",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 45,
+	//                         "wishlist_id": null
+	//                     },
+	//                     {
+	//                         "id": 30046,
+	//                         "name": "Samsung Galaxy C46 5G 12/512 ГБ, серый",
+	//                         "images": [
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30046/image-46-1.png",
+	//                             "https://storage.alifshop.tj/media/images/alifshop/30046/image-46-2.png"
+	//                         ],
+	//                         "slug": "samsung-galaxy-c46-5g-12-512-gb-seryy",
+	//                         "min_price": "5746.00",
+	//                         "discount": "0.00",
+	//                         "discount_percent": 0,
+	//                         "default_duration": 6,
+	//                         "final_price": "5746.00",
+	//                         "max_commission": 12,
+	//                         "monthly_payment": "1143.96",
+	//                         "gifts": [],
+	//                         "labels": [
+	//                             {
+	//                                 "id": "new",
+	//                                 "label": "Новинка",
+	//                                 "color": "#ffffff",
+	//                                 "bg_color": "#9833FD"
+	//                             }
+	//                         ],
+	//                         "rating": "5.0",
+	//                         "rating_count": 46,
+	//                         "wishlist_id": null
+	//                     }
+	//                 ],
+	//                 "view_all_url": "/for_you/15",
+	//                 "position": 0.027,
+	//                 "properties": {
+	//                     "rec_type": "for_you_popular"
+	//                 }
+	//             }
+	//         ]
+	//     }
+	// }`,
+	// 	)
 
-	// 	payload := []byte(`{
+	payload := []byte(`{
 	//     "meta": {
 	//         "error": false,
 	//         "message": "",
@@ -9045,9 +9045,9 @@ func (r *widgetsRepository) GetWidgets() WidgetsResult {
 	//             }
 	//         ]
 	//     }
-	// }`)
+	}`)
 
-	fullPayload := payload2
+	fullPayload := payload
 
 	var result WidgetsResult
 	if err := json.Unmarshal(fullPayload, &result); err != nil {
