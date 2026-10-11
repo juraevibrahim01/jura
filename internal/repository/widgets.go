@@ -4316,7 +4316,198 @@ func (r *widgetsRepository) GetWidgets() WidgetsResult {
 	            "to": 13
 	        },
 	        "items": [
-	            {
+				{
+					"id": 1279,
+					"city_id": 1,
+					"name": "\u0412\u0438\u0434\u0436\u0435\u0442 \u043c\u043e\u0431 \u0420\u043e\u0437\u044b\u0433\u0440\u044b\u0448 \u043e\u0442 Dorob Store\ud83d\udcaa",
+					"title": "\u0420\u043e\u0437\u044b\u0433\u0440\u044b\u0448 \u043e\u0442 Dorob Store\ud83d\udcaa",
+					"is_hidden_title": 0,
+					"widget_type": "product",
+					"view_mode": "mobile",
+					"source": "main",
+					"widget_items": [
+						{
+							"id": 25727,
+							"name": "\u041f\u0440\u043e\u0442\u0435\u0438\u043d Maxler Golden 7 Protein Blend 907 \u0433, \u043c\u043e\u043b\u043e\u0447\u043d\u044b\u0439 \u0448\u043e\u043a\u043e\u043b\u0430\u0434.",
+							"slug": "protein-maxler-golden-7-protein-blend-907-g-molochnyy-shokolad",
+							"images": [
+								"https:\/\/storage.alifshop.tj\/media\/images\/alifshop\/25727\/protein-maxler-golden-7-protein-blend-907-g-molochnyy-shokolad-1751974138263.png"
+							],
+							"min_price": "540.00",
+							"discount": "0.00",
+							"discount_percent": 0,
+							"final_price": "540.00",
+							"gifts": [],
+							"labels": [],
+							"default_duration": 6,
+							"max_commission": 0,
+							"monthly_payment": "90.00",
+							"rating": "0.0",
+							"rating_count": 0,
+							"wishlist_id": null
+						},
+						{
+							"id": 25737,
+							"name": " \u0413\u0435\u0439\u043d\u0435\u0440 Maxler Special Mass \u0432\u0430\u043d\u0438\u043b\u044c\u043d\u043e\u0435 \u043c\u043e\u0440\u043e\u0436\u0435\u043d\u043e\u0435, 2,73 \u043a\u0433.",
+							"slug": "geyner-maxler-special-mass-vanilnoe-morozhenoe-2-73-kg",
+							"images": [
+								"https:\/\/storage.alifshop.tj\/media\/images\/alifshop\/25737\/geyner-maxler-special-mass-vanilnoe-morozhenoe-2-73-kg-1728364739853.png",
+								"https:\/\/storage.alifshop.tj\/media\/images\/alifshop\/25737\/geyner-maxler-special-mass-vanilnoe-morozhenoe-2-73-kg-1728364227632.png"
+							],
+							"min_price": "670.00",
+							"discount": "0.00",
+							"discount_percent": 0,
+							"final_price": "670.00",
+							"gifts": [],
+							"labels": [],
+							"default_duration": 6,
+							"max_commission": 0,
+							"monthly_payment": "111.66",
+							"rating": "0.0",
+							"rating_count": 0,
+							"wishlist_id": null
+						},
+						{
+							"id": 25544,
+							"name": "\u041f\u0440\u043e\u0442\u0435\u0438\u043d BSN TRUE-MASS Weight Gainer 4650\u0433, \u041a\u043b\u0443\u0431\u043d\u0438\u0447\u043d\u043e \u043c\u043e\u043b\u043e\u0447\u043d\u044b\u0439 \u043a\u043e\u043a\u0442\u0435\u0439\u043b",
+							"slug": "protein-bsn-true-mass-weight-gainer-4650g-klubnichno-molochnyy-kokteyl",
+							"images": [
+								"https:\/\/storage.alifshop.tj\/media\/images\/alifshop\/25544\/aminokisloty-bsn-true-mass-weight-gainer-4650g-klubnichno-molochnyy-kokteyl-1727424953027.png"
+							],
+							"min_price": "1450.00",
+							"discount": "0.00",
+							"discount_percent": 0,
+							"final_price": "1450.00",
+							"gifts": [],
+							"labels": [
+								{
+									"id": "original",
+									"label": "\u041e\u0440\u0438\u0433\u0438\u043d\u0430\u043b",
+									"color": "#336BFD",
+									"bg_color": "#F0F9FF"
+								}
+							],
+							"default_duration": 6,
+							"max_commission": 0,
+							"monthly_payment": "241.66",
+							"rating": "0.0",
+							"rating_count": 0,
+							"wishlist_id": null
+						},
+						{
+							"id": 44918,
+							"name": "\u041a\u0440\u0435\u0430\u0442\u0438\u043d OstroVit Monohydrate, 500 \u0433",
+							"slug": "kreatin-ostrovit-monohydrate-500-g",
+							"images": [
+								"https:\/\/storage.alifshop.tj\/media\/images\/alifshop\/44918\/kreatin-ostrovit-creatine-monohydrate-500-g-1765284873152.png",
+								"https:\/\/storage.alifshop.tj\/media\/images\/alifshop\/44918\/kreatin-ostrovit-creatine-monohydrate-500-g-1765284871172.png",
+								"https:\/\/storage.alifshop.tj\/media\/images\/alifshop\/44918\/kreatin-ostrovit-creatine-monohydrate-500-g-1765284869271.png"
+							],
+							"min_price": "300.00",
+							"discount": "0.00",
+							"discount_percent": 0,
+							"final_price": "300.00",
+							"gifts": [],
+							"labels": [
+								{
+									"id": "new",
+									"label": "\u041d\u043e\u0432\u0438\u043d\u043a\u0430",
+									"color": "#ffffff",
+									"bg_color": "#9833FD"
+								},
+								{
+									"id": "original",
+									"label": "\u041e\u0440\u0438\u0433\u0438\u043d\u0430\u043b",
+									"color": "#336BFD",
+									"bg_color": "#F0F9FF"
+								}
+							],
+							"default_duration": 6,
+							"max_commission": 0,
+							"monthly_payment": "50.00",
+							"rating": "5.0",
+							"rating_count": 2,
+							"wishlist_id": null
+						},
+						{
+							"id": 42613,
+							"name": "\u0413\u0435\u0439\u043d\u0435\u0440 Kevin Levrone Levro Legendary Mass, 7 \u043a\u0433",
+							"slug": "geyner-kevin-levrone-levro-legendary-mass-7-kg",
+							"images": [
+								"https:\/\/storage.alifshop.tj\/media\/images\/alifshop\/42613\/geyner-kevin-levrone-levro-legendary-mass-7-kg-1761554150752.png"
+							],
+							"min_price": "1190.00",
+							"discount": "0.00",
+							"discount_percent": 0,
+							"final_price": "1190.00",
+							"gifts": [],
+							"labels": [
+								{
+									"id": "new",
+									"label": "\u041d\u043e\u0432\u0438\u043d\u043a\u0430",
+									"color": "#ffffff",
+									"bg_color": "#9833FD"
+								},
+								{
+									"id": "original",
+									"label": "\u041e\u0440\u0438\u0433\u0438\u043d\u0430\u043b",
+									"color": "#336BFD",
+									"bg_color": "#F0F9FF"
+								}
+							],
+							"default_duration": 6,
+							"max_commission": 0,
+							"monthly_payment": "198.33",
+							"rating": "0.0",
+							"rating_count": 0,
+							"wishlist_id": null
+						},
+						{
+							"id": 30922,
+							"name": "\u041f\u043e\u044f\u0441 \u0434\u043b\u044f \u0442\u044f\u0436\u0435\u043b\u043e\u0439 \u0430\u0442\u043b\u0435\u0442\u0438\u043a\u0438, \u0447\u0451\u0440\u043d\u044b\u0439",
+							"slug": "poyas-dlya-tyazheloy-atletiki-chernyy",
+							"images": [
+								"https:\/\/storage.alifshop.tj\/media\/images\/alifshop\/30922\/poyas-dlya-tyazheloy-atletiki-chernyy-1791350927841-LYlM2wdQ.png"
+							],
+							"min_price": "350.00",
+							"discount": "0.00",
+							"discount_percent": 0,
+							"final_price": "350.00",
+							"gifts": [],
+							"labels": [],
+							"default_duration": 12,
+							"max_commission": 10,
+							"monthly_payment": "32.08",
+							"rating": "0.0",
+							"rating_count": 0,
+							"wishlist_id": null
+						}
+					],
+					"view_all_url": "\/shops\/dorob-store?activeTab=products&cityId=1",
+					"position": 0.0032048597637137,
+					"properties": null
+				},
+				{
+					"id": 913,
+					"city_id": 1,
+					"name": "\u041f\u0440\u043e\u0434\u0443\u043a\u0442\u044b \u043c\u043e\u0431\u0438",
+					"title": "\u041f\u0440\u043e\u0434\u0443\u043a\u0442\u044b \u043c\u043e\u0431\u0438",
+					"is_hidden_title": 1,
+					"widget_type": "banner",
+					"view_mode": "mobile",
+					"source": "main",
+					"widget_items": [
+						{
+							"id": 1770292917880,
+							"url": "\/groceries?cityId=1",
+							"media_url": "https:\/\/storage.alifshop.tj\/media\/images\/settings\/913\/banner-1789643256622.jpg"
+						}
+					],
+					"view_all_url": "",
+					"position": 0.0032049511892609,
+					"properties": null
+				},
+	        {
 	                "id": 9004,
 	                "city_id": 1,
 	                "name": "Recent_6",
