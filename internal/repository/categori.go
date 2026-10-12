@@ -113,11 +113,13 @@ func (r *CategoriReposotori) CheckSubcategoriesExist(categoryID *int) (bool, err
 			SELECT 1 FROM subcategories WHERE categori_id = $1
 		)
 	`
+
 	var exists bool
-	err := r.postgres.DB.QueryRow(query, categoryID).Scan(&exists)
-	if err != nil {
-		log.Print("Ошибка при проверке подкатегорий: ", err)
+	if err := r.postgres.DB.QueryRow(query, categoryID).Scan(&exists); err != nil {
+		log.Printf("Ошибка при проверке подкатегорий (category_id=%d): %v", categoryID, err)
 		return false, err
 	}
+
+	log.Printf("category_id=%d, подкатегории найдены: %v", categoryID, exists)
 	return exists, nil
 }
