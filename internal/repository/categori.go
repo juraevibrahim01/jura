@@ -80,7 +80,7 @@ func (r *CategoriReposotori) DeleteCategory(category_id *int) (string, error) {
 	defer tx.Rollback()
 
 	if _, err := tx.Exec(
-		`DELETE FROM subcategories WHERE category_id = $1`, *category_id,
+		`DELETE FROM subcategories WHERE categori_id = $1`, *category_id,
 	); err != nil {
 		log.Print("Ошибка при удалении подкатегорий: ", err)
 		return "", err
@@ -110,7 +110,7 @@ func (r *CategoriReposotori) DeleteCategory(category_id *int) (string, error) {
 func (r *CategoriReposotori) CheckSubcategoriesExist(categoryID *int) (bool, error) {
 	query := `
 		SELECT EXISTS (
-			SELECT 1 FROM subcategories WHERE category_id = $1
+			SELECT 1 FROM subcategories WHERE categori_id = $1
 		)
 	`
 	var exists bool

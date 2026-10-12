@@ -121,11 +121,19 @@ func (c *CategoryHandler) DeleteCategory(w http.ResponseWriter, r *http.Request)
 	}
 
 	exists, err := c.service.CheckSubcategoriesExist(&delete_req.ID)
-	if err != nil && !exists {
+	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(models.CategoriesRes{
 			Status:      "error",
 			Description: "Ошибка сервера",
+		})
+		return
+	}
+	if exists {
+		w.WriteHeader(http.StatusConflict)
+		_ = json.NewEncoder(w).Encode(models.CategoriesRes{
+			Status:      "error",
+			Description: "Нельзя удалить категорию: есть связанные подкатегории",
 		})
 		return
 	}
