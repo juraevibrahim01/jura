@@ -130,7 +130,7 @@ func (c *CategoryHandler) DeleteCategory(w http.ResponseWriter, r *http.Request)
 		})
 		return
 	}
-	if exists {
+	if !exists {
 		w.WriteHeader(http.StatusConflict)
 		_ = json.NewEncoder(w).Encode(models.CategoriesRes{
 			Status:      "error",
