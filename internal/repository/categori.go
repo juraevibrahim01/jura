@@ -69,3 +69,21 @@ func (r *CategoriReposotori) CreateCategory(name *string, projectID *int) (strin
 
 	return "success", nil
 }
+
+func (r *CategoriReposotori) DeleteCategory(category_id *int) (string, error) {
+	query := `
+		BEGIN;
+		DELETE FROM subcategories WHERE category_id = $1;
+		DELETE FROM categories WHERE id = $2;
+		COMMIT;
+	`
+
+	_, err := r.postgres.DB.Exec(query, category_id, category_id)
+	if err != nil {
+		log.Print("Ошибка при удалении категории: ", err)
+		return "", err
+	}
+
+	return "success", nil
+
+}

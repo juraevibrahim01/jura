@@ -106,3 +106,42 @@ func (c *CategoryHandler) CreateCategory(w http.ResponseWriter, r *http.Request)
 		Description: "created",
 	})
 }
+
+func (c *CategoryHandler) DeleteCategory(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	category_id := vars["category_id"]
+	if category_id == "" {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.CategoriesRes{
+			Status:      "error",
+			Description: "Category ID not found in path",
+		})
+		return
+	}
+	CategoryID_int, err := strconv.Atoi(category_id)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		_ = json.NewEncoder(w).Encode(models.CategoriesRes{
+			Status:      "error",
+			Description: "Invalid Category ID format",
+		})
+		return
+	}
+
+	delete_category, err := c.service.DeleteCategory(&CategoryID_int)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		_ = json.NewEncoder(w).Encode(models.CategoriesRes{
+			Status:      "error",
+			Description: "Ошибка сервера",
+		})
+		return
+	}
+
+	w.WriteHeader(200)
+	_ = json.NewEncoder(w).Encode(models.CategoriesRes{
+		Status:      delete_category,
+		Description: "deleted",
+	})
+
+}

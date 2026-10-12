@@ -20,3 +20,7 @@ func (c *CategotiService) GetCategories(projectID *int) (*[]models.Categoridbres
 func (c *CategotiService) CreateCategory(name *string, projectID *int) (string, error) {
 	return c.repo.CreateCategory(name, projectID)
 }
+
+func (c *CategotiService) DeleteCategory(categoty_id *int) (string, error) {
+	return c.repo.DeleteCategory(categoty_id)
+}
