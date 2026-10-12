@@ -115,6 +115,7 @@ func main() {
 
 	router.Handle("/project/{project_id}/categories", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc((categori_handler.GetCategories)))).Methods("GET")
 	router.Handle("/project/{project_id}/categories", middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc((categori_handler.CreateCategory)))).Methods("POST")
+	router.Handle("/project/{project_id}/categories", middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc((categori_handler.DeleteCategory)))).Methods("DELETE")
 
 	router.Handle("/category/{categori_id}/subcategories", middleware.RoleMiddleware(user_service, []string{"reading", "admin"}, http.HandlerFunc((subcategori_handler.GetSubCategories)))).Methods("GET")
 	router.Handle("/category/{categori_id}/subcategories", middleware.RoleMiddleware(user_service, []string{"writing", "admin"}, http.HandlerFunc((subcategori_handler.CreateSubCategory)))).Methods("POST")
