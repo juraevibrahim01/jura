@@ -108,27 +108,19 @@ func (c *CategoryHandler) CreateCategory(w http.ResponseWriter, r *http.Request)
 }
 
 func (c *CategoryHandler) DeleteCategory(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	category_id := vars["category_id"]
-	if category_id == "" {
-		w.WriteHeader(http.StatusBadRequest)
-		_ = json.NewEncoder(w).Encode(models.CategoriesRes{
-			Status:      "error",
-			Description: "Category ID not found in path",
-		})
-		return
-	}
-	CategoryID_int, err := strconv.Atoi(category_id)
+
+	var delete_req models.CategotyDeketeRequest
+	err := json.NewDecoder(r.Body).Decode(&delete_req)
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.CategoriesRes{
 			Status:      "error",
-			Description: "Invalid Category ID format",
+			Description: "Invalid request body",
 		})
 		return
 	}
 
-	delete_category, err := c.service.DeleteCategory(&CategoryID_int)
+	delete_category, err := c.service.DeleteCategory(&delete_req.ID)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(models.CategoriesRes{
