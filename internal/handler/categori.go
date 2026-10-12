@@ -2,6 +2,7 @@ package handler
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 	"strconv"
 
@@ -137,6 +138,7 @@ func (c *CategoryHandler) DeleteCategory(w http.ResponseWriter, r *http.Request)
 		})
 		return
 	}
+	log.Println("exists", exists)
 
 	delete_category, err := c.service.DeleteCategory(&delete_req.ID)
 	if err != nil {
