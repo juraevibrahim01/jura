@@ -106,3 +106,18 @@ func (r *CategoriReposotori) DeleteCategory(category_id *int) (string, error) {
 	return "success", nil
 
 }
+
+func (r *CategoriReposotori) CheckSubcategoriesExist(categoryID *int) (bool, error) {
+	query := `
+		SELECT EXISTS (
+			SELECT 1 FROM subcategories WHERE category_id = $1
+		)
+	`
+	var exists bool
+	err := r.postgres.DB.QueryRow(query, categoryID).Scan(&exists)
+	if err != nil {
+		log.Print("Ошибка при проверке подкатегорий: ", err)
+		return false, err
+	}
+	return exists, nil
+}

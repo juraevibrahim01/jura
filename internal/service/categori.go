@@ -24,3 +24,7 @@ func (c *CategotiService) CreateCategory(name *string, projectID *int) (string, 
 func (c *CategotiService) DeleteCategory(categoty_id *int) (string, error) {
 	return c.repo.DeleteCategory(categoty_id)
 }
+
+func (c *CategotiService) CheckSubcategoriesExist(category_id *int) (bool, error) {
+	return c.repo.CheckSubcategoriesExist(category_id)
+}

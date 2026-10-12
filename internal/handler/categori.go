@@ -120,6 +120,16 @@ func (c *CategoryHandler) DeleteCategory(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
+	exists, err := c.service.CheckSubcategoriesExist(&delete_req.ID)
+	if err != nil && !exists {
+		w.WriteHeader(http.StatusInternalServerError)
+		_ = json.NewEncoder(w).Encode(models.CategoriesRes{
+			Status:      "error",
+			Description: "Ошибка сервера",
+		})
+		return
+	}
+
 	delete_category, err := c.service.DeleteCategory(&delete_req.ID)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
