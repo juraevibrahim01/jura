@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"database/sql"
 	"log"
 
 	"github.com/juraevibrahim01/jura/internal/models"
@@ -71,16 +72,34 @@ func (r *CategoriReposotori) CreateCategory(name *string, projectID *int) (strin
 }
 
 func (r *CategoriReposotori) DeleteCategory(category_id *int) (string, error) {
-	query := `
-		BEGIN;
-		DELETE FROM subcategories WHERE category_id = $1;
-		DELETE FROM categories WHERE id = $2;
-		COMMIT;
-	`
+	tx, err := r.postgres.DB.Begin()
+	if err != nil {
+		log.Print("Ошибка при старте транзакции: ", err)
+		return "", err
+	}
+	defer tx.Rollback()
 
-	_, err := r.postgres.DB.Exec(query, category_id, category_id)
+	if _, err := tx.Exec(
+		`DELETE FROM subcategories WHERE category_id = $1`, *category_id,
+	); err != nil {
+		log.Print("Ошибка при удалении подкатегорий: ", err)
+		return "", err
+	}
+
+	res, err := tx.Exec(
+		`DELETE FROM categories WHERE id = $1`, *category_id,
+	)
 	if err != nil {
 		log.Print("Ошибка при удалении категории: ", err)
+		return "", err
+	}
+
+	if n, _ := res.RowsAffected(); n == 0 {
+		return "", sql.ErrNoRows // категории с таким id нет
+	}
+
+	if err := tx.Commit(); err != nil {
+		log.Print("Ошибка при коммите: ", err)
 		return "", err
 	}
 
