@@ -28,27 +28,30 @@ func (s *SubCategoriesHandler) GetSubCategories(w http.ResponseWriter, r *http.R
 			Status:      "error",
 			Description: "Categori ID not found in path",
 		})
+		return
 	}
 
-	categori_id_int, err := strconv.Atoi(categori_id)
+	categori_id_int, err := strconv.ParseInt(categori_id, 10, 64)
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.SubCategoriesRes{
 			Status:      "error",
 			Description: "Invalid Categori ID format",
 		})
+		return
 	}
 
 	subcategories, err := s.sercice.GetSubCategories(&categori_id_int)
 	if err != nil {
-		w.WriteHeader(500)
+		w.WriteHeader(http.StatusInternalServerError)
 		_ = json.NewEncoder(w).Encode(models.SubCategoriesRes{
 			Status:      "error",
 			Description: "Ошибка сервера",
 		})
+		return
 	}
 
-	w.WriteHeader(200)
+	w.WriteHeader(http.StatusOK)
 	_ = json.NewEncoder(w).Encode(models.SubCategoriesRes{
 		Status:        "success",
 		Description:   "Подкатегории получены",
@@ -56,11 +59,9 @@ func (s *SubCategoriesHandler) GetSubCategories(w http.ResponseWriter, r *http.R
 	})
 }
 
-
 func (s *SubCategoriesHandler) CreateSubCategory(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	categori_id := vars["categori_id"]
-	CategoriID_int, err := strconv.Atoi(categori_id)
 	if categori_id == "" {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
@@ -69,6 +70,8 @@ func (s *SubCategoriesHandler) CreateSubCategory(w http.ResponseWriter, r *http.
 		})
 		return
 	}
+
+	CategoriID_int, err := strconv.ParseInt(categori_id, 10, 64)
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(models.TestKeysResponse{
@@ -96,9 +99,10 @@ func (s *SubCategoriesHandler) CreateSubCategory(w http.ResponseWriter, r *http.
 			Status:      "error",
 			Description: "Ошибка сервера",
 		})
+		return
 	}
 
-	w.WriteHeader(200)
+	w.WriteHeader(http.StatusOK)
 	_ = json.NewEncoder(w).Encode(models.SubCategoriesRes{
 		Status:      create_subcategories,
 		Description: "created",

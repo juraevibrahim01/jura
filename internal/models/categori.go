@@ -1,7 +1,7 @@
 package models
 
 type Categoridbres struct {
-	ID   int    `json:"id"`
+	ID   int64  `json:"id"`
 	Name string `json:"name"`
 }
 
@@ -10,4 +10,3 @@ type CategoriesRes struct {
 	Description string          `json:"description"`
 	Categories  []Categoridbres `json:"categories"`
 }
-

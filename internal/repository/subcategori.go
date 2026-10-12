@@ -16,7 +16,7 @@ func NewSubCategories(postgres *pkg.Postgres) *SubCategories {
 	return &SubCategories{postgres: postgres}
 }
 
-func (s *SubCategories) GetSubCategories(categoriID *int) (*[]models.SubCategoriResdb, error) {
+func (s *SubCategories) GetSubCategories(categoriID *int64) (*[]models.SubCategoriResdb, error) {
 
 	var subCategories []models.SubCategoriResdb
 	var subCategori models.SubCategoriResdb
@@ -55,8 +55,7 @@ func (s *SubCategories) GetSubCategories(categoriID *int) (*[]models.SubCategori
 
 }
 
-
-func (r *SubCategories) CreateSubCategory(name *string, categoriID *int) (string, error) {
+func (r *SubCategories) CreateSubCategory(name *string, categoriID *int64) (string, error) {
 
 	query := `
 		INSERT INTO subcategories ("name", categori_id)
