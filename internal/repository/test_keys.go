@@ -135,7 +135,7 @@ func (r *Test_keys_repository) CreateTestKey(request *models.TestKeyCreateReques
 		request.Status,
 	)
 	if err != nil {
-		log.Print("Ошибка при создании тестового кейса: ", err)
+		log.Print("Ошибка при создании тестового кейса: ", err, " subcategory_id: ", *subcategory_id)
 		return err
 	}
 
